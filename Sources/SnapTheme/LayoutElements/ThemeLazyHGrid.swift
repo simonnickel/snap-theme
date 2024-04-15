@@ -1,0 +1,92 @@
+//
+//  ThemeLazyHGrid.swift
+//  SnapTheme
+//
+//  Created by Simon Nickel on 09.01.24.
+//
+
+import SwiftUI
+
+public struct ThemeLazyHGrid<Content>: View where Content : View {
+	
+	@Environment(\.theme) private var theme
+	@ScaledMetric private var scaleFactor: CGFloat = 1
+	
+	public init(rows: [GridItem], alignment: VerticalAlignment = .center, spacing: Theme.ValueKey? = nil, pinnedViews: PinnedScrollableViews = .init(), @ViewBuilder content: @escaping () -> Content) {
+		self.rows = rows
+		self.alignment = alignment
+		self.spacing = spacing
+		self.pinnedViews = pinnedViews
+		self.content = content
+	}
+	
+	private let rows: [GridItem]
+	private let alignment: VerticalAlignment
+	private let spacing: Theme.ValueKey?
+	private let pinnedViews: PinnedScrollableViews
+	private let content: () -> Content
+	
+	public var body: some View {
+		
+		LazyHGrid(
+			rows: rows,
+			alignment: alignment,
+			spacing: {
+				if let spacing {
+					theme.value(spacing, scaled: scaleFactor)
+				} else { 0 }
+			}(),
+			pinnedViews: pinnedViews,
+			content: content
+		)
+		
+	}
+	
+}
+
+
+// MARK: - Preview
+
+#Preview {
+	
+	ThemePreviewContainer(.view) {
+		
+		Section {
+			
+			VStack {
+				
+				LazyHGrid(
+					rows: [GridItem(.fixed(10))]
+				) {
+					Rectangle()
+					Rectangle()
+				}
+				
+				ThemeLazyHGrid(
+					rows: [GridItem(.fixed(10))]
+				) {
+					Rectangle()
+					Rectangle()
+				}
+				
+				ThemeLazyHGrid(
+					rows: [GridItem(.fixed(10))],
+					spacing: .spacingElements
+				) {
+					Rectangle()
+					Rectangle()
+				}
+				
+			}
+			
+		} header: {
+			ThemeSectionHeaderContainer {
+				ThemeLabel(text: "ThemeLazyVGrid", style: .themeSectionHeader(prominent: true))
+			}
+		}
+		
+	}
+	
+}
+
+
