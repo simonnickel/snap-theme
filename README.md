@@ -1,6 +1,8 @@
 # SnapTheme
 
-This packages provides tools to define semantic values to theme your views.
+A toolset to abstract Colors, Fonts and Values into semantic definitions for a SwiftUI app.
+
+This package is part of the [SNAP](https://github.com/simonnickel/snap-abstract) suite.
 
 
 ## Definitions
