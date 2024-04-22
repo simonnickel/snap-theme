@@ -23,12 +23,11 @@ public extension Theme.BackgroundKey {
 	/// macOS does use .system to allow list scroll edge behaviour where windowBar disappears (FB13322408). 
 	static let scene = Theme.BackgroundKey("scene", default: .platform(macOS: .system, other: .surface(.color(.background))))
 	
+	// Make sure to check macOS behavior: .platform(macOS: .system, other: .surface(.material(.bar)))
 	static let bar = Theme.BackgroundKey("bar", default: .system)
 	static let barNavigation = Theme.BackgroundKey("barNavigation", default: .key(.bar))
 	static let barBottom = Theme.BackgroundKey("barBottom", default: .key(.bar))
-	static let barTab = Theme.BackgroundKey("barTab", default: .key(.bar))
-	
-	// Make sure to check macOS behavior: .platform(macOS: .system, other: .surface(.material(.bar)))
+	static let barTab = Theme.BackgroundKey("barTab", default: .key(.bar))	
 	
 	// FB13324686 - SwiftUI: NavigationSplitView sidebar in overlay does not use Material as background
 	static let sidebar = Theme.BackgroundKey("sidebar", default: .system)
