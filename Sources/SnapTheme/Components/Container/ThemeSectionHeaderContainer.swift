@@ -12,15 +12,15 @@ import SwiftUI
 
 public struct ThemeSectionHeaderContainer<Content: View>: View {
 	
-	public init(top: Theme.ValueKey? = .spacingSections, inset: Theme.ValueKey? = nil, @ViewBuilder content: @escaping () -> Content) {
+	public init(top: Theme.NumberKey? = .spacingSections, inset: Theme.NumberKey? = nil, @ViewBuilder content: @escaping () -> Content) {
 		self.top = top
 		self.inset = inset
 		self.content = content
 	}
 	
 	@ViewBuilder private let content: () -> Content
-	private let top: Theme.ValueKey?
-	private let inset: Theme.ValueKey?
+	private let top: Theme.NumberKey?
+	private let inset: Theme.NumberKey?
 	
 	public var body: some View {
 		

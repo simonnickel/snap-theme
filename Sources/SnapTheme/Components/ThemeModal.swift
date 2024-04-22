@@ -36,7 +36,7 @@ public extension View {
 	///   - contentInteraction: `PresentationContentInteraction` to use for the modal.
 	///   - backgroundInteraction: `PresentationBackgroundInteraction` to use for the modal.
 	///   - dragIndicator: `Visibility` of the drag indicator.
-	///   - cornerRadius: `Theme.ValueKey` to use as corner radius.
+	///   - cornerRadius: `Theme.NumberKey` to use as corner radius.
 	///   - background: `any ShapeStyle` to apply as background.
 	/// - Returns: Modified View.
 	func themeModal(
@@ -45,7 +45,7 @@ public extension View {
 		contentInteraction: PresentationContentInteraction = .automatic,
 		backgroundInteraction: PresentationBackgroundInteraction = .automatic,
 		dragIndicator: Visibility = .automatic,
-		cornerRadius: Theme.ValueKey? = .cornerRadiusSheet,
+		cornerRadius: Theme.NumberKey? = .cornerRadiusSheet,
 		background: (any ShapeStyle)? = nil
 	) -> some View {
 		return self
@@ -74,7 +74,7 @@ private extension Theme {
 		internal init(
 			detents: [PresentationDetent],
 			selectedDetent: Binding<PresentationDetent>? = nil,
-			cornerRadius: Theme.ValueKey?
+			cornerRadius: Theme.NumberKey?
 		) {
 			self.detents = Set(detents)
 			self.currentPresentationDetentExternal = selectedDetent
@@ -87,7 +87,7 @@ private extension Theme {
 		private let currentPresentationDetentExternal: Binding<PresentationDetent>?
 		@State private var currentPresentationDetent: PresentationDetent
 		
-		private let cornerRadius: Theme.ValueKey?
+		private let cornerRadius: Theme.NumberKey?
 		
 		public func body(content: Content) -> some View {
 			return content
@@ -144,7 +144,7 @@ private extension Theme {
 	
 	return Container()
 		.environment(\.theme, Theme(
-			values: [
+			numbers: [
 				:
 			],
 			fonts: [

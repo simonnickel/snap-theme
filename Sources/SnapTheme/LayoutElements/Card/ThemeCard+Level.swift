@@ -13,7 +13,7 @@ public extension Theme.Card {
 		
 		case ground, first
 		
-		var cornerRadius: Theme.ValueKey {
+		var cornerRadius: Theme.NumberKey {
 			return switch self {
 					
 				case .ground: .cardCornerRadiusGround

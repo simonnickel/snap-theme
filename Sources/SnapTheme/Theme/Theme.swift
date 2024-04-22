@@ -28,7 +28,7 @@ public struct Theme: Identifiable, Equatable, Hashable, Sendable { // TODO: Coda
 	
 	public init(
 		icons: [IconKey : IconValue] = [:],
-		values: [ValueKey : ValueType] = [:],
+		numbers: [NumberKey : NumberType] = [:],
 		scale: CGFloat = 1.0,
 		colors: [ColorKey : ColorValue] = [:],
 		surfaces: [SurfaceKey : SurfaceValue] = [:],
@@ -41,7 +41,7 @@ public struct Theme: Identifiable, Equatable, Hashable, Sendable { // TODO: Coda
 		debugFlags: [DebugFlag] = []
 	) {
 		self.icons = icons
-		self.values = values
+		self.numbers = numbers
 		self.scale = scale
 		self.colors = colors
 		self.surfaces = surfaces
@@ -58,9 +58,9 @@ public struct Theme: Identifiable, Equatable, Hashable, Sendable { // TODO: Coda
 	
 	public var icons: [IconKey : IconValue]
 	
-	public var values: [ValueKey : ValueType]
+	public var numbers: [NumberKey : NumberType]
 	
-	/// Scale factor used for all sizes (fonts + values).
+	/// Scale factor used for all sizes (fonts + numbers).
 	public var scale: CGFloat
 	
 	/// Color definition for base set of keys defined in `ColorKey`.
@@ -86,7 +86,7 @@ public struct Theme: Identifiable, Equatable, Hashable, Sendable { // TODO: Coda
 	
 	public func replacingDefinitions(
 		icons: [IconKey : IconValue]? = nil,
-		values: [ValueKey : ValueType]? = nil,
+		numbers: [NumberKey : NumberType]? = nil,
 		scale: CGFloat? = nil,
 		colors: [ColorKey : ColorValue]? = nil,
 		surfaces: [SurfaceKey : SurfaceValue]? = nil,
@@ -100,7 +100,7 @@ public struct Theme: Identifiable, Equatable, Hashable, Sendable { // TODO: Coda
 	) -> Theme {
 		return Theme(
 			icons: icons ?? self.icons,
-			values: values ?? self.values,
+			numbers: numbers ?? self.numbers,
 			scale: scale ?? self.scale,
 			colors: colors ?? self.colors,
 			surfaces: surfaces ?? self.surfaces,
@@ -116,7 +116,7 @@ public struct Theme: Identifiable, Equatable, Hashable, Sendable { // TODO: Coda
 	
 	public func replacingValues(
 		icons: [IconKey : IconValue] = [:],
-		values: [ValueKey : ValueType] = [:],
+		numbers: [NumberKey : NumberType] = [:],
 		scale: CGFloat? = nil,
 		colors: [ColorKey : ColorValue] = [:],
 		surfaces: [SurfaceKey : SurfaceValue] = [:],
@@ -130,7 +130,7 @@ public struct Theme: Identifiable, Equatable, Hashable, Sendable { // TODO: Coda
 	) -> Theme {
 		return Theme(
 			icons: self.icons.merging(icons, uniquingKeysWith: { $1 }),
-			values: self.values.merging(values, uniquingKeysWith: { $1 }),
+			numbers: self.numbers.merging(numbers, uniquingKeysWith: { $1 }),
 			scale: scale ?? self.scale,
 			colors: self.colors.merging(colors, uniquingKeysWith: { $1 }),
 			surfaces: self.surfaces.merging(surfaces, uniquingKeysWith: { $1 }),

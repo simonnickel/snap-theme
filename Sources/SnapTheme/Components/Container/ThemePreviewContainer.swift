@@ -19,7 +19,7 @@ public struct ThemePreviewContainer<Content: View>: View {
 		title: String? = nil,
 		background: Theme.BackgroundKey? = .content,
 		alignment: Alignment = .center,
-		padding: Theme.ValueKey? = .paddingModal,
+		padding: Theme.NumberKey? = .paddingModal,
 		theme: Theme = .base,
 		@ViewBuilder content: @escaping () -> Content
 	) {
@@ -36,7 +36,7 @@ public struct ThemePreviewContainer<Content: View>: View {
 	private let title: String?
 	private let background: Theme.BackgroundKey?
 	private let alignment: Alignment
-	private let padding: Theme.ValueKey?
+	private let padding: Theme.NumberKey?
 	private let theme: Theme
 	private let content: () -> Content
 	

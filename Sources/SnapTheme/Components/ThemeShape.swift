@@ -14,7 +14,7 @@ public struct ThemeShape: View {
 		/// A simple rectangle, e.g. to just have a colored area.
 		case plane
 		
-		case rectangle(_ cornerRadius: Theme.ValueKey? = nil)
+		case rectangle(_ cornerRadius: Theme.NumberKey? = nil)
 		
 		case circle
 		

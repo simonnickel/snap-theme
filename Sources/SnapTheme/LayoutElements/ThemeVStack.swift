@@ -12,14 +12,14 @@ public struct ThemeVStack<Content>: View where Content : View {
 	@Environment(\.theme) private var theme
 	@ScaledMetric private var scaleFactor: CGFloat = 1
 	
-	public init(alignment: HorizontalAlignment = .center, spacing: Theme.ValueKey? = nil, @ViewBuilder content: @escaping () -> Content) {
+	public init(alignment: HorizontalAlignment = .center, spacing: Theme.NumberKey? = nil, @ViewBuilder content: @escaping () -> Content) {
 		self.alignment = alignment
 		self.spacing = spacing
 		self.content = content
 	}
 	
 	private let alignment: HorizontalAlignment
-	private let spacing: Theme.ValueKey?
+	private let spacing: Theme.NumberKey?
 	private let content: () -> Content
 	
 	public var body: some View {	

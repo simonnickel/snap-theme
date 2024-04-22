@@ -13,7 +13,7 @@ public struct ThemeCloseContainer<Content: View>: View {
 	@Environment(\.theme) private var theme
 	@Environment(\.dismiss) private var dismiss
 	
-	public init(alignment: Alignment = .topTrailing, padding: Theme.ValueKey? = .paddingModalCloseButton, @ViewBuilder content: @escaping () -> Content, onClose: ThemeCloseContainer<Content>.CloseHandler? = nil) {
+	public init(alignment: Alignment = .topTrailing, padding: Theme.NumberKey? = .paddingModalCloseButton, @ViewBuilder content: @escaping () -> Content, onClose: ThemeCloseContainer<Content>.CloseHandler? = nil) {
 		self.alignment = alignment
 		self.padding = padding
 		self.content = content
@@ -23,7 +23,7 @@ public struct ThemeCloseContainer<Content: View>: View {
 	@ViewBuilder private let content: () -> Content
 
 	private let alignment: Alignment
-	private let padding: Theme.ValueKey?
+	private let padding: Theme.NumberKey?
 	public typealias CloseHandler = () -> Void
 	private let onClose: CloseHandler?
 	

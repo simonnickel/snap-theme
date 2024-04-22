@@ -1,5 +1,5 @@
 //
-//  Theme+ValueKey.swift
+//  Theme+NumberKey.swift
 //  SnapTheme
 //
 //  Created by Simon Nickel on 13.10.23.
@@ -9,31 +9,31 @@ import Foundation
 
 public extension Theme {
 	
-	typealias ValueType = CGFloat?
+	typealias NumberType = CGFloat?
 
-	typealias ValueKey = Theme.Key<Theme.ValueType>
+	typealias NumberKey = Theme.Key<Theme.NumberType>
 	
 	
 	// MARK: - Value + Scaling
 	
-	/// Get a `ValueType aka CGFloat` registered for a `ValueKey`.
+	/// Get a `NumberType aka CGFloat` registered for a `NumberKey`.
 	///
-	/// - If no value is registered for the key, the `ValueType` set as default is used.
+	/// - If no value is registered for the key, the `NumberType` set as default is used.
 	///
-	/// - Parameter key: `ValueKey` to get the Icon for.
-	/// - Returns: The `ValueType` registered for the key.
-	func value(_ key: ValueKey) -> ValueType {
-		return if let value = values[key] {
+	/// - Parameter key: `NumberKey` to get the Icon for.
+	/// - Returns: The `NumberType` registered for the key.
+	func value(_ key: NumberKey) -> NumberType {
+		return if let value = numbers[key] {
 			value
 		} else {
 			key.defaultValue
 		}
 	}
 	
-	/// Get a **scaled** value of `ValueType aka CGFloat` registered for a `ValueKey`.
+	/// Get a **scaled** value of `NumberType aka CGFloat` registered for a `NumberKey`.
 	///
-	/// - If no value is registered for the key, the `ValueType` from `Theme.ValueKey.definitionsBase` is used.
-	/// - If `Theme.ValueKey.definitionsBase` also has no value for the key, `Theme.ValueKey.defaultValue`  is used.
+	/// - If no value is registered for the key, the `NumberType` from `Theme.NumberKey.definitionsBase` is used.
+	/// - If `Theme.NumberKey.definitionsBase` also has no value for the key, `Theme.NumberKey.defaultValue`  is used.
 	///
 	///	Value is scaled by the scale configured at (`Theme.scale`) and the provided factor, which should be scaled by `@ScaledMetric`, see example below:
 	///
@@ -44,10 +44,10 @@ public extension Theme {
 	///	```
 	///
 	/// - Parameters:
-	///   - key: `ValueKey` to get the Icon for.
+	///   - key: `NumberKey` to get the Icon for.
 	///   - factor: Additional factor as `CGFloat`, should be scaled by `@ScaledMetric`.
-	/// - Returns: **`value * theme.scale * factor`** --- The `ValueType` registered for the key, scaled by `theme.scale` and `factor`.
-	func value(_ key: ValueKey, scaled factor: CGFloat) -> ValueType {
+	/// - Returns: **`value * theme.scale * factor`** --- The `NumberType` registered for the key, scaled by `theme.scale` and `factor`.
+	func value(_ key: NumberKey, scaled factor: CGFloat) -> NumberType {
 		guard let valueOfKey = value(key) else { return nil }
 		return valueOfKey * scale(with: factor)
 	}

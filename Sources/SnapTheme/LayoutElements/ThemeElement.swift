@@ -14,12 +14,12 @@ public struct ThemeElement<Content: View>: View {
 	/// A convenience container to apply common theme attributes.
 	/// - Parameters:
 	///   - shape: `ThemeShape.Style` of the view,
-	///   - padding: `Theme.ValueKey` to apply as padding.
+	///   - padding: `Theme.NumberKey` to apply as padding.
 	///   - color: `Theme.ColorKey` to apply as foreground.
 	///   - background: `Theme.BackgroundKey` to use as background.
 	///   - highlighted: If `true`, the highlight configured in the background is applied (animated).
 	///   - content: The content view to present in the element.
-	public init(shape: ThemeShape.Style? = nil, padding: Theme.ValueKey? = nil, color: Theme.ColorKey? = nil, background: Theme.BackgroundKey? = nil, highlighted: Bool = false, @ViewBuilder content: @escaping () -> Content) {
+	public init(shape: ThemeShape.Style? = nil, padding: Theme.NumberKey? = nil, color: Theme.ColorKey? = nil, background: Theme.BackgroundKey? = nil, highlighted: Bool = false, @ViewBuilder content: @escaping () -> Content) {
 		self.shape = shape
 		self.padding = padding
 		self.color = color
@@ -29,7 +29,7 @@ public struct ThemeElement<Content: View>: View {
 	}
 	
 	private let shape: ThemeShape.Style?
-	private let padding: Theme.ValueKey?
+	private let padding: Theme.NumberKey?
 	private let color: Theme.ColorKey?
 	private let background: Theme.BackgroundKey?
 	private let highlighted: Bool

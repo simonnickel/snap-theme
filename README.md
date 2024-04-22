@@ -7,7 +7,7 @@
 
 # SnapTheme
 
-A toolset to abstract Colors, Fonts, Icons and Values into semantic definitions for a SwiftUI app. The package contains a Theme definition to hold semantic values and a set of ViewModifier to apply them to SwiftUI views.
+A toolset to abstract Colors, Fonts, Icons and Numbers into semantic definitions for a SwiftUI app. The package contains a Theme definition to hold semantic values and a set of ViewModifier to apply them to SwiftUI views.
 
 
 [![Documentation][documentation badge]][documentation] 

@@ -99,7 +99,7 @@ public struct ThemeSceneList<SelectionValue, Content>: View where SelectionValue
 	}
 	.environment(\.theme, Theme(
 		icons: [:],
-		values: [:],
+		numbers: [:],
 		colors: [
 			//							:
 			.background : .color(.teal),

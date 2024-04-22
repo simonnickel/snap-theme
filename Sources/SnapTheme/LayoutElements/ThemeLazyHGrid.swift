@@ -12,7 +12,7 @@ public struct ThemeLazyHGrid<Content>: View where Content : View {
 	@Environment(\.theme) private var theme
 	@ScaledMetric private var scaleFactor: CGFloat = 1
 	
-	public init(rows: [GridItem], alignment: VerticalAlignment = .center, spacing: Theme.ValueKey? = nil, pinnedViews: PinnedScrollableViews = .init(), @ViewBuilder content: @escaping () -> Content) {
+	public init(rows: [GridItem], alignment: VerticalAlignment = .center, spacing: Theme.NumberKey? = nil, pinnedViews: PinnedScrollableViews = .init(), @ViewBuilder content: @escaping () -> Content) {
 		self.rows = rows
 		self.alignment = alignment
 		self.spacing = spacing
@@ -22,7 +22,7 @@ public struct ThemeLazyHGrid<Content>: View where Content : View {
 	
 	private let rows: [GridItem]
 	private let alignment: VerticalAlignment
-	private let spacing: Theme.ValueKey?
+	private let spacing: Theme.NumberKey?
 	private let pinnedViews: PinnedScrollableViews
 	private let content: () -> Content
 	
