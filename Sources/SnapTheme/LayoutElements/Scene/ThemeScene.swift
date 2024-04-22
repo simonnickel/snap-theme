@@ -72,9 +72,6 @@ public struct ThemeScene<Content>: View where Content : View {
 					.themeCard(.content)
 			}
 		}
-//#if !os(macOS)
-//		.toolbarBackground(.visible, for: .navigationBar)
-//#endif
 		
 	}
 	

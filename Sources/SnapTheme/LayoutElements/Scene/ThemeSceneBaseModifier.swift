@@ -42,7 +42,13 @@ public extension Theme {
 			
 			// Toolbar Background
 			// .automatic is .windowToolbar on macOS and .navigationBar on iOS
-				.theme(toolbarBackground: .bar, placement: .automatic)
+		#if os(macOS)
+				.theme(toolbarBackground: .barNavigation, placement: .windowToolbar)
+		#else
+				.theme(toolbarBackground: .barNavigation, placement: .navigationBar)
+				.theme(toolbarBackground: .barBottom, placement: .bottomBar)
+				.theme(toolbarBackground: .barTab, placement: .tabBar)
+		#endif
 			
 			// TODO idea: Could be a config on theme.
 			// FB13322408: Force visible navigation bar

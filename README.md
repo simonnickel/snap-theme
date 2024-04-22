@@ -16,6 +16,26 @@ A toolset to abstract Colors, Fonts, Icons and Numbers into semantic definitions
 [documentation badge]: https://img.shields.io/badge/Documentation-DocC-blue
 
 
+## How to use
+
+Create a Theme:
+
+```
+	let theme = Theme(
+		colors: [
+			.accentColorBase : .color(.purple)
+		], 
+		...
+	)
+```
+
+Apply the Theme to your view:
+```
+contentView
+	.theme(apply: theme)
+```
+
+
 ## Definitions
 
 ### ColorKey
