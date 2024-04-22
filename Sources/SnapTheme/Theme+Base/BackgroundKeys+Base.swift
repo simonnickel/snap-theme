@@ -42,7 +42,7 @@ public extension Theme.BackgroundKey {
 	/// Background of content elements.
 	static let content = Theme.BackgroundKey("content", default: .surface(.color(.backgroundContent), highlight: .overlayHighlightContent))
 	
-	/// Background of elements on content elements.
+	/// Background of content on top of content.
 	static let contentSecondary = Theme.BackgroundKey("contentSecondary", default: .surface(.color(.backgroundContentSecondary), highlight: .overlayHighlightContent))
 	
 	/// Background of content elements with visual focus.

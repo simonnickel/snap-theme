@@ -56,13 +56,13 @@ public extension Theme.ColorKey {
 	
 	// MARK: - Foreground
 	
-	/// Color of text on `.backgroundContent`.
+	/// Color of text on element with background `.content`.
 	static let foreground = Theme.ColorKey("foreground", default: .color(.label))
 	
-	/// Color of secondary text on `.backgroundContent`.
+	/// Color of text on element with background `.content`.
 	static let foregroundSecondary = Theme.ColorKey("foregroundSecondary", default: .color(.secondaryLabel))
 	
-	/// Color of disabled text on `.backgroundContent`.
+	/// Color of text on element with background `.content`.
 	static let foregroundDisabled = Theme.ColorKey("foregroundDisabled", default: .color(.secondaryLabel))
 	
 	/// Color of text on colored background.
@@ -80,7 +80,7 @@ public extension Theme.ColorKey {
 	/// Default complimentary color adjustment.
 	static let accentColorBaseComplimentary = Theme.ColorKey("accentColorBaseComplimentary", default: .keyAdjusted(.accentColorBase, adjustment: .init(hue: .add(0.15))))
 	
-	// static let accentColorBaseComplementary // There is no single color or adjustment to work with all accents.
+	// static let accentColorBaseComplementary // There is no single color or adjustment to work with all accents. See ColorKeys+System and ColorKey.systemColorSet(for: Color)
 	
 	/// Set of accent colors.
 	static let accentColors = Theme.ColorKey("accentColors", default: .colorSet(.accentColorBase, complimentary: nil, complementary: nil))
@@ -88,16 +88,16 @@ public extension Theme.ColorKey {
 	/// Main accent color, `.base` style from `.accentColors` ColorSet..
 	static let accentColor = Theme.ColorKey("accentColor", default: .colorInSet(.accentColors, style: .base))
 	
-	/// An addition to the `accentColor` to go with it, `.complimentary` style from `.accentColors` ColorSet.
+	/// A complimenting color to use in combination with `accentColor`, `.complimentary` style from `.accentColors` ColorSet.
 	static let accentComplimentary = Theme.ColorKey("accentComplimentary", default: .colorInSet(.accentColors, style: .complimentary))
 
-	/// A contrast to `accentColor` to go on top of it, `.complementary` style from `.accentColors` ColorSet.
+	/// A contrast color to `accentColor` to use on top of it, `.complementary` style from `.accentColors` ColorSet.
 	static let accentComplementary = Theme.ColorKey("accentComplementary", default: .colorInSet(.accentColors, style: .complementary))
 	
 	
 	// MARK: - Controls
 	
-	/// Color of placeholder text on `.backgroundContent`.
+	/// Color of placeholder text on background`.content`.
 	static let placeholder = Theme.ColorKey("placeholder", default: .color(.placeholderText))
 	
 	static let controlIndicator = Theme.ColorKey("placeholder", default: .color(.secondaryLabel))
