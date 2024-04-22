@@ -22,7 +22,7 @@ public extension Theme {
 	///
 	/// - Parameter key: `NumberKey` to get the Icon for.
 	/// - Returns: The `NumberType` registered for the key.
-	func value(_ key: NumberKey) -> NumberType {
+	func number(_ key: NumberKey) -> NumberType {
 		return if let value = numbers[key] {
 			value
 		} else {
@@ -47,8 +47,8 @@ public extension Theme {
 	///   - key: `NumberKey` to get the Icon for.
 	///   - factor: Additional factor as `CGFloat`, should be scaled by `@ScaledMetric`.
 	/// - Returns: **`value * theme.scale * factor`** --- The `NumberType` registered for the key, scaled by `theme.scale` and `factor`.
-	func value(_ key: NumberKey, scaled factor: CGFloat) -> NumberType {
-		guard let valueOfKey = value(key) else { return nil }
+	func number(_ key: NumberKey, scaled factor: CGFloat) -> NumberType {
+		guard let valueOfKey = number(key) else { return nil }
 		return valueOfKey * scale(with: factor)
 	}
 	

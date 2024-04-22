@@ -93,7 +93,7 @@ private extension Theme {
 			return content
 				.presentationDetents(detents, selection: currentPresentationDetentExternal ?? $currentPresentationDetent)
 				.if(unwrap: cornerRadius, transform: { view, cornerRadius in
-					view.presentationCornerRadius(theme.value(cornerRadius, scaled: scaleFactor))
+					view.presentationCornerRadius(theme.number(cornerRadius, scaled: scaleFactor))
 				})
 				// .presentationCompactAdaptation(.fullScreenCover) for .popOver only
 		}

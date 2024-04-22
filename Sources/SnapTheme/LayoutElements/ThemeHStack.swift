@@ -28,7 +28,7 @@ public struct ThemeHStack<Content>: View where Content : View {
 			alignment: alignment,
 			spacing: {
 				if let spacing {
-					theme.value(spacing, scaled: scaleFactor)
+					theme.number(spacing, scaled: scaleFactor)
 				} else { 0 }
 			}(),
 			content: content

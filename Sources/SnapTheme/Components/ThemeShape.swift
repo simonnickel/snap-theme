@@ -62,7 +62,7 @@ public struct ThemeShape: View {
 				
 			case .rectangle(cornerRadius: let cornerRadius):
 				let radius: CGFloat = if let cornerRadius {
-					theme.value(cornerRadius, scaled: scaleFactor) ?? 0
+					theme.number(cornerRadius, scaled: scaleFactor) ?? 0
 				} else { 0 }
 				
 				return RoundedRectangle(cornerRadius: radius, style: .continuous)
