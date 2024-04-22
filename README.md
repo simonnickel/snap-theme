@@ -46,7 +46,7 @@ They do not describe the color or specific use case (~`.red`~, ~`.buttonLabel`~)
 
 ### SurfaceKey
 
-A Surface represents a specific visual style. Can be a gradient, material or color.
+A Surface represents a specific visual style and a highlight. Can be a gradient, material or color.
 
 
 ### FontKey
