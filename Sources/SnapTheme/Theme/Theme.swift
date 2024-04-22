@@ -28,7 +28,7 @@ public struct Theme: Identifiable, Equatable, Hashable, Sendable { // TODO: Coda
 	
 	public init(
 		icons: [IconKey : IconValue] = [:],
-		numbers: [NumberKey : NumberType] = [:],
+		numbers: [NumberKey : NumberValue] = [:],
 		scale: CGFloat = 1.0,
 		colors: [ColorKey : ColorValue] = [:],
 		surfaces: [SurfaceKey : SurfaceValue] = [:],
@@ -58,7 +58,7 @@ public struct Theme: Identifiable, Equatable, Hashable, Sendable { // TODO: Coda
 	
 	public var icons: [IconKey : IconValue]
 	
-	public var numbers: [NumberKey : NumberType]
+	public var numbers: [NumberKey : NumberValue]
 	
 	/// Scale factor used for all sizes (fonts + numbers).
 	public var scale: CGFloat
@@ -86,7 +86,7 @@ public struct Theme: Identifiable, Equatable, Hashable, Sendable { // TODO: Coda
 	
 	public func replacingDefinitions(
 		icons: [IconKey : IconValue]? = nil,
-		numbers: [NumberKey : NumberType]? = nil,
+		numbers: [NumberKey : NumberValue]? = nil,
 		scale: CGFloat? = nil,
 		colors: [ColorKey : ColorValue]? = nil,
 		surfaces: [SurfaceKey : SurfaceValue]? = nil,
@@ -116,7 +116,7 @@ public struct Theme: Identifiable, Equatable, Hashable, Sendable { // TODO: Coda
 	
 	public func replacingValues(
 		icons: [IconKey : IconValue] = [:],
-		numbers: [NumberKey : NumberType] = [:],
+		numbers: [NumberKey : NumberValue] = [:],
 		scale: CGFloat? = nil,
 		colors: [ColorKey : ColorValue] = [:],
 		surfaces: [SurfaceKey : SurfaceValue] = [:],

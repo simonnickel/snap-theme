@@ -19,7 +19,7 @@ public extension Theme {
 	/// - If no value is registered for the key, the `IconValue` set as default is used.
 	///
 	/// - Parameter key: `IconKey` to get the Icon for.
-	/// - Returns: The `IconValue` registered for the key.
+	/// - Returns: The `IconValue` resolved for the key.
 	func icon(_ key: IconKey) -> IconValue {
 		let value = icons[key] ?? key.defaultValue
 		return switch value {

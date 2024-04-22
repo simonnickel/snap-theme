@@ -11,7 +11,7 @@ public extension Theme {
 	
 	enum FontValue: Theme.KeyProtocolRequirements {
 		
-		/// Define a Font directly
+		/// Define a Font directly.
 		case definition(Theme.FontDefinition)
 		
 		/// Reference a different key.

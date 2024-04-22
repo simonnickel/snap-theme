@@ -22,7 +22,7 @@ public extension Theme {
 	///
 	/// - Parameter key: `ColorKey` to get the color for.
 	/// - Parameter environment: `EnvironmentValues` the Color is resolved in. Needed to properly calculate adjustments.
-	/// - Returns: The `Color` registered for the key.
+	/// - Returns: The `Color` resolved for the key.
 	func color(for key: ColorKey, in environment: EnvironmentValues) -> Color {
 		let value = colorValue(for: key)
 		return color(for: value, with: key, in: environment)
@@ -35,7 +35,7 @@ public extension Theme {
 	/// 
 	/// - Parameter key: `ColorKey` to get the color for.
 	/// - Parameter environment: `EnvironmentValues` the Color is resolved in. Needed to properly calculate adjustments.
-	/// - Returns: The `Color` registered for the key.
+	/// - Returns: The `Color` resolved for the key.
 	func shapeStyle(for key: ColorKey, in environment: EnvironmentValues) -> any ShapeStyle {
 		let value = colorValue(for: key)
 		return color(for: value, with: key, in: environment)

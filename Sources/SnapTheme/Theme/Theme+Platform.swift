@@ -26,3 +26,13 @@ public extension CGFloat {
 #endif
 	}
 }
+
+public extension Theme.NumberValue {
+	static func platform(macOS: Theme.NumberValue, other: Theme.NumberValue) -> Theme.NumberValue {
+#if os(macOS)
+		return macOS
+#else
+		return other
+#endif
+	}
+}

@@ -8,32 +8,30 @@
 import Foundation
 
 public extension Theme {
-	
-	typealias NumberType = CGFloat?
 
-	typealias NumberKey = Theme.Key<Theme.NumberType>
+	typealias NumberKey = Theme.Key<Theme.NumberValue>
 	
 	
 	// MARK: - Value + Scaling
 	
-	/// Get a `NumberType aka CGFloat` registered for a `NumberKey`.
+	/// Get a `NumberValueType?` registered for a `NumberKey`.
 	///
-	/// - If no value is registered for the key, the `NumberType` set as default is used.
+	/// - If no value is registered for the key, the `Theme.NumberKey.defaultValue`  is used.
 	///
 	/// - Parameter key: `NumberKey` to get the Icon for.
-	/// - Returns: The `NumberType` registered for the key.
-	func number(_ key: NumberKey) -> NumberType {
-		return if let value = numbers[key] {
-			value
-		} else {
-			key.defaultValue
+	/// - Returns: The `NumberValueType` resolved for the key. Nil indicates to use the system value.
+	func number(_ key: NumberKey) -> NumberValueType? {
+		let value = numbers[key] ?? key.defaultValue
+		return switch value {
+			case .key(let replacement): number(replacement)
+			case .value(let value): value
+			case .system: nil
 		}
 	}
 	
-	/// Get a **scaled** value of `NumberType aka CGFloat` registered for a `NumberKey`.
+	/// Get a **scaled** value of `NumberValue` registered for a `NumberKey`.
 	///
-	/// - If no value is registered for the key, the `NumberType` from `Theme.NumberKey.definitionsBase` is used.
-	/// - If `Theme.NumberKey.definitionsBase` also has no value for the key, `Theme.NumberKey.defaultValue`  is used.
+	/// - If no value is registered for the key, the `Theme.NumberKey.defaultValue`  is used.
 	///
 	///	Value is scaled by the scale configured at (`Theme.scale`) and the provided factor, which should be scaled by `@ScaledMetric`, see example below:
 	///
@@ -45,9 +43,9 @@ public extension Theme {
 	///
 	/// - Parameters:
 	///   - key: `NumberKey` to get the Icon for.
-	///   - factor: Additional factor as `CGFloat`, should be scaled by `@ScaledMetric`.
-	/// - Returns: **`value * theme.scale * factor`** --- The `NumberType` registered for the key, scaled by `theme.scale` and `factor`.
-	func number(_ key: NumberKey, scaled factor: CGFloat) -> NumberType {
+	///   - factor: Additional factor as `NumberValueType aka CGFloat`, should be scaled by `@ScaledMetric`.
+	/// - Returns: **`value * theme.scale * factor`** --- The `NumberValue` resolved for the key, scaled by `theme.scale` and `factor`.
+	func number(_ key: NumberKey, scaled factor: NumberValueType) -> NumberValueType? {
 		guard let valueOfKey = number(key) else { return nil }
 		return valueOfKey * scale(with: factor)
 	}

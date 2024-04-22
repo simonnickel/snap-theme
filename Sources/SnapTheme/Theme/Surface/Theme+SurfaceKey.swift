@@ -19,7 +19,7 @@ public extension Theme {
 	/// - If no value is registered for the key, the `SurfaceValue` set as default is used.
 	///
 	/// - Parameter key: `SurfaceKey` to get the Icon for.
-	/// - Returns: The `SurfaceValue` registered for the key.
+	/// - Returns: The `SurfaceValue` resolved for the key.
 	func surfaceValue(for key: SurfaceKey) -> SurfaceValue {
 		let value = surfaces[key] ?? key.defaultValue
 		return switch value {

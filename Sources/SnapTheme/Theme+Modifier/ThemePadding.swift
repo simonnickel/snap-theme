@@ -49,7 +49,7 @@ private extension Theme {
 	
 	ThemePreviewContainer(.view, theme: Theme(
 		numbers: [
-			.cardPadding : 20,
+			.cardPadding : .value(20),
 		],
 		scale: 1.5
 	)) {
