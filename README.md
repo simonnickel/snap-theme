@@ -59,9 +59,9 @@ Represents a semantic meaning of text (`.textTitle`, `.textSubtitle`) and assign
 Represents a semantic meaning of a visual indicator and assigns an image.
 
 
-### ValueKey
+### NumberKey
 
-Represents a specific value.
+Represents a specific value. Scaled by dynamic type.
 
 
 ## Key Assignments
@@ -90,7 +90,7 @@ Key and default value.
 
 Values registered for a `ThemeKey`.
 
-Examples: BackgroundValue, ColorValue (TextSurface), FontValue, IconValue, Value 
+Examples: BackgroundValue, ColorValue (TextSurface), FontValue, IconValue, NumberValue 
  
  
 ### ThemeModifier
