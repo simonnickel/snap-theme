@@ -19,11 +19,14 @@ public extension Theme {
 		
 		public static var definitionsBase: [TextSurfaceKeyType : TextSurfaceValueType] {[
 			
+			// Text
+			.textSubtitle: .color(.foregroundSecondary),
+			.labelButtonPrimary: .color(.foregroundOnBackground),
+			.labelButtonSecondary: .key(.accentForegroundInteractive),
+			// List
 			.listHeader: .color(.foregroundSecondary),
 			.listFooter: .color(.foregroundSecondary),
 			.listAccessoryNavigation: .color(.listAccessoryNavigation),
-			.labelButtonPrimary: .color(.foregroundOnBackground),
-			.labelButtonSecondary: .key(.accentForegroundInteractive),
 			// Sidebar
 			.sidebarTitle: .platform(macOS: .color(.foregroundSecondary), other: .color(.foreground)),
 			.sidebarLabelSelected: .color(.foregroundOnBackground),
