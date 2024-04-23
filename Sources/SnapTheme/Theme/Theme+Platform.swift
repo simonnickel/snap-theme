@@ -36,3 +36,13 @@ public extension Theme.NumberValue {
 #endif
 	}
 }
+
+public extension Theme.FontValue {
+	static func platform(macOS: Theme.FontValue, other: Theme.FontValue) -> Theme.FontValue {
+#if os(macOS)
+		return macOS
+#else
+		return other
+#endif
+	}
+}

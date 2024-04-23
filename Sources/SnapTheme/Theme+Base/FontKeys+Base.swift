@@ -17,7 +17,7 @@ public extension Theme.FontKey {
 		// Card
 		.cardTitle, .cardSubtitle, .cardLabel, .cardIcon, .cardBlock, .cardValue, .cardFootnote, .cardIndicator,
 		// List
-		.listHeader, .listHeaderProminent, .listFooter, .listTitle, .listSubtitle, .listLabel, .listIcon, .listBlock, .listValue, .listFootnote, .listNavText, .listAccessoryNavigation,
+		.listHeader, .listHeaderProminent, .listFooter, .listTitle, .listSubtitle, .listLabel, .listIcon, .listBlock, .listValue, .listFootnote, .listAccessoryNavigation,
 		// Sidebar
 		.sidebarTitle, .sidebarLabel, .sidebarLabelSelected,
 		// Label
@@ -80,9 +80,6 @@ public extension Theme.FontKey {
 	/// Font for text in footer of a list.
 	static let listFooter = Theme.FontKey("listFooter", default: .definition(.init(size: 13, weight: .regular))) // iOS 16: (size: 13, weight: .regular)
 	
-	/// Font for text in a list of `NavigationLink`s.
-	static let listNavText = Theme.FontKey("listNavText", default: .key(.listLabel))
-	
 	static let listAccessoryNavigation = Theme.FontKey("listAccessoryNavigation", default: .key(.listTitle))
 	
 	
@@ -90,15 +87,22 @@ public extension Theme.FontKey {
 	
 	// Title - iOS 17: (size: 20, weight: .semibold), macOS 14: (size: 11, weight: .semibold)
 	// Label - iOS 17: (size: 17, weight: .regular), macOS 14: (size: 13, weight: .regular)
-#if os(macOS)
-	static let sidebarTitle = Theme.FontKey("sidebarTitle", default: .definition(.init(size: 11, weight: .semibold)))
-	static let sidebarLabel = Theme.FontKey("sidebarLabel", default: .definition(.init(size: 13, weight: .regular)))
-	static let sidebarLabelSelected = Theme.FontKey("sidebarLabelSelected", default: .definition(.init(size: 13, weight: .semibold)))
-#else
-	static let sidebarTitle = Theme.FontKey("sidebarTitle", default: .definition(.init(size: 20, weight: .semibold)))
-	static let sidebarLabel = Theme.FontKey("sidebarLabel", default: .definition(.init(size: 17, weight: .regular)))
-	static let sidebarLabelSelected = Theme.FontKey("sidebarLabelSelected", default: .definition(.init(size: 17, weight: .semibold)))
-#endif
+	
+	static let sidebarTitle = Theme.FontKey("sidebarTitle", default: .platform(
+		macOS: .definition(.init(size: 11, weight: .semibold)),
+		other: .definition(.init(size: 20, weight: .semibold))
+	))
+	
+	static let sidebarLabel = Theme.FontKey("sidebarLabel", default: .platform(
+		macOS: .definition(.init(size: 13, weight: .regular)),
+		other: .definition(.init(size: 17, weight: .regular))
+	))
+	
+	static let sidebarLabelSelected = Theme.FontKey("sidebarLabelSelected", default: .platform(
+		macOS: .definition(.init(size: 13, weight: .semibold)),
+		other: .definition(.init(size: 17, weight: .semibold))
+	))
+
 	static let sidebarIcon = Theme.FontKey("sidebarIcon", default: .key(.sidebarLabel))
 	static let sidebarIconSelected = Theme.FontKey("sidebarIconSelected", default: .key(.sidebarLabelSelected))
 	
