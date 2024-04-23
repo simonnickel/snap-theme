@@ -50,12 +50,12 @@ public extension Theme.FontKey {
 	
 	// MARK: Card
 	
-	static let cardTitle = Theme.FontKey("cardTitle", default: .definition(.init(size: 18, weight: .semibold, textStyle: .title3)))
+	static let cardTitle = Theme.FontKey("cardTitle", default: .definition(.init(size: 22, weight: .semibold, textStyle: .title3)))
 	static let cardSubtitle = Theme.FontKey("cardSubtitle", default: .definition(.init(size: 18, weight: .semibold, textStyle: .title3)))
-	static let cardLabel = Theme.FontKey("cardLabel", default: .definition(.init(size: 15, weight: .medium)))
-	static let cardIcon = Theme.FontKey("cardIcon", default: .definition(.init(size: 22, weight: .bold, textStyle: .title1)))
+	static let cardIcon = Theme.FontKey("cardIcon", default: .key(.cardTitle))
+	static let cardValue = Theme.FontKey("cardValue", default: .key(.cardTitle))
+	static let cardLabel = Theme.FontKey("cardLabel", default: .definition(.init(size: 16, weight: .medium)))
 	static let cardBlock = Theme.FontKey("cardBlock", default: .definition(.init(size: 13, weight: .medium)))
-	static let cardValue = Theme.FontKey("cardValue", default: .key(.cardIcon))
 	static let cardFootnote = Theme.FontKey("cardFootnote", default: .key(.textFootnote))
 	
 	static let cardIndicator = Theme.FontKey("cardIndicator", default: .definition(.init(size: 24, weight: .bold, textStyle: .title1)))
