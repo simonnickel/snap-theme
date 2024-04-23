@@ -23,11 +23,11 @@ public extension Theme {
 			.listFooter: .color(.foregroundSecondary),
 			.listAccessoryNavigation: .color(.listAccessoryNavigation),
 			.labelButtonPrimary: .color(.foregroundOnBackground),
-			.labelButtonSecondary: .key(.interactiveForeground),
+			.labelButtonSecondary: .key(.accentForegroundInteractive),
 			// Sidebar
 			.sidebarTitle: .platform(macOS: .color(.foregroundSecondary), other: .color(.foreground)),
 			.sidebarLabelSelected: .color(.foregroundOnBackground),
-			.sidebarIcon: .key(.interactiveForeground),
+			.sidebarIcon: .key(.accentForegroundInteractive),
 			.sidebarIconSelected: .color(.foregroundOnBackground),
 			
 		]}

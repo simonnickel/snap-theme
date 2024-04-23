@@ -12,7 +12,7 @@ public extension Theme.SurfaceKey {
 		
 	static let allBaseKeys: [Theme.SurfaceKey] = [
 		accentGradientForeground, accentGradientBackground,
-		accentForeground, accentBackground, interactiveForeground, interactiveBackground,
+		accentForeground, accentBackground, accentForegroundInteractive, accentForegroundNavigation, accentBackgroundInteractive,
 		overlayHighlightPush, overlayHighlightPushIntense, overlayHighlightDrop, overlayHighlightContent, overlayHighlightAccent, uiIndicator
 	]
 	
@@ -45,11 +45,13 @@ public extension Theme.SurfaceKey {
 	
 	static let accentForeground = Theme.SurfaceKey("accentForeground", default: .color(.accentPrimary))
 	
+	static let accentForegroundNavigation = Theme.SurfaceKey("accentForegroundNavigation", default: .key(.accentForeground))
+	
+	static let accentForegroundInteractive = Theme.SurfaceKey("accentForegroundInteractive", default: .key(.accentGradientForeground))
+	
 	static let accentBackground = Theme.SurfaceKey("accentBackground", default: .color(.accentPrimary))
 	
-	static let interactiveForeground = Theme.SurfaceKey("interactiveForeground", default: .color(.accentPrimary))
-	
-	static let interactiveBackground = Theme.SurfaceKey("interactiveBackground", default: .color(.accentPrimary))
+	static let accentBackgroundInteractive = Theme.SurfaceKey("accentBackgroundInteractive", default: .key(.accentGradientBackground))
 	
 	
 	// MARK: - Overlay

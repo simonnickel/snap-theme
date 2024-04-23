@@ -95,15 +95,21 @@ public extension Theme.ColorKey {
 	static let accentComplementary = Theme.ColorKey("accentComplementary", default: .colorInSet(.accentColors, style: .complementary))
 	
 	
+	// MARK: - Navigation
+	
+	/// Main accent color, `.base` style from `.accentColors` ColorSet..
+	static let accentNavigation = Theme.ColorKey("accentNavigation", default: .key(.accentPrimary))
+	
+	/// Color for an accessory in a List indicating navigation..
+	static let listAccessoryNavigation = Theme.ColorKey("listAccessoryNavigation", default: .color(.secondaryLabel))
+	
+	
 	// MARK: - Controls
 	
 	/// Color of placeholder text on background`.content`.
 	static let placeholder = Theme.ColorKey("placeholder", default: .color(.placeholderText))
 	
 	static let controlIndicator = Theme.ColorKey("controlIndicator", default: .color(.secondaryLabel))
-	
-	/// Color for an accessory in a List indicating navigation..
-	static let listAccessoryNavigation = Theme.ColorKey("listAccessoryNavigation", default: .color(.secondaryLabel))
 	
 	
 	// MARK: - Others

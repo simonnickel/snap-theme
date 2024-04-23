@@ -49,7 +49,7 @@ public extension Theme.BackgroundKey {
 	static let accent = Theme.BackgroundKey("accent", default: .surface(.accentBackground, highlight: .overlayHighlightAccent))
 	
 	/// Background of interactive elements.
-	static let interactive = Theme.BackgroundKey("interactive", default: .surface(.interactiveBackground, highlight: .overlayHighlightAccent))
+	static let interactive = Theme.BackgroundKey("interactive", default: .surface(.accentBackgroundInteractive, highlight: .overlayHighlightAccent))
 	
 	
 	// MARK: Buttons
