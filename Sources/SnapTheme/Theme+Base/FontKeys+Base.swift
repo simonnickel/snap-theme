@@ -65,10 +65,10 @@ public extension Theme.FontKey {
 	
 	static let listTitle = Theme.FontKey("listTitle", default: .definition(.init(size: 17, weight: .semibold, textStyle: .title3)))
 	static let listSubtitle = Theme.FontKey("listSubtitle", default: .definition(.init(size: 14, weight: .semibold, textStyle: .title3)))
-	static let listLabel = Theme.FontKey("listLabel", default: .definition(.init(size: 17, weight: .regular))) // iOS 16: (size: 17, weight: .regular)
+	static let listLabel = Theme.FontKey("listLabel", default: .definition(.init(size: 16, weight: .medium))) // iOS 16: (size: 17, weight: .regular)
 	static let listIcon = Theme.FontKey("listIcon", default: .key(.listLabel))
-	static let listBlock = Theme.FontKey("listBlock", default: .definition(.init(size: 14, weight: .regular)))
 	static let listValue = Theme.FontKey("listValue", default: .key(.listLabel))
+	static let listBlock = Theme.FontKey("listBlock", default: .key(.textBlock))
 	static let listFootnote = Theme.FontKey("listFootnote", default: .key(.textFootnote))
 	
 	/// Font for text in header of a list.
@@ -81,7 +81,7 @@ public extension Theme.FontKey {
 	static let listFooter = Theme.FontKey("listFooter", default: .definition(.init(size: 13, weight: .regular))) // iOS 16: (size: 13, weight: .regular)
 	
 	/// Font for text in a list of `NavigationLink`s.
-	static let listNavText = Theme.FontKey("listNavText", default: .definition(.init(size: 17, weight: .regular)))
+	static let listNavText = Theme.FontKey("listNavText", default: .key(.listLabel))
 	
 	static let listAccessoryNavigation = Theme.FontKey("listAccessoryNavigation", default: .key(.listTitle))
 	
