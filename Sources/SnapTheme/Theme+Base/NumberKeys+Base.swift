@@ -12,7 +12,7 @@ public extension Theme.NumberKey {
 	static let allBaseKeys: [Theme.NumberKey] = [
 		.spacingSections, .spacingGroups, .spacingElements, .paddingModal, .paddingModalCloseButton,
 		.cornerRadiusSheet, .cornerRadiusElement,
-		.textSpacingHeader, .textSpacingTitle,
+		.spacingTextHeader, .spacingTextTitle,
 		.cardCornerRadiusGround, .cardCornerRadiusFirst, .cardPadding, .cardPaddingIndicator,
 		.listSpacingTitle, .listRowPaddingVertical, .listRowPaddingHorizontal,
 		.sidebarMacOSBackgroundPaddingHorizontal, .sidebarBackgroundCornerRadius,
@@ -57,10 +57,10 @@ public extension Theme.NumberKey {
 	// MARK: - Text
 	
 	/// Generic spacing between `.textHeader` and content.
-	static let textSpacingHeader = Theme.NumberKey("textSpacingHeader", default: .value(10))
+	static let spacingTextHeader = Theme.NumberKey("spacingTextHeader", default: .value(10))
 	
 	/// Generic spacing between `.textTitle` and content.
-	static let textSpacingTitle = Theme.NumberKey("textSpacingTitle", default: .value(8))
+	static let spacingTextTitle = Theme.NumberKey("spacingTextTitle", default: .value(8))
 	
 	
 	// MARK: - Card

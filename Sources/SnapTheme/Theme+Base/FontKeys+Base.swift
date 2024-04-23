@@ -33,7 +33,7 @@ public extension Theme.FontKey {
 	
 	/// Font for header of a Scene.
 	static let sceneHeader = Theme.FontKey("sceneHeader", default: .definition(.init(size: 34, weight: .bold, textStyle: .largeTitle))) // iOS 16: UINavigationBar large title is SFUI-Bold 34
-	static let sceneHeaderSubtitle = Theme.FontKey("sceneSubtitle", default: .definition(.init(size: 20, weight: .semibold, textStyle: .largeTitle)))
+	static let sceneHeaderSubtitle = Theme.FontKey("sceneHeaderSubtitle", default: .definition(.init(size: 20, weight: .semibold, textStyle: .largeTitle)))
 	static let sceneSectionHeader = Theme.FontKey("sceneSectionHeader", default: .definition(.init(size: 22, weight: .bold, textStyle: .title1)))
 	
 	
