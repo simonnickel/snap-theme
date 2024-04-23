@@ -13,6 +13,7 @@ public extension Theme.IconKey {
 		// Generic Actions
 		.close,
 		.favorite,
+		.edit,
 		.delete,
 		.settings,
 		.warning,
@@ -20,9 +21,7 @@ public extension Theme.IconKey {
 		.accessoryNavigation,
 		.textFieldClear,
 		.emptySceneDecoration,
-		.cardIndicatorSelected,
-		.cardIndicatorEnabled,
-		.cardIndicatorDisabled,
+		.cardIndicatorSelected, .cardIndicatorEnabled, .cardIndicatorDisabled,
 		// Toolbar
 		.toolbarMore,
 		.toolbarCreate,
@@ -61,13 +60,18 @@ public extension Theme.IconKey {
 	/// Icon that decorates an empty scene.
 	static let emptySceneDecoration = Theme.IconKey("emptySceneDecoration", default: .system(name: "figure.dance"))
 	
+	/// Icon on a card to indicate selected state.
 	static let cardIndicatorSelected = Theme.IconKey("cardIndicatorSelected", default: .system(name: "checkmark.circle.fill"))
+	
+	/// Icon on a card to indicate enabled state.
 	static let cardIndicatorEnabled = Theme.IconKey("cardIndicatorEnabled", default: .system(name: "record.circle")) // "circle.inset.filled"),
+	
+	/// Icon on a card to indicate disabled state.
 	static let cardIndicatorDisabled = Theme.IconKey("cardIndicatorDisabled", default: .system(name: "circle"))
 	
 	
 	// MARK: - Toolbar
-	// Toolbar icons: Usually as .circle.fill, except toolbarMoore.
+	// Toolbar icons: Usually as .circle.fill, except toolbarMore.
 	
 	/// Icon for placement in toolbar that represents a set of additional actions.
 	static let toolbarMore = Theme.IconKey("toolbarMore", default: .system(name: "ellipsis"))
