@@ -21,7 +21,7 @@ public extension Theme.BackgroundKey {
 	
 	/// Scene background.
 	/// macOS does use .system to allow list scroll edge behaviour where windowBar disappears (FB13322408). 
-	static let scene = Theme.BackgroundKey("scene", default: .platform(macOS: .system, other: .surface(.color(.background))))
+	static let scene = Theme.BackgroundKey("scene", default: .platform(macOS: .system, other: .surface(.color(.backgroundScene))))
 	
 	/// Generic bar background definition.
 	static let bar = Theme.BackgroundKey("bar", default: .system) // .platform(macOS: .system, other: .surface(.material(.bar)))

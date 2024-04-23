@@ -102,7 +102,7 @@ public struct ThemeSceneList<SelectionValue, Content>: View where SelectionValue
 		numbers: [:],
 		colors: [
 			//							:
-			.background : .color(.teal),
+			.backgroundScene : .color(.teal),
 			.backgroundContent : .color(.mint)
 		],
 		fonts: [:]
