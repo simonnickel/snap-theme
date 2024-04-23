@@ -57,7 +57,7 @@ public extension Theme.NumberKey {
 	// MARK: - Text
 	
 	/// Generic spacing between `.textHeader` and content.
-	static let spacingTextHeader = Theme.NumberKey("spacingTextHeader", default: .value(10))
+	static let spacingTextHeader = Theme.NumberKey("spacingTextHeader", default: .value(12))
 	
 	/// Generic spacing between `.textTitle` and content.
 	static let spacingTextTitle = Theme.NumberKey("spacingTextTitle", default: .value(8))
