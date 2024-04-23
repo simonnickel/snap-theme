@@ -13,13 +13,14 @@ public extension Theme.FontKey {
 		// Scene
 		.sceneHeader, .sceneHeaderSubtitle, .sceneSectionHeader,
 		// Text
-		.textTitle, .textSubtitle, .textLabel, .textIcon, .textBlock, .textValue, .textFootnote,
+		.textTitle, .textSubtitle, .textBlock, .textLabel, .textIcon, .textValue, .textFootnote,
 		// Card
-		.cardTitle, .cardSubtitle, .cardLabel, .cardIcon, .cardBlock, .cardValue, .cardFootnote, .cardIndicator,
+		.cardTitle, .cardSubtitle, .cardIcon, .cardValue, .cardLabel, .cardBlock, .cardFootnote, .cardIndicator,
 		// List
-		.listHeader, .listHeaderProminent, .listFooter, .listTitle, .listSubtitle, .listLabel, .listIcon, .listBlock, .listValue, .listFootnote, .listAccessoryNavigation,
+		.listTitle, .listSubtitle, .listLabel, .listIcon, .listValue, .listBlock, .listFootnote, .listAccessoryNavigation,
+		.listHeader, .listHeaderProminent, .listFooter, .listAccessoryNavigation,
 		// Sidebar
-		.sidebarTitle, .sidebarLabel, .sidebarLabelSelected,
+		.sidebarTitle, .sidebarLabel, .sidebarLabelSelected, .sidebarIcon, .sidebarIconSelected,
 		// Label
 		.labelButtonPrimary, .labelButtonSecondary,
 		// Toolbar
