@@ -41,9 +41,9 @@ public extension Theme.FontKey {
 	
 	static let textTitle = Theme.FontKey("textTitle", default: .definition(.init(size: 16, weight: .semibold, textStyle: .title1)))
 	static let textSubtitle = Theme.FontKey("textSubtitle", default: .definition(.init(size: 14, weight: .semibold)))
+	static let textBlock = Theme.FontKey("textBlock", default: .definition(.init(size: 14, weight: .regular)))
 	static let textLabel = Theme.FontKey("textLabel", default: .definition(.init(size: 12, weight: .semibold)))
 	static let textIcon = Theme.FontKey("textIcon", default: .key(.textLabel))
-	static let textBlock = Theme.FontKey("textBlock", default: .definition(.init(size: 14, weight: .regular)))
 	static let textValue = Theme.FontKey("textValue", default: .key(.textLabel))
 	static let textFootnote = Theme.FontKey("textFootnote", default: .definition(.init(size: 12, weight: .regular)))
 	
