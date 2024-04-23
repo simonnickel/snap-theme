@@ -17,8 +17,6 @@ public extension Theme {
 		
 		case key(Theme.BackgroundKey)
 		
-		case platform(macOS: BackgroundValue, other: BackgroundValue)
-		
 	}
 	
 }

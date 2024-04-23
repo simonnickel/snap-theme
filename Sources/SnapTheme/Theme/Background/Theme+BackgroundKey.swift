@@ -20,12 +20,7 @@ public extension Theme {
 		
 		return switch value {
 			case .key(let key): backgroundValue(for: key)
-			case .platform(macOS: let macOS, other: let other):
-#if os(macOS)
-				macOS
-#else
-				other
-#endif
+
 			default: value
 				
 		}
@@ -35,7 +30,7 @@ public extension Theme {
 		let value = backgroundValue(for: key)
 		return switch value {
 			case .surface(let surface, highlight: _): shapeStyle(for: surface, in: environment)
-			case .key(_), .system, .platform(macOS: _, other: _): nil
+			case .key(_), .system: nil
 		}
 	}
 	
@@ -56,7 +51,7 @@ public extension Theme {
 						}
 					})
 				
-			case .key(_), .system, .platform(macOS: _, other: _): return nil
+			case .key(_), .system: return nil
 				
 		}
 		

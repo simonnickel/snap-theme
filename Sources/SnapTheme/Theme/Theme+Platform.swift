@@ -7,8 +7,8 @@
 
 import Foundation
 
-public extension Theme.TextSurfaceValueType {
-	static func platform(macOS: Theme.TextSurfaceValueType, other: Theme.TextSurfaceValueType) -> Theme.TextSurfaceValueType {
+public extension Theme.BackgroundValue {
+	static func platform(macOS: Theme.BackgroundValue, other: Theme.BackgroundValue) -> Theme.BackgroundValue {
 #if os(macOS)
 		return macOS
 #else
@@ -17,8 +17,28 @@ public extension Theme.TextSurfaceValueType {
 	}
 }
 
-public extension CGFloat {
-	static func platform(macOS: CGFloat, other: CGFloat) -> CGFloat {
+public extension Theme.ColorValue {
+	static func platform(macOS: Theme.ColorValue, other: Theme.ColorValue) -> Theme.ColorValue {
+#if os(macOS)
+		return macOS
+#else
+		return other
+#endif
+	}
+}
+
+public extension Theme.FontValue {
+	static func platform(macOS: Theme.FontValue, other: Theme.FontValue) -> Theme.FontValue {
+#if os(macOS)
+		return macOS
+#else
+		return other
+#endif
+	}
+}
+
+public extension Theme.IconValue {
+	static func platform(macOS: Theme.IconValue, other: Theme.IconValue) -> Theme.IconValue {
 #if os(macOS)
 		return macOS
 #else
@@ -37,8 +57,8 @@ public extension Theme.NumberValue {
 	}
 }
 
-public extension Theme.FontValue {
-	static func platform(macOS: Theme.FontValue, other: Theme.FontValue) -> Theme.FontValue {
+public extension Theme.SurfaceValue {
+	static func platform(macOS: Theme.SurfaceValue, other: Theme.SurfaceValue) -> Theme.SurfaceValue {
 #if os(macOS)
 		return macOS
 #else
