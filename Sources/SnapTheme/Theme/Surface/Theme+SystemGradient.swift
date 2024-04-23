@@ -92,7 +92,7 @@ extension Theme.SystemGradient: CustomStringConvertible {
 		
 		let angularSurface = Theme.SurfaceKey("angularSurface", default:
 				.gradient(
-					.angular([.accentColor, .accentComplimentary, .accentColor, .accentComplimentary, .accentComplimentary, .accentColor])
+					.angular([.accentPrimary, .accentComplimentary, .accentPrimary, .accentComplimentary, .accentComplimentary, .accentPrimary])
 				)
 		)
 		
@@ -113,7 +113,7 @@ extension Theme.SystemGradient: CustomStringConvertible {
 		// Linear
 		
 		let linearSurface = Theme.SurfaceKey("linearSurface", default:
-				.gradient(.linear([.accentColor, .accentComplimentary, .accentColor, .accentComplimentary, .accentComplimentary, .accentColor], start: .topLeading, end: .bottomTrailing))
+				.gradient(.linear([.accentPrimary, .accentComplimentary, .accentPrimary, .accentComplimentary, .accentComplimentary, .accentPrimary], start: .topLeading, end: .bottomTrailing))
 		)
 		
 		let linearBackground = Theme.BackgroundKey("linearBackground", default:
@@ -130,7 +130,7 @@ extension Theme.SystemGradient: CustomStringConvertible {
 		// Radial
 		
 		let radialSurface = Theme.SurfaceKey("radialSurface", default:
-				.gradient(.radial([.accentColor, .accentComplimentary, .accentColor, .accentComplimentary, .accentComplimentary, .accentColor], center: .center, start: 20, end: 200))
+				.gradient(.radial([.accentPrimary, .accentComplimentary, .accentPrimary, .accentComplimentary, .accentComplimentary, .accentPrimary], center: .center, start: 20, end: 200))
 		)
 		let radialBackground = Theme.BackgroundKey("radialBackground", default:
 				.surface(radialSurface, highlight: .overlayHighlightAccent)

@@ -33,23 +33,23 @@ public extension Theme.SurfaceKey {
 	// MARK: Base
 	
 	static let accentGradientForeground = Theme.SurfaceKey("accentGradientForeground", default:
-			.gradient(.angular([.accentColor, .accentComplimentary, .accentColor, .accentColor], center: .center))
+			.gradient(.angular([.accentPrimary, .accentComplimentary, .accentPrimary, .accentPrimary], center: .center))
 	)
 	
 	static let accentGradientBackground = Theme.SurfaceKey("accentGradientBackground", default:
-			.gradient(.linear([.accentColor, .accentColor, .accentComplimentary], start: .topLeading, end: .bottomTrailing))
+			.gradient(.linear([.accentPrimary, .accentPrimary, .accentComplimentary], start: .topLeading, end: .bottomTrailing))
 	)
 	
 	
 	// MARK: Accent
 	
-	static let accentForeground = Theme.SurfaceKey("accentForeground", default: .color(.accentColor))
+	static let accentForeground = Theme.SurfaceKey("accentForeground", default: .color(.accentPrimary))
 	
-	static let accentBackground = Theme.SurfaceKey("accentBackground", default: .color(.accentColor))
+	static let accentBackground = Theme.SurfaceKey("accentBackground", default: .color(.accentPrimary))
 	
-	static let interactiveForeground = Theme.SurfaceKey("interactiveForeground", default: .color(.accentColor))
+	static let interactiveForeground = Theme.SurfaceKey("interactiveForeground", default: .color(.accentPrimary))
 	
-	static let interactiveBackground = Theme.SurfaceKey("interactiveBackground", default: .color(.accentColor))
+	static let interactiveBackground = Theme.SurfaceKey("interactiveBackground", default: .color(.accentPrimary))
 	
 	
 	// MARK: - Overlay
@@ -64,7 +64,7 @@ public extension Theme.SurfaceKey {
 	static let overlayHighlightDrop = Theme.SurfaceKey("overlayHighlightDrop", default: .colorAdjusted(.black, alpha: .replace(0.15)))
 	
 	/// Color of overlay to highlight a content view on selection.
-	static let overlayHighlightContent = Theme.SurfaceKey("overlayHighlightContent", default: .colorAdjusted(.accentColor, hue: nil, saturation: .add(-0), brightness: nil, alpha: .replace(0.3)))
+	static let overlayHighlightContent = Theme.SurfaceKey("overlayHighlightContent", default: .colorAdjusted(.accentPrimary, hue: nil, saturation: .add(-0), brightness: nil, alpha: .replace(0.3)))
 	
 	/// Color of overlay to highlight an accent on selection.
 	static let overlayHighlightAccent = Theme.SurfaceKey("overlayHighlightAccent", default: .color(.accentComplimentary))

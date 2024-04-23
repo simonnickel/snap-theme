@@ -121,7 +121,7 @@ public extension Theme {
 		Text("Test")
 	}
 	.theme(padding: .spacingElements)
-	.theme(color: .accentColor)
+	.theme(color: .accentPrimary)
 	.theme(background: .scene)
 	
 }

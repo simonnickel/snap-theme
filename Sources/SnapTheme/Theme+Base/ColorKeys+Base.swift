@@ -22,7 +22,7 @@ public extension Theme.ColorKey {
 		// Foreground
 		.foreground, .foregroundSecondary, .foregroundDisabled, .foregroundOnBackground, .foregroundOnLightBackground,
 		// Accent
-		.accentColorBase, .accentColors, .accentColor, .accentComplimentary, .accentComplementary,
+		.accentColorBase, .accentColors, .accentPrimary, .accentComplimentary, .accentComplementary,
 		// Controls
 		.placeholder,
 		// Others
@@ -86,12 +86,12 @@ public extension Theme.ColorKey {
 	static let accentColors = Theme.ColorKey("accentColors", default: .colorSet(.accentColorBase, complimentary: nil, complementary: nil))
 	
 	/// Main accent color, `.base` style from `.accentColors` ColorSet..
-	static let accentColor = Theme.ColorKey("accentColor", default: .colorInSet(.accentColors, style: .base))
+	static let accentPrimary = Theme.ColorKey("accentPrimary", default: .colorInSet(.accentColors, style: .base))
 	
-	/// A complimenting color to use in combination with `accentColor`, `.complimentary` style from `.accentColors` ColorSet.
+	/// A complimenting color to use in combination with `accentPrimary`, `.complimentary` style from `.accentColors` ColorSet.
 	static let accentComplimentary = Theme.ColorKey("accentComplimentary", default: .colorInSet(.accentColors, style: .complimentary))
 
-	/// A contrast color to `accentColor` to use on top of it, `.complementary` style from `.accentColors` ColorSet.
+	/// A contrast color to use on top of  `accentPrimary`, `.complementary` style from `.accentColors` ColorSet.
 	static let accentComplementary = Theme.ColorKey("accentComplementary", default: .colorInSet(.accentColors, style: .complementary))
 	
 	
@@ -100,16 +100,16 @@ public extension Theme.ColorKey {
 	/// Color of placeholder text on background`.content`.
 	static let placeholder = Theme.ColorKey("placeholder", default: .color(.placeholderText))
 	
-	static let controlIndicator = Theme.ColorKey("placeholder", default: .color(.secondaryLabel))
+	static let controlIndicator = Theme.ColorKey("controlIndicator", default: .color(.secondaryLabel))
+	
+	/// Color for an accessory in a List indicating navigation..
+	static let listAccessoryNavigation = Theme.ColorKey("listAccessoryNavigation", default: .color(.secondaryLabel))
 	
 	
 	// MARK: - Others
 	
 	/// Color to indicate a destructive action.
 	static let destructive = Theme.ColorKey("destructive", default: .colorAdjusted(.red, adjustment: .init(brightness: .add(-0.05))))
-	
-	/// Color for an accessory in a List indicating navigation..
-	static let listAccessoryNavigation = Theme.ColorKey("listAccessoryNavigation", default: .color(.secondaryLabel))
 	
 	/// Color used for as replacement when DebugFlag `.preventLoadingAssets` is set.
 	static let debugAssetReplacement = Theme.ColorKey("debugAssetReplacement", default: .color(.orange))

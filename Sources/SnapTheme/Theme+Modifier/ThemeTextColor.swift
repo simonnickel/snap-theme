@@ -50,14 +50,14 @@ private extension Theme {
 		
 		Text("Text Title")
 			.theme(font: .textTitle)
-			.theme(color: .accentColor)
+			.theme(color: .accentPrimary)
 		
 		Text("Text Title")
 			.theme(text: .textTitle)
-			.theme(color: .accentColor)
+			.theme(color: .accentPrimary)
 		
 		Text("Text Title")
-			.theme(color: .accentColor)
+			.theme(color: .accentPrimary)
 			.theme(text: .textTitle)
 		
 	}

@@ -103,7 +103,7 @@ private extension Theme {
 	let materialSurface = Theme.SurfaceKey("materialSurface", default: .material(.ultraThin))
 	let materialBackground = Theme.BackgroundKey("materialBackground", default: .surface(materialSurface, highlight: .overlayHighlightAccent))
 	
-	let gradientSurface = Theme.SurfaceKey("gradientSurface", default: .gradient(.angular([.accentColor, .accentComplimentary, .accentColor, .accentComplimentary, .accentComplimentary, .accentColor], center: .center, angle: .zero)))
+	let gradientSurface = Theme.SurfaceKey("gradientSurface", default: .gradient(.angular([.accentPrimary, .accentComplimentary, .accentPrimary, .accentComplimentary, .accentComplimentary, .accentPrimary], center: .center, angle: .zero)))
 	let gradientBackground = Theme.BackgroundKey("gradientBackground", default: .surface(gradientSurface, highlight: .overlayHighlightAccent))
 	
 	return ThemePreviewContainer(.scene, padding: nil) {
@@ -149,10 +149,10 @@ private extension Theme {
 					.theme(color: .foregroundOnBackground)
 					.theme(background: .interactive, highlighted: true)
 				
-				Text("Background Color .accentColor")
+				Text("Background Color .accentPrimary")
 					.theme(padding: .cardPadding)
 					.theme(color: .foregroundOnBackground)
-					.theme(backgroundColor: .accentColor)
+					.theme(backgroundColor: .accentPrimary)
 				
 				Text("Background Material")
 					.theme(padding: .cardPadding)

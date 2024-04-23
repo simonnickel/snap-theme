@@ -91,7 +91,7 @@ public struct ThemeTextField: View {
 		@State private var text: String = ""
 		
 		public var body: some View {
-			ThemeTextField(prompt: prompt, text: $text, font: .controlTextFieldProminent, color: .accentColor, promptColor: promptColor)
+			ThemeTextField(prompt: prompt, text: $text, font: .controlTextFieldProminent, color: .accentPrimary, promptColor: promptColor)
 		}
 		
 	}
