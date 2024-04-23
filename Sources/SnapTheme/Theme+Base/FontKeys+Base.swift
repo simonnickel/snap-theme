@@ -31,9 +31,11 @@ public extension Theme.FontKey {
 	
 	// MARK: Scene
 	
-	/// Font for header of a Scene.
+	/// Font for header of a scene.
 	static let sceneHeader = Theme.FontKey("sceneHeader", default: .definition(.init(size: 34, weight: .bold, textStyle: .largeTitle))) // iOS 16: UINavigationBar large title is SFUI-Bold 34
+	/// Font for subtitle of a `sceneHeader`.
 	static let sceneHeaderSubtitle = Theme.FontKey("sceneHeaderSubtitle", default: .definition(.init(size: 20, weight: .semibold, textStyle: .largeTitle)))
+	/// Font for a header of a section of a scene.
 	static let sceneSectionHeader = Theme.FontKey("sceneSectionHeader", default: .definition(.init(size: 22, weight: .bold, textStyle: .title1)))
 	
 	
@@ -80,6 +82,7 @@ public extension Theme.FontKey {
 	/// Font for text in footer of a list.
 	static let listFooter = Theme.FontKey("listFooter", default: .definition(.init(size: 13, weight: .regular))) // iOS 16: (size: 13, weight: .regular)
 	
+	/// Font for a list accesory indicating a navigation action.
 	static let listAccessoryNavigation = Theme.FontKey("listAccessoryNavigation", default: .key(.listTitle))
 	
 	
@@ -88,28 +91,36 @@ public extension Theme.FontKey {
 	// Title - iOS 17: (size: 20, weight: .semibold), macOS 14: (size: 11, weight: .semibold)
 	// Label - iOS 17: (size: 17, weight: .regular), macOS 14: (size: 13, weight: .regular)
 	
+	/// Font for section title in the sidebar.
 	static let sidebarTitle = Theme.FontKey("sidebarTitle", default: .platform(
 		macOS: .definition(.init(size: 11, weight: .semibold)),
 		other: .definition(.init(size: 20, weight: .semibold))
 	))
 	
+	/// Font for the label of a sidebar item.
 	static let sidebarLabel = Theme.FontKey("sidebarLabel", default: .platform(
 		macOS: .definition(.init(size: 13, weight: .regular)),
 		other: .definition(.init(size: 17, weight: .regular))
 	))
 	
+	/// Font for the label of a selected sidebar item.
 	static let sidebarLabelSelected = Theme.FontKey("sidebarLabelSelected", default: .platform(
 		macOS: .definition(.init(size: 13, weight: .semibold)),
 		other: .definition(.init(size: 17, weight: .semibold))
 	))
 
+	/// Font for the icon of a sidebar item.
 	static let sidebarIcon = Theme.FontKey("sidebarIcon", default: .key(.sidebarLabel))
+	/// Font for the icon of a selected sidebar item.
 	static let sidebarIconSelected = Theme.FontKey("sidebarIconSelected", default: .key(.sidebarLabelSelected))
 	
 	
 	// MARK: Label
 	
+	/// Font for the label of a primary button.
 	static let labelButtonPrimary = Theme.FontKey("labelButtonPrimary", default: .definition(.init(size: 18, weight: .semibold, textStyle: .title3)))
+	
+	/// Font for the label of a secondary button.
 	static let labelButtonSecondary = Theme.FontKey("labelButtonSecondary", default: .key(.labelButtonPrimary))
 	
 	
