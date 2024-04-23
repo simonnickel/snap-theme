@@ -11,19 +11,23 @@ public struct ThemeLabelStyleTag: LabelStyle {
 		
 	@Environment(\.theme) private var theme
 	
+	public static let defaultFont: Theme.FontKey = .textLabel
 	public static let defaultColor: Theme.ColorKey = .foreground
 	public static let defaultBackground: Theme.BackgroundKey = .tag
 	
 	public init(
+		font: Theme.FontKey = ThemeLabelStyleTag.defaultFont,
 		color: Theme.ColorKey = ThemeLabelStyleTag.defaultColor,
 		background: Theme.BackgroundKey = ThemeLabelStyleTag.defaultBackground,
 		selected: Bool = false
 	) {
+		self.font = font
 		self.color = color
 		self.background = background
 		self.selected = selected
 	}
 	
+	public let font: Theme.FontKey
 	public let color: Theme.ColorKey
 	public let background: Theme.BackgroundKey
 	public let selected: Bool
@@ -41,7 +45,7 @@ public struct ThemeLabelStyleTag: LabelStyle {
 				configuration.icon
 					.imageScale(.medium)
 			}
-			.theme(font: .labelTag)
+			.theme(font: font)
 			.theme(padding: .labelTagPaddingHorizontal, .horizontal)
 			.theme(padding: .labelTagPaddingVertical, .vertical)
 		}
