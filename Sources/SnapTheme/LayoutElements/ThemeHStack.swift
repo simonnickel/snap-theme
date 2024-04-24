@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// A `HStack` wrapper to configure spacing with value of `Theme.NumberKey`.
 public struct ThemeHStack<Content>: View where Content : View {
 	
 	@Environment(\.theme) private var theme

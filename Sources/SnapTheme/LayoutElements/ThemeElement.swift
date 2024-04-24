@@ -10,7 +10,6 @@ import SnapCore
 
 public struct ThemeElement<Content: View>: View {
 	
-	
 	/// A convenience container to apply common theme attributes.
 	/// - Parameters:
 	///   - shape: `ThemeShape.Style` of the view,

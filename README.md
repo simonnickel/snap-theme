@@ -24,8 +24,10 @@ Instead of defining design attributes all over the place, you register a semanti
 
 `Theme` comes with:
  - Base attributes (Color, Font, Icon, Number) and composed attributes (Surface, Background, TextSurface).
- - A preset of common semantic definitions for these attributes (e.g. textTitle, textSubtitle).
+ - A preset of common semantic definitions for these attributes (e.g. `.textTitle`, `.textSubtitle`).
  - ViewModifier to apply them to your views.
+ - Wrapper of stock SwiftUI views to configure attributes with theme definitions (e.g. `ThemeVStack(spacing:`)).
+ - Convenience views for common layout and style tasks (e.g. `ThemeScene`, `ThemeElement`).
 
 Fonts and Numbers are scaled by DynamicType.
 

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// A `LazyVGrid` wrapper to configure spacing with value of `Theme.NumberKey`.
 public struct ThemeLazyVGrid<Content>: View where Content : View {
 	
 	@Environment(\.theme) private var theme
