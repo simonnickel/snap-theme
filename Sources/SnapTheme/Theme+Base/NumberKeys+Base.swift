@@ -10,9 +10,9 @@ import SwiftUI
 public extension Theme.NumberKey {
 	
 	static let allBaseKeys: [Theme.NumberKey] = [
-		.spacingSections, .spacingGroups, .spacingElements, .paddingModal, .paddingModalCloseButton,
+		.spacingSections, .spacingGroups, .spacingElements, .spacingLines, .paddingModal, .paddingModalCloseButton, .strokeSelected,
 		.cornerRadiusSheet, .cornerRadiusElement,
-		.spacingTextHeader, .spacingTextTitle,
+		.spacingTextHeader, .spacingTextTitle, .spacingTextBlock,
 		.cardCornerRadiusGround, .cardCornerRadiusFirst, .cardPadding, .cardPaddingIndicator,
 		.listSpacingTitle, .listRowPaddingVertical, .listRowPaddingHorizontal,
 		.sidebarMacOSBackgroundPaddingHorizontal, .sidebarBackgroundCornerRadius,
@@ -50,8 +50,8 @@ public extension Theme.NumberKey {
 	/// Corner radius for sheets.
 	static let cornerRadiusSheet = Theme.NumberKey("cornerRadiusSheet", default: .system) // Uses system default
 	
-	/// Generic corner radius for an element.
-	static let cornerRadiusElement = Theme.NumberKey("cornerRadiusElement", default: .value(6))
+	/// Generic corner radius for an element. Make sure to check for surrounding corners to fit the curve, see `.cardCornerRadiusGround / First`.
+	static let cornerRadiusElement = Theme.NumberKey("cornerRadiusElement", default: .key(.cardCornerRadiusFirst))
 	
 	
 	// MARK: - Text
@@ -61,6 +61,9 @@ public extension Theme.NumberKey {
 	
 	/// Generic spacing between `.textTitle` and content.
 	static let spacingTextTitle = Theme.NumberKey("spacingTextTitle", default: .value(8))
+	
+	/// Generic spacing between `.textBlock` and `.textBlock`.
+	static let spacingTextBlock = Theme.NumberKey("spacingTextBlock", default: .key(.spacingElements))
 	
 	
 	// MARK: - Card
