@@ -7,48 +7,24 @@
 
 import SwiftUI
 
-public extension Theme {
+public extension Theme.TextSurfaceKey {
 	
-	typealias TextSurfaceKeyType = Theme.FontKey
-	typealias TextSurfaceValueType = Theme.SurfaceValue
+	static var definitionsBase: [Theme.TextSurfaceKeyType : Theme.TextSurfaceValueType] {[
+		
+		// Text
+		.textSubtitle: .color(.foregroundSecondary),
+		.labelButtonPrimary: .color(.foregroundOnBackground),
+		.labelButtonSecondary: .key(.accentForegroundInteractive),
+		// List
+		.listHeader: .color(.foregroundSecondary),
+		.listFooter: .color(.foregroundSecondary),
+		.listAccessoryNavigation: .color(.listAccessoryNavigation),
+		// Sidebar
+		.sidebarTitle: .platform(macOS: .color(.foregroundSecondary), other: .color(.foreground)),
+		.sidebarLabelSelected: .color(.foregroundOnBackground),
+		.sidebarIcon: .key(.accentForegroundInteractive),
+		.sidebarIconSelected: .color(.foregroundOnBackground),
+		
+	]}
 	
-	struct TextSurfaceKey: Codable {
-		
-		
-		// MARK: - Base Text Surfaces
-		
-		public static var definitionsBase: [TextSurfaceKeyType : TextSurfaceValueType] {[
-			
-			// Text
-			.textSubtitle: .color(.foregroundSecondary),
-			.labelButtonPrimary: .color(.foregroundOnBackground),
-			.labelButtonSecondary: .key(.accentForegroundInteractive),
-			// List
-			.listHeader: .color(.foregroundSecondary),
-			.listFooter: .color(.foregroundSecondary),
-			.listAccessoryNavigation: .color(.listAccessoryNavigation),
-			// Sidebar
-			.sidebarTitle: .platform(macOS: .color(.foregroundSecondary), other: .color(.foreground)),
-			.sidebarLabelSelected: .color(.foregroundOnBackground),
-			.sidebarIcon: .key(.accentForegroundInteractive),
-			.sidebarIconSelected: .color(.foregroundOnBackground),
-			
-		]}
-		
-	}
-	
-		
-	// MARK: - Get TextSurface
-
-	/// Get a `TextSurfaceValueType aka SurfaceValue` registered for a `TextSurfaceKeyType aka FontKey`.
-	///
-	/// - If no value is registered for the key, the definition from `Theme.TextSurfaceKey.definitionsBase` is used.
-	/// - If `Theme.TextSurfaceKey.definitionsBase` also has no value for the key, `textSurfaceDefault`  is used.
-	///
-	/// - Parameter key: `FontKey` to get the `ColorKey` for.
-	/// - Returns: The `ColorKey` registered for the `FontKey`.
-	func textSurface(_ key: TextSurfaceKeyType) -> TextSurfaceValueType {
-		return textSurfaces[key] ?? Theme.TextSurfaceKey.definitionsBase[key] ?? textSurfaceDefault
-	}
-		
 }
