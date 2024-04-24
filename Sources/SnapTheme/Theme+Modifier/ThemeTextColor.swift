@@ -35,7 +35,7 @@ private extension Theme {
 			let surface = theme.textSurface(key)
 			return content
 				.themeScaledFont(key)
-				.theme(surface: surface)
+				.surface(surface)
 		}
 	}
 	
@@ -50,14 +50,14 @@ private extension Theme {
 		
 		Text("Text Title")
 			.theme(font: .textTitle)
-			.theme(color: .accentPrimary)
+			.color(.accentPrimary)
 		
 		Text("Text Title")
 			.theme(text: .textTitle)
-			.theme(color: .accentPrimary)
+			.color(.accentPrimary)
 		
 		Text("Text Title")
-			.theme(color: .accentPrimary)
+			.color(.accentPrimary)
 			.theme(text: .textTitle)
 		
 	}

@@ -13,28 +13,28 @@ public extension View {
 	/// Apply foreground color registered for `ColorKey`.
 	/// - Parameter color: `Theme.ColorKey` to apply as `.foregroundStyle`.
 	/// - Returns: Modified view.
-	func theme(color: Theme.ColorKey) -> some View {
+	func color(_ color: Theme.ColorKey) -> some View {
 		return self.modifier(Theme.ThemeForegroundColor(color: color))
 	}
 	
 	/// Apply surface registered for `SurfaceKey` as  foreground.
 	/// - Parameter surface: `Theme.SurfaceKey` to apply as `.foregroundStyle`.
 	/// - Returns: Modified view.
-	func theme(surface: Theme.SurfaceKey) -> some View {
+	func surface(_ surface: Theme.SurfaceKey) -> some View {
 		return self.modifier(Theme.ThemeForegroundSurfaceWithKey(surface: surface))
 	}
 	
 	/// Apply surface as foreground.
 	/// - Parameter surface: `Theme.SurfaceValue` to apply as `.foregroundStyle`.
 	/// - Returns: Modified view.
-	func theme(surface: Theme.SurfaceValue) -> some View {
+	func surface(_ surface: Theme.SurfaceValue) -> some View {
 		return self.modifier(Theme.ThemeForegroundSurfaceWithValue(surface: surface))
 	}
 	
 	/// Apply tint color registered for `ColorKey`.
 	/// - Parameter color: `Theme.ColorKey` to apply as `.tint`.
 	/// - Returns: Modified view.
-	func theme(tint: Theme.ColorKey) -> some View {
+	func tint(_ tint: Theme.ColorKey) -> some View {
 		return self.modifier(Theme.ThemeTintColor(color: tint))
 	}
 	
@@ -121,7 +121,7 @@ public extension Theme {
 		Text("Test")
 	}
 	.theme(padding: .spacingElements)
-	.theme(color: .accentPrimary)
+	.color(.accentPrimary)
 	.theme(background: .scene)
 	
 }

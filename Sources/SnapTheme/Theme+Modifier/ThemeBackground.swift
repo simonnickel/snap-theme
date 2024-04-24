@@ -131,42 +131,42 @@ private extension Theme {
 
 				Text("Background .accent")
 					.theme(padding: .cardPadding)
-					.theme(color: .foregroundOnBackground)
+					.color(.foregroundOnBackground)
 					.theme(background: .accent)
 				
 				Text("Background .accent, highlighted")
 					.theme(padding: .cardPadding)
-					.theme(color: .foregroundOnBackground)
+					.color(.foregroundOnBackground)
 					.theme(background: .accent, highlighted: true)
 				
 				Text("Background .interactive")
 					.theme(padding: .cardPadding)
-					.theme(color: .foregroundOnBackground)
+					.color(.foregroundOnBackground)
 					.theme(background: .interactive)
 				
 				Text("Background .interactive, highlighted")
 					.theme(padding: .cardPadding)
-					.theme(color: .foregroundOnBackground)
+					.color(.foregroundOnBackground)
 					.theme(background: .interactive, highlighted: true)
 				
 				Text("Background Color .accentPrimary")
 					.theme(padding: .cardPadding)
-					.theme(color: .foregroundOnBackground)
+					.color(.foregroundOnBackground)
 					.theme(backgroundColor: .accentPrimary)
 				
 				Text("Background Material")
 					.theme(padding: .cardPadding)
-					.theme(color: .foregroundOnBackground)
+					.color(.foregroundOnBackground)
 					.theme(background: materialBackground, highlighted: false)
 				
 				Text("Background Material Highlighted")
 					.theme(padding: .cardPadding)
-					.theme(color: .foregroundOnBackground)
+					.color(.foregroundOnBackground)
 					.theme(background: materialBackground, highlighted: true)
 				
 				Text("Gradient")
 					.theme(padding: .cardPadding)
-					.theme(color: .foregroundOnBackground)
+					.color(.foregroundOnBackground)
 					.theme(background: gradientBackground, highlighted: false)
 				
 			}

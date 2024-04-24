@@ -59,7 +59,7 @@ public struct CardIndicator: ViewModifier {
 				theme.icon(configuration.icon).image
 					.opacity(configuration.opacity)
 					.theme(font: configuration.font)
-					.theme(color: configuration.color)
+					.color(configuration.color)
 					.padding([.trailing, .bottom], (theme.number(.cardPadding, scaled: scaleFactor) ?? 0) * 3 / 5)
 					.overlay { // Overlay to read the actual icon size.
 						

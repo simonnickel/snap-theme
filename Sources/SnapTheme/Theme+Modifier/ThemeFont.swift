@@ -48,14 +48,14 @@ private extension Theme {
 		
 		Text("Text Title")
 			.theme(font: .textTitle)
-			.theme(color: .accentPrimary)
+			.color(.accentPrimary)
 		
 		Text("Text Title")
 			.theme(text: .textTitle)
-			.theme(color: .accentPrimary)
+			.color(.accentPrimary)
 		
 		Text("Text Title")
-			.theme(color: .accentPrimary)
+			.color(.accentPrimary)
 			.theme(text: .textTitle)
 		
 	}

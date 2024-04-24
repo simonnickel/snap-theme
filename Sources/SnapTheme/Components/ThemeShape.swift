@@ -88,7 +88,7 @@ public struct ThemeShape: View {
 			
 			Section {
 				ThemeShape(shape)
-					.theme(surface: .accentBackground)
+					.surface(.accentBackground)
 					.frame(width: 200, height: 30)
 			} header: {
 				ThemeSectionHeaderContainer {

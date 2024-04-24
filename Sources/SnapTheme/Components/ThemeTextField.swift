@@ -46,7 +46,7 @@ public struct ThemeTextField: View {
 			view.theme(font: font)
 		})
 		.if(unwrap: color) { view, color in
-			view.theme(color: color)
+			view.color(color)
 		}
 		.onChange(of: text.wrappedValue, initial: true) { oldValue, newValue in
 			withAnimation {
@@ -61,7 +61,7 @@ public struct ThemeTextField: View {
 			text.wrappedValue = ""
 		} label: {
 			theme.icon(.textFieldClear).image
-				.theme(color: .controlIndicator)
+				.color(.controlIndicator)
 		}
 	}
 	

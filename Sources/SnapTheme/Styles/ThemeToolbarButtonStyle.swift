@@ -43,7 +43,7 @@ public struct ThemeToolbarButtonStyle: ButtonStyle {
 		
 		configuration.label
 			.labelStyle(ThemeLabelStyleToolbar(placement: placement, showTitle: showTitle))
-			.theme(surface: configuration.isPressed ? .overlayHighlightAccent : .accentForegroundNavigation)
+			.surface(configuration.isPressed ? .overlayHighlightAccent : .accentForegroundNavigation)
 		
 	}
 	

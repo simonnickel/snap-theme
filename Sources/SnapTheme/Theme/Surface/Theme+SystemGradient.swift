@@ -105,7 +105,7 @@ extension Theme.SystemGradient: CustomStringConvertible {
 		
 		Text("Angular Gradient")
 			.theme(padding: .cardPadding)
-			.theme(color: .foregroundOnBackground)
+			.color(.foregroundOnBackground)
 			.theme(text: .cardTitle)
 			.theme(background: angularBackground, highlighted: false)
 		
@@ -122,7 +122,7 @@ extension Theme.SystemGradient: CustomStringConvertible {
 		
 		Text("Linear Gradient")
 			.theme(padding: .cardPadding)
-			.theme(color: .foregroundOnBackground)
+			.color(.foregroundOnBackground)
 			.theme(text: .cardTitle)
 			.theme(background: linearBackground, highlighted: false)
 		
@@ -138,7 +138,7 @@ extension Theme.SystemGradient: CustomStringConvertible {
 		
 		Text("Radial Gradient")
 			.theme(padding: .cardPadding)
-			.theme(color: .foregroundOnBackground)
+			.color(.foregroundOnBackground)
 			.theme(text: .cardTitle)
 			.theme(background: radialBackground, highlighted: false)
 		

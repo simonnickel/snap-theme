@@ -89,7 +89,7 @@ private extension Theme {
 				.theme(font: .cardTitle)
 			Text("Default")
 				.theme(font: .cardBlock)
-				.theme(color: .foregroundSecondary)
+				.color(.foregroundSecondary)
 		}
 		.themeCard()
 	
@@ -98,7 +98,7 @@ private extension Theme {
 				.theme(font: .cardTitle)
 			Text("Style .content")
 				.theme(font: .cardBlock)
-				.theme(color: .foregroundSecondary)
+				.color(.foregroundSecondary)
 		}
 		.themeCard(.content)
 		

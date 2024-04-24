@@ -24,7 +24,7 @@ public extension Theme {
 		
 		public func body(content: Content) -> some View {
 			content
-				.theme(tint: .accentPrimary)
+				.tint(.accentPrimary)
 				.environment(\.theme, theme)
 		}
 	}

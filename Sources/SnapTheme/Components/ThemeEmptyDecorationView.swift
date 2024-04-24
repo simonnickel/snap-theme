@@ -27,7 +27,7 @@ public struct ThemeEmptyDecorationView: View {
 				.theme(text: .sceneHeader)
 			
 			Text(text)
-				.theme(color: .foregroundSecondary)
+				.color(.foregroundSecondary)
 				.theme(font: .textTitle)
 			
 		}

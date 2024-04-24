@@ -27,7 +27,7 @@ public struct ThemeLabelStyleListRow: LabelStyle {
 			configuration.icon
 				//.imageScale(.large) gets scale from List automatically
 				.if(highlightIcon) { view in
-					view.theme(surface: .accentForeground)
+					view.surface(.accentForeground)
 				}
 				.theme(text: .listIcon)
 		}

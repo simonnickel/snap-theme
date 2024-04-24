@@ -47,7 +47,7 @@ public struct ThemeElement<Content: View>: View {
 			view.theme(background: background, highlighted: highlighted)
 		})
 		.if(unwrap: color, transform: { view, color in
-			view.theme(color: color)
+			view.color(color)
 		})
 		.if(unwrap: shape, transform: { view, shape in
 			view.mask {
