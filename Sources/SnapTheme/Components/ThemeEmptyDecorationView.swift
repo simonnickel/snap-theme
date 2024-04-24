@@ -11,7 +11,7 @@ public struct ThemeEmptyDecorationView: View {
 	
 	@Environment(\.theme) private var theme
 	
-	public init(text: String, icon: Theme.IconKey = .emptySceneDecoration) {
+	public init(text: String, icon: Theme.IconKey = .emptyScreenDecoration) {
 		self.text = text
 		self.icon = icon
 	}
@@ -24,7 +24,7 @@ public struct ThemeEmptyDecorationView: View {
 		ThemeVStack(spacing: .spacingGroups) {
 			
 			theme.icon(icon).image
-				.theme(text: .sceneHeader)
+				.theme(text: .screenHeader)
 			
 			Text(text)
 				.theme(color: .foregroundSecondary)

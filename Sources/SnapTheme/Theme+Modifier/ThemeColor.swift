@@ -122,6 +122,6 @@ public extension Theme {
 	}
 	.theme(padding: .spacingElements)
 	.theme(color: .accentPrimary)
-	.theme(background: .scene)
+	.theme(background: .screen)
 	
 }

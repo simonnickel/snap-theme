@@ -10,8 +10,8 @@ import SwiftUI
 public extension Theme.FontKey {
 		
 	static let allBaseKeys: [Theme.FontKey] = [
-		// Scene
-		.sceneHeader, .sceneHeaderSubtitle, .sceneSectionHeader,
+		// Screen
+		.screenHeader, .screenHeaderSubtitle, .screenSectionHeader,
 		// Text
 		.textTitle, .textSubtitle, .textBlock, .textLabel, .textIcon, .textValue, .textFootnote,
 		// Card
@@ -30,16 +30,16 @@ public extension Theme.FontKey {
 	]
 	
 	
-	// MARK: Scene
+	// MARK: Screen
 	
-	/// Font for header of a scene.
-	static let sceneHeader = Theme.FontKey("sceneHeader", default: .definition(.init(size: 34, weight: .bold, textStyle: .largeTitle))) // iOS 16: UINavigationBar large title is SFUI-Bold 34
+	/// Font for header of a screen.
+	static let screenHeader = Theme.FontKey("screenHeader", default: .definition(.init(size: 34, weight: .bold, textStyle: .largeTitle))) // iOS 16: UINavigationBar large title is SFUI-Bold 34
 	
-	/// Font for subtitle of a `sceneHeader`.
-	static let sceneHeaderSubtitle = Theme.FontKey("sceneHeaderSubtitle", default: .definition(.init(size: 20, weight: .semibold, textStyle: .largeTitle)))
+	/// Font for subtitle of a `screenHeader`.
+	static let screenHeaderSubtitle = Theme.FontKey("screenHeaderSubtitle", default: .definition(.init(size: 20, weight: .semibold, textStyle: .largeTitle)))
 	
-	/// Font for a header of a section of a scene.
-	static let sceneSectionHeader = Theme.FontKey("sceneSectionHeader", default: .definition(.init(size: 22, weight: .bold, textStyle: .title1)))
+	/// Font for a header of a section of a screen.
+	static let screenSectionHeader = Theme.FontKey("screenSectionHeader", default: .definition(.init(size: 22, weight: .bold, textStyle: .title1)))
 	
 	
 	// MARK: Text
@@ -80,7 +80,7 @@ public extension Theme.FontKey {
 	static let listHeader = Theme.FontKey("listHeader", default: .definition(.init(size: 14, weight: .semibold))) // iOS 16: (size: 13, weight: .regular)
 	
 	/// Font for text in header of a list with bigger content.
-	static let listHeaderProminent = Theme.FontKey("listHeaderProminent", default: .key(.sceneSectionHeader))
+	static let listHeaderProminent = Theme.FontKey("listHeaderProminent", default: .key(.screenSectionHeader))
 	
 	/// Font for text in footer of a list.
 	static let listFooter = Theme.FontKey("listFooter", default: .definition(.init(size: 13, weight: .regular))) // iOS 16: (size: 13, weight: .regular)
@@ -151,6 +151,6 @@ public extension Theme.FontKey {
 	static let controlTextField = Theme.FontKey("textField", default: .system)
 	
 	/// Font for the content of a promonent `TextField`, e.g. when it's the main input or the title of the screen.
-	static let controlTextFieldProminent = Theme.FontKey("textField", default: .key(.sceneSectionHeader))
+	static let controlTextFieldProminent = Theme.FontKey("textField", default: .key(.screenSectionHeader))
 	
 }

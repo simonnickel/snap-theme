@@ -58,7 +58,7 @@ public struct ThemeCloseContainer<Content: View>: View {
 
 #Preview {
 	
-	ThemePreviewContainer(.scene) {
+	ThemePreviewContainer(.screen) {
 		
 		ThemeCloseContainer {
 			Text("Top Trailing Default")

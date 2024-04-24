@@ -10,18 +10,18 @@ import Foundation
 public extension Theme.BackgroundKey {
 	
 	static let allBaseKeys: [Theme.BackgroundKey] = [
-		.scene, .content, .contentSecondary, .accent, .interactive, 
+		.screen, .content, .contentSecondary, .accent, .interactive, 
 		.bar, .barNavigation, .barBottom, .barTab, .sidebar,
 		.buttonPrimary, .buttonSecondary, .buttonToolbar, buttonDestructive,
 		.tag
 	]
 	
 	
-	// MARK: Scene
+	// MARK: Screen
 	
-	/// Scene background.
+	/// Screen background.
 	/// macOS does use .system to allow list scroll edge behaviour where windowBar disappears (FB13322408). 
-	static let scene = Theme.BackgroundKey("scene", default: .platform(macOS: .system, other: .surface(.color(.backgroundScene))))
+	static let screen = Theme.BackgroundKey("screen", default: .platform(macOS: .system, other: .surface(.color(.backgroundScreen))))
 	
 	/// Generic bar background definition.
 	static let bar = Theme.BackgroundKey("bar", default: .system) // .platform(macOS: .system, other: .surface(.material(.bar)))

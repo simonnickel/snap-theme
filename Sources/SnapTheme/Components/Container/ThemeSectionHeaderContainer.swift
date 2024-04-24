@@ -42,7 +42,7 @@ public struct ThemeSectionHeaderContainer<Content: View>: View {
 
 #Preview {
 	
-	ThemeScene {
+	ThemeScreen {
 		
 		Section {
 			Text("Section Content")
@@ -52,7 +52,7 @@ public struct ThemeSectionHeaderContainer<Content: View>: View {
 				ThemeLabel(text: "Section Header Container")
 					.labelStyle(.themeSectionHeader(textCase: .uppercase))
 			}
-			.theme(background: .scene)
+			.theme(background: .screen)
 		}
 		
 		Section {
@@ -64,7 +64,7 @@ public struct ThemeSectionHeaderContainer<Content: View>: View {
 				ThemeLabel(text: "Section Header Container")
 					.labelStyle(.themeSectionHeader(textCase: .uppercase))
 			}
-			.theme(background: .scene)
+			.theme(background: .screen)
 		}
 		
 		

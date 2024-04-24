@@ -1,5 +1,5 @@
 //
-//  ThemeSceneSidebar.swift
+//  ThemeScreenSidebar.swift
 //  SnapTheme
 //
 //  Created by Simon Nickel on 04.11.23.
@@ -10,7 +10,7 @@ import SnapCore
 
 /// Alternative init to use when selection should not be used. Specify generic SelectionValue.
 /// Needed to solve error when selection binding is missing: Generic parameter 'SelectionValue' could not be inferred
-public extension ThemeSceneSidebar where SelectionValue == Never {
+public extension ThemeScreenSidebar where SelectionValue == Never {
 	init(
 		title: String? = nil,
 		titleMode: ToolbarTitleDisplayMode = .automatic,
@@ -19,14 +19,14 @@ public extension ThemeSceneSidebar where SelectionValue == Never {
 	) {
 		self.title = title
 		self.titleMode = titleMode
-		self.background = collapsed ? .scene : .sidebar
+		self.background = collapsed ? .screen : .sidebar
 		self.selection = nil
 		self.collapsed = collapsed
 		self.content = content
 	}
 }
 
-public struct ThemeSceneSidebar<SelectionValue, Content>: View where SelectionValue : Hashable, Content : View {
+public struct ThemeScreenSidebar<SelectionValue, Content>: View where SelectionValue : Hashable, Content : View {
 	
 	@Environment(\.theme) private var theme
 	
@@ -39,7 +39,7 @@ public struct ThemeSceneSidebar<SelectionValue, Content>: View where SelectionVa
 	) {
 		self.title = title
 		self.titleMode = titleMode
-		self.background = collapsed ? .scene : .sidebar
+		self.background = collapsed ? .screen : .sidebar
 		self.selection = selection
 		self.collapsed = collapsed
 		self.content = content
@@ -54,7 +54,7 @@ public struct ThemeSceneSidebar<SelectionValue, Content>: View where SelectionVa
 	
 	public var body: some View {
 		
-		ThemeSceneList(
+		ThemeScreenList(
 			title: title,
 			titleMode: titleMode,
 			background: background,
@@ -76,7 +76,7 @@ public struct ThemeSceneSidebar<SelectionValue, Content>: View where SelectionVa
 	
 	return NavigationStack {
 		
-		ThemeSceneSidebar(title: "Sidebar", selection: $selected, collapsed: false) {
+		ThemeScreenSidebar(title: "Sidebar", selection: $selected, collapsed: false) {
 			ForEach(0..<2) { _ in
 				Text("Some Content Text with a few Lorem Ipsum like words to fill the row showing the edge behaviour and maybe have a second row.")
 			}

@@ -48,7 +48,7 @@ public struct ThemeCornerContainer: View {
 
 #Preview {
 	
-	ThemePreviewContainer(.scene) {
+	ThemePreviewContainer(.screen) {
 		
 		ThemeCornerContainer(topLeading: {
 			Text("Top L")

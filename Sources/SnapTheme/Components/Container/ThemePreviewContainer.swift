@@ -11,7 +11,7 @@ import SnapCore
 public struct ThemePreviewContainer<Content: View>: View {
 	
 	public enum Style {
-		case scene, view
+		case screen, view
 	}
 	
 	public init(
@@ -42,11 +42,11 @@ public struct ThemePreviewContainer<Content: View>: View {
 	
 	public var body: some View {
 		NavigationStack {
-			ThemeScene(title: title) {
+			ThemeScreen(title: title) {
 				
 				switch style {
 						
-					case .scene:
+					case .screen:
 						
 						ThemeVStack(spacing: .spacingGroups) {
 							content()
@@ -84,7 +84,7 @@ public struct ThemePreviewContainer<Content: View>: View {
 		
 	VStack {
 		
-		ThemePreviewContainer(.scene, title: "Preview") {
+		ThemePreviewContainer(.screen, title: "Preview") {
 			
 			Text("Test")
 			Text("Test")

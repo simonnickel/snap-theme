@@ -20,7 +20,7 @@ public extension Theme.IconKey {
 		// Indicators
 		.accessoryNavigation,
 		.textFieldClear,
-		.emptySceneDecoration,
+		.emptyScreenDecoration,
 		.cardIndicatorSelected, .cardIndicatorEnabled, .cardIndicatorDisabled,
 		// Toolbar
 		.toolbarMore,
@@ -57,8 +57,8 @@ public extension Theme.IconKey {
 	/// Icon to use as a button to clear a `TextField`.
 	static let textFieldClear = Theme.IconKey("textFieldClear", default: .system(name: "xmark.circle.fill"))
 	
-	/// Icon that decorates an empty scene.
-	static let emptySceneDecoration = Theme.IconKey("emptySceneDecoration", default: .system(name: "figure.dance"))
+	/// Icon that decorates an empty screen.
+	static let emptyScreenDecoration = Theme.IconKey("emptyScreenDecoration", default: .system(name: "figure.dance"))
 	
 	/// Icon on a card to indicate selected state.
 	static let cardIndicatorSelected = Theme.IconKey("cardIndicatorSelected", default: .system(name: "checkmark.circle.fill"))

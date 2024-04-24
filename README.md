@@ -27,7 +27,7 @@ Instead of defining design attributes all over the place, you register a semanti
  - A preset of common semantic definitions for these attributes (e.g. `.textTitle`, `.textSubtitle`).
  - ViewModifier to apply them to your views.
  - Wrapper of stock SwiftUI views to configure attributes with theme definitions (e.g. `ThemeVStack(spacing:`)).
- - Convenience views for common layout and style tasks (e.g. `ThemeScene`, `ThemeElement`).
+ - Convenience views for common layout and style tasks (e.g. `ThemeScreen`, `ThemeElement`).
 
 Fonts and Numbers are scaled by DynamicType.
 
@@ -105,7 +105,7 @@ Assigns a `Surface` to a font.
 
 ### BackgroundKey
 
-Defines the background of a semantic layout element (`.scene`, `.content`, `.contentSecondary`) by assigning a `Surface`.
+Defines the background of a semantic layout element (`.screen`, `.content`, `.contentSecondary`) by assigning a `Surface`.
 
 
 ## SnapAppThemeDemo
@@ -137,9 +137,9 @@ Examples: `.theme(background:)`, `.theme(color:)`, `.theme(text:)`, `.theme(padd
 
 ### LayoutElements
 
-Generic container views used for layout. Basic building blocks of to build a scene.
+Generic container views used for layout. Basic building blocks of to build a screen.
 
-Examples: `ThemeScene`, `ThemeHStack(spacing:)`, `ThemeElement` 
+Examples: `ThemeScreen`, `ThemeHStack(spacing:)`, `ThemeElement` 
 
 
 ### Components

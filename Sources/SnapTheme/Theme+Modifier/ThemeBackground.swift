@@ -106,7 +106,7 @@ private extension Theme {
 	let gradientSurface = Theme.SurfaceKey("gradientSurface", default: .gradient(.angular([.accentPrimary, .accentComplimentary, .accentPrimary, .accentComplimentary, .accentComplimentary, .accentPrimary], center: .center, angle: .zero)))
 	let gradientBackground = Theme.BackgroundKey("gradientBackground", default: .surface(gradientSurface, highlight: .overlayHighlightAccent))
 	
-	return ThemePreviewContainer(.scene, padding: nil) {
+	return ThemePreviewContainer(.screen, padding: nil) {
 		
 		ZStack {
 			

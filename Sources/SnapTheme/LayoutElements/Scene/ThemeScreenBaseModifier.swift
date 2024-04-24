@@ -1,5 +1,5 @@
 //
-//  ThemeSceneBaseModifier.swift
+//  ThemeScreenBaseModifier.swift
 //  SnapTheme
 //
 //  Created by Simon Nickel on 04.11.23.
@@ -9,7 +9,7 @@ import SwiftUI
 
 public extension Theme {
 	
-	struct ThemeSceneBaseModifier: ViewModifier {
+	struct ThemeScreenBaseModifier: ViewModifier {
 		
 		public struct Model {
 			

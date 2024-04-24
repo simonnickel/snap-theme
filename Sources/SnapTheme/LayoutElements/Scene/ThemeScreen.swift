@@ -1,5 +1,5 @@
 //
-//  ThemeScene.swift
+//  ThemeScreen.swift
 //  SnapTheme
 //
 //  Created by Simon Nickel on 04.11.23.
@@ -9,7 +9,7 @@ import SwiftUI
 
 // TODO idea: Define default TitleDisplayMode in theme.
 
-extension ThemeScene where Content : View {
+extension ThemeScreen where Content : View {
 	
 	public enum Style {
 		case plain, scrollView
@@ -18,7 +18,7 @@ extension ThemeScene where Content : View {
 	
 }
 
-public struct ThemeScene<Content>: View where Content : View {
+public struct ThemeScreen<Content>: View where Content : View {
 	
 	@Environment(\.theme) private var theme
 	
@@ -26,7 +26,7 @@ public struct ThemeScene<Content>: View where Content : View {
 		style: Style = .defaultCase,
 		title: String? = nil,
 		titleMode: ToolbarTitleDisplayMode = .automatic,
-		background: Theme.BackgroundKey? = .scene,
+		background: Theme.BackgroundKey? = .screen,
 		@ViewBuilder content: @escaping () -> Content
 	) {
 		self.style = style
@@ -35,7 +35,7 @@ public struct ThemeScene<Content>: View where Content : View {
 	}
 	
 	private let style: Style
-	private let baseData: Theme.ThemeSceneBaseModifier.Model
+	private let baseData: Theme.ThemeScreenBaseModifier.Model
 	private let content: () -> Content
 	
 	public var body: some View {
@@ -57,7 +57,7 @@ public struct ThemeScene<Content>: View where Content : View {
 					
 			}
 		}
-		.modifier(Theme.ThemeSceneBaseModifier(data: baseData))
+		.modifier(Theme.ThemeScreenBaseModifier(data: baseData))
 
 	}
 	
@@ -70,7 +70,7 @@ public struct ThemeScene<Content>: View where Content : View {
 	
 	NavigationStack {
 		
-		ThemeScene(title: "Scroll View") {
+		ThemeScreen(title: "Scroll View") {
 			ForEach(0..<2) { _ in
 				Text("Some Content Text with a few Lorem Ipsum like words to fill the row showing the edge behaviour and maybe have a second row.")
 					.themeCard(.content)

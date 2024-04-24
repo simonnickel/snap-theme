@@ -1,5 +1,5 @@
 //
-//  ThemeSceneList.swift
+//  ThemeScreenList.swift
 //	SnapTheme
 //
 //  Created by Simon Nickel on 04.11.23.
@@ -10,11 +10,11 @@ import SnapCore
 
 /// Alternative init to use when selection should not be used. Specify generic SelectionValue.
 /// Needed to solve error when selection binding is missing: Generic parameter 'SelectionValue' could not be inferred
-public extension ThemeSceneList where SelectionValue == Never {
+public extension ThemeScreenList where SelectionValue == Never {
 	init(
 		title: String? = nil,
 		titleMode: ToolbarTitleDisplayMode = .automatic,
-		background: Theme.BackgroundKey? = .scene,
+		background: Theme.BackgroundKey? = .screen,
 		listStyle: Theme.ThemeListStyle = .automatic,
 		@ViewBuilder content: @escaping () -> Content
 	) {
@@ -25,14 +25,14 @@ public extension ThemeSceneList where SelectionValue == Never {
 	}
 }
 
-public struct ThemeSceneList<SelectionValue, Content>: View where SelectionValue : Hashable, Content : View {
+public struct ThemeScreenList<SelectionValue, Content>: View where SelectionValue : Hashable, Content : View {
 	
 	@Environment(\.theme) private var theme
 	
 	public init(
 		title: String? = nil,
 		titleMode: ToolbarTitleDisplayMode = .automatic,
-		background: Theme.BackgroundKey? = .scene,
+		background: Theme.BackgroundKey? = .screen,
 		listStyle: Theme.ThemeListStyle = .automatic,
 		selection: Binding<SelectionValue?>? = nil,
 		@ViewBuilder content: @escaping () -> Content
@@ -43,7 +43,7 @@ public struct ThemeSceneList<SelectionValue, Content>: View where SelectionValue
 		self.content = content
 	}
 	
-	private let baseData: Theme.ThemeSceneBaseModifier.Model
+	private let baseData: Theme.ThemeScreenBaseModifier.Model
 	private let listStyle: Theme.ThemeListStyle
 	private let selection: Binding<SelectionValue?>?
 	private let content: () -> Content
@@ -54,7 +54,7 @@ public struct ThemeSceneList<SelectionValue, Content>: View where SelectionValue
 			List(selection: selection, content: content)
 				.themeListStyle(listStyle)
 		)
-		.modifier(Theme.ThemeSceneBaseModifier(data: baseData))
+		.modifier(Theme.ThemeScreenBaseModifier(data: baseData))
 		.if(unwrap: baseData.background, transform: { view, background -> AnyView in
 			let value = theme.backgroundValue(for: background)
 			return AnyView(
@@ -77,7 +77,7 @@ public struct ThemeSceneList<SelectionValue, Content>: View where SelectionValue
 	
 	return NavigationStack {
 		
-		ThemeSceneList(title: "List", selection:  $selected) {
+		ThemeScreenList(title: "List", selection:  $selected) {
 			ForEach(0..<2) { _ in
 				Text("Some Content Text with a few Lorem Ipsum like words to fill the row showing the edge behaviour and maybe have a second row.")
 			}
@@ -102,7 +102,7 @@ public struct ThemeSceneList<SelectionValue, Content>: View where SelectionValue
 		numbers: [:],
 		colors: [
 			//							:
-			.backgroundScene : .color(.teal),
+			.backgroundScreen : .color(.teal),
 			.backgroundContent : .color(.mint)
 		],
 		fonts: [:]
@@ -111,7 +111,7 @@ public struct ThemeSceneList<SelectionValue, Content>: View where SelectionValue
 	struct Factory {
 		static func createList(style: Theme.ThemeListStyle) -> some View {
 			
-			ThemeScene(
+			ThemeScreen(
 				title: style.rawValue
 			) {
 				

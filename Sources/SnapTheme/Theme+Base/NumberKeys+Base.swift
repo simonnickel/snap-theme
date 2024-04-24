@@ -38,7 +38,7 @@ public extension Theme.NumberKey {
 	/// Generic padding for a modal scene.
 	static let paddingModal = Theme.NumberKey("paddingModal", default: .value(16))
 	
-	/// Padding for spacing of close button in modal scene.
+	/// Padding for spacing of close button in a modal scene.
 	static let paddingModalCloseButton = Theme.NumberKey("paddingModalCloseButton", default: .value(10))
 	
 	/// Width of a stroke indicating a selection.

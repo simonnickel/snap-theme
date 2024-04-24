@@ -18,7 +18,7 @@ public extension Theme.ColorKey {
 		// Generic
 		.clear, .white, .black,
 		// Background
-		.backgroundScene, .backgroundContent, .backgroundContentSecondary,
+		.backgroundScreen, .backgroundContent, .backgroundContentSecondary,
 		// Foreground
 		.foreground, .foregroundSecondary, .foregroundDisabled, .foregroundOnBackground, .foregroundOnLightBackground,
 		// Accent
@@ -41,11 +41,11 @@ public extension Theme.ColorKey {
 	
 	// MARK: - Background
 	
-	/// Scene background.
+	/// Screen background.
 	/// TODO finetuning: Should respect elevated presentation as in a sheet.
 	/// See https://blog.eidinger.info/uiuserinterfacelevel-in-swiftui
 	/// Also keep in mind: iPad apps should have a non black background in SplitView in dark mode.
-	static let backgroundScene = Theme.ColorKey("backgroundScene", default: .color(.systemGroupedBackground))
+	static let backgroundScreen = Theme.ColorKey("backgroundScreen", default: .color(.systemGroupedBackground))
 	
 	/// Content background.
 	static let backgroundContent = Theme.ColorKey("backgroundContent", default: .color(.secondarySystemGroupedBackground))

@@ -82,7 +82,7 @@ private extension Theme {
 
 #Preview {
 	
-	ThemePreviewContainer(.scene) {
+	ThemePreviewContainer(.screen) {
 		
 		VStack(alignment: .leading) {
 			Text("ThemedCard")
