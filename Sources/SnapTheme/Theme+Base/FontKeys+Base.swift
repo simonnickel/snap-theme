@@ -34,8 +34,10 @@ public extension Theme.FontKey {
 	
 	/// Font for header of a scene.
 	static let sceneHeader = Theme.FontKey("sceneHeader", default: .definition(.init(size: 34, weight: .bold, textStyle: .largeTitle))) // iOS 16: UINavigationBar large title is SFUI-Bold 34
+	
 	/// Font for subtitle of a `sceneHeader`.
 	static let sceneHeaderSubtitle = Theme.FontKey("sceneHeaderSubtitle", default: .definition(.init(size: 20, weight: .semibold, textStyle: .largeTitle)))
+	
 	/// Font for a header of a section of a scene.
 	static let sceneSectionHeader = Theme.FontKey("sceneSectionHeader", default: .definition(.init(size: 22, weight: .bold, textStyle: .title1)))
 	
@@ -127,18 +129,28 @@ public extension Theme.FontKey {
 	
 	// MARK: Toolbar
 	
+	/// Font for the label of an item in a toolbar.
 	static let toolbarLabel = Theme.FontKey("toolbarLabel", default: .definition(.init(size: 17, weight: .semibold)))
+	
+	/// Font for the icon of an item in a toolbar.
 	static let toolbarIcon = Theme.FontKey("toolbarIcon", default: .key(.toolbarLabel))
 	
+	/// Font for the label of a navigation item in a toolbar.
 	static let toolbarNavigationLabel = Theme.FontKey("toolbarNavigationLabel", default: .key(.toolbarLabel))
+	
+	/// Font for the icon of a navigation item in a toolbar.
 	static let toolbarNavigationIcon = Theme.FontKey("toolbarNavigationIcon", default: .key(.toolbarIcon))
 	
+	/// Font for the close icon for a toolbar.
 	static let toolbarClose = Theme.FontKey("toolbarNavigationLabel", default: .definition(.init(size: 30, weight: .semibold)))
 	
 	
 	// MARK: Controls
 	
+	/// Font for the content of a `TextField`.
 	static let controlTextField = Theme.FontKey("textField", default: .system)
+	
+	/// Font for the content of a promonent `TextField`, e.g. when it's the main input or the title of the screen.
 	static let controlTextFieldProminent = Theme.FontKey("textField", default: .key(.sceneSectionHeader))
 	
 }
