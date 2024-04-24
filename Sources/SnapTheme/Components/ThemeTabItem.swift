@@ -46,7 +46,7 @@ public struct ThemeTabItem: View {
 		Group { Text("A") }
 		.tabItem {
 			ThemeTabItem(text: "Tab Item", icon: .favorite)
-				.theme(font: .sceneHeader)
+				.font(.sceneHeader)
 		}.tag("a")
 		
 		Group { Text("B") }

@@ -49,7 +49,7 @@ private extension Theme {
 	ThemeVStack(spacing: .spacingGroups) {
 		
 		Text("Text Title")
-			.theme(font: .textTitle)
+			.font(.textTitle)
 			.color(.accentPrimary)
 		
 		Text("Text Title")

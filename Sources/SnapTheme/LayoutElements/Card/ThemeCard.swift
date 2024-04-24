@@ -86,35 +86,35 @@ private extension Theme {
 		
 		VStack(alignment: .leading) {
 			Text("ThemedCard")
-				.theme(font: .cardTitle)
+				.font(.cardTitle)
 			Text("Default")
-				.theme(font: .cardBlock)
+				.font(.cardBlock)
 				.color(.foregroundSecondary)
 		}
 		.themeCard()
 	
 		VStack(alignment: .leading) {
 			Text("ThemedCard")
-				.theme(font: .cardTitle)
+				.font(.cardTitle)
 			Text("Style .content")
-				.theme(font: .cardBlock)
+				.font(.cardBlock)
 				.color(.foregroundSecondary)
 		}
 		.themeCard(.content)
 		
 		VStack(alignment: .leading) {
 			Text("ThemedCard")
-				.theme(font: .cardTitle)
+				.font(.cardTitle)
 			Text("Style .accent")
-				.theme(font: .cardBlock)
+				.font(.cardBlock)
 		}
 		.themeCard(.accent)
 		
 		VStack(alignment: .leading) {
 			Text("ThemedCard")
-				.theme(font: .cardTitle)
+				.font(.cardTitle)
 			Text("Style .customBackground")
-				.theme(font: .cardBlock)
+				.font(.cardBlock)
 		}
 		.themeCard(.custom(color: .foreground, background: .content))
 		
@@ -124,7 +124,7 @@ private extension Theme {
 				level: .first
 			) {
 				Text("Card on Card")
-					.theme(font: .cardTitle)
+					.font(.cardTitle)
 			}
 		}
 		

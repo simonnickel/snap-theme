@@ -42,7 +42,7 @@ public struct ThemeCloseContainer<Content: View>: View {
 			} label: {
 				theme.icon(.close).image
 			}
-			.theme(font: .toolbarClose)
+			.font(.toolbarClose)
 			.surface(.uiIndicator)
 			.if(unwrap: padding) { view, padding in
 				view.theme(padding: padding)

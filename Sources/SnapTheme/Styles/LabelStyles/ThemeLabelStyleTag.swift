@@ -45,7 +45,7 @@ public struct ThemeLabelStyleTag: LabelStyle {
 				configuration.icon
 					.imageScale(.medium)
 			}
-			.theme(font: font)
+			.font(font)
 			.theme(padding: .labelTagPaddingHorizontal, .horizontal)
 			.theme(padding: .labelTagPaddingVertical, .vertical)
 		}

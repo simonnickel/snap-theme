@@ -62,14 +62,14 @@ public struct ThemeCornerView: View {
 				
 				if let icon = model.icon {
 					theme.icon(icon).image
-						.theme(font: .cardIcon)
+						.font(.cardIcon)
 				}
 				
 			}, topTrailing: {
 				
 				if let value = model.value {
 					Text(value)
-						.theme(font: .cardValue)
+						.font(.cardValue)
 						.frame(maxWidth: .infinity, alignment: alignmentValue)
 				}
 				
@@ -79,12 +79,12 @@ public struct ThemeCornerView: View {
 					VStack {
 						if let title = model.title {
 							Text(title)
-								.theme(font: .cardTitle)
+								.font(.cardTitle)
 								.frame(maxWidth: .infinity, alignment: .leading)
 						}
 						if let text = model.text {
 							Text(text)
-								.theme(font: .cardSubtitle)
+								.font(.cardSubtitle)
 								.frame(maxWidth: .infinity, alignment: .leading)
 						}
 					}
@@ -94,7 +94,7 @@ public struct ThemeCornerView: View {
 				
 				if let isSelected = model.isSelected {
 					theme.icon((model.isSelected ?? false) ? .cardIndicatorSelected : .cardIndicatorDisabled).image
-						.theme(font: .cardIndicator)
+						.font(.cardIndicator)
 						.if(!isSelected && iconOff == nil) { view in
 							view.opacity(0)
 						}

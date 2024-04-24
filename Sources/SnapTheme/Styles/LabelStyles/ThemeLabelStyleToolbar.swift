@@ -26,10 +26,10 @@ public struct ThemeLabelStyleToolbar: LabelStyle {
 		
 		Label {
 			configuration.title
-				.theme(font: placement == .navigation ? .toolbarNavigationLabel : .toolbarLabel)
+				.font(placement == .navigation ? .toolbarNavigationLabel : .toolbarLabel)
 		} icon: {
 			configuration.icon
-				.theme(font: placement == .navigation ? .toolbarNavigationIcon : .toolbarIcon)
+				.font(placement == .navigation ? .toolbarNavigationIcon : .toolbarIcon)
 				.imageScale(.large)
 		}
 		.if(showTitle, transform: { view in

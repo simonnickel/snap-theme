@@ -13,7 +13,7 @@ public extension View {
 	/// - Parameters:
 	///   - font: `FontKey` to apply as `.font`.
 	/// - Returns: Modified View.
-	func theme(font: Theme.FontKey) -> some View {
+	func font(_ font: Theme.FontKey) -> some View {
 		return self.modifier(Theme.ThemeFont(font: font))
 	}
 
@@ -47,7 +47,7 @@ private extension Theme {
 	ThemeVStack(spacing: .spacingGroups) {
 		
 		Text("Text Title")
-			.theme(font: .textTitle)
+			.font(.textTitle)
 			.color(.accentPrimary)
 		
 		Text("Text Title")

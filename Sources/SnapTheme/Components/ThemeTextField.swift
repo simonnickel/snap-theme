@@ -43,7 +43,7 @@ public struct ThemeTextField: View {
 			}
 		}
 		.if(unwrap: font, transform: { view, font in
-			view.theme(font: font)
+			view.font(font)
 		})
 		.if(unwrap: color) { view, color in
 			view.color(color)
