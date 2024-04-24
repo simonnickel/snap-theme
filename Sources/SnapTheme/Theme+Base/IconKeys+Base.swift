@@ -39,7 +39,7 @@ public extension Theme.IconKey {
 	/// Icon that represents an edit interaction.
 	static let edit = Theme.IconKey("edit", default: .system(name: "square.and.pencil"))
 	
-	/// Icon that represents a favorite interaction or state.
+	/// Icon that represents a delete action.
 	static let delete = Theme.IconKey("delete", default: .system(name: "trash"))
 	
 	/// Icon that represents the settings screen.
