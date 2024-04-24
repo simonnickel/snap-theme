@@ -18,7 +18,7 @@ A toolset to abstract Colors, Fonts, Icons and Numbers into semantic definitions
 
 ## Motivation
 
-With a growing app project consistency of look and feel is important. Especially when you decide to tweak a few attributes or need to adjust it to fit platform changes or new design trends. Goal of `SnapTheme` is to define visual attributes in a single place, to allow: simple adjustments, quick experiments and user-selectable styles. 
+Consistency in look and feel is important. Especially for a growing app project, when you decide to tweak a few attributes or need adjustments to fit platform changes or design trends. Goal of `SnapTheme` is to define visual attributes in a single place, to allow: simple adjustments, quick experiments and user-selectable styles. 
 
 Instead of defining design attributes all over the place, you register a semantic key for your Theme, assign a definition and use it in your SwiftUI views.
 
@@ -30,13 +30,10 @@ Instead of defining design attributes all over the place, you register a semanti
 
 ## How to use
 
-### Define your Theme
-A: Define your own attributes
-```
-public static let exampleColor = Theme.ColorKey("exampleColor", default: .color(.purple))
-```
+The Theme comes with some presets and is easy to use and customize.
 
-B: Override preset attributes in a custom Theme
+### Define the Theme
+Override preset attributes in a custom Theme:
 ```
 let theme = Theme(
 	colors: [
@@ -46,16 +43,21 @@ let theme = Theme(
 )
 ```
 
-### Apply your Theme
+And/or define your own attributes:
 ```
-contentView
-	.theme(apply: theme)
+extension Theme.ColorKey {
+	static let exampleColor = Theme.ColorKey("exampleColor", default: .color(.purple))
+}
 ```
 
-### Use theme attributes
+### Apply the Theme
 ```
-Text("Example")
-	.color(.exampleColor)
+contentView.theme(apply: theme)
+```
+
+### Use the Theme
+```
+Text("Example").color(.exampleColor)
 ```
 
 
