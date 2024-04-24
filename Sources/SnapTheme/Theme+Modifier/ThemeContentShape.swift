@@ -9,8 +9,8 @@ import SwiftUI
 
 public extension View {
 	
-	func themeContentShape(_ shape: ThemeShape.Style, kind: ContentShapeKinds) -> some View {
-		return self.modifier(Theme.ThemeContentShape(kind: kind, shape: shape))
+	func theme(contentShape: ThemeShape.Style, kind: ContentShapeKinds) -> some View {
+		return self.modifier(Theme.ThemeContentShape(kind: kind, shape: contentShape))
 	}
 
 }
@@ -49,7 +49,7 @@ private extension Theme {
 			Text("Press and Hold")
 				.padding()
 #if !os(macOS)
-				.themeContentShape(.capsule, kind: .contextMenuPreview)
+				.theme(contentShape: .capsule, kind: .contextMenuPreview)
 #endif
 				.contextMenu(ContextMenu(menuItems: {
 					Text("Menu Item 1")
