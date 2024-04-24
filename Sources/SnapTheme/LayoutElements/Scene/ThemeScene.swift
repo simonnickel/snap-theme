@@ -9,12 +9,16 @@ import SwiftUI
 
 // TODO idea: Define default TitleDisplayMode in theme.
 
-public struct ThemeScene<Content>: View where Content : View {
+extension ThemeScene where Content : View {
 	
 	public enum Style {
 		case plain, scrollView
-		public static var defaultCase: Style { .scrollView }
+		public static var defaultCase: Self { .scrollView }
 	}
+	
+}
+
+public struct ThemeScene<Content>: View where Content : View {
 	
 	@Environment(\.theme) private var theme
 	
