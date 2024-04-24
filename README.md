@@ -7,7 +7,7 @@
 
 # SnapTheme
 
-A toolset to abstract Colors, Fonts, Icons and Numbers into semantic definitions for a SwiftUI app. The package contains a Theme definition to hold semantic values and a set of ViewModifier to apply them to SwiftUI views.
+A toolset to abstract Colors, Fonts, Icons and Numbers into semantic definitions for a SwiftUI app. The package contains a Theme definition to hold values and a set of ViewModifier to apply them to SwiftUI views.
 
 
 [![Documentation][documentation badge]][documentation] 
@@ -16,23 +16,46 @@ A toolset to abstract Colors, Fonts, Icons and Numbers into semantic definitions
 [documentation badge]: https://img.shields.io/badge/Documentation-DocC-blue
 
 
+## Motivation
+
+With a growing app project consistency of look and feel is important. Especially when you decide to tweak a few attributes or need to adjust it to fit platform changes or new design trends. Goal of `SnapTheme` is to define visual attributes in a single place, to allow: simple adjustments, quick experiments and user-selectable styles. 
+
+Instead of defining design attributes all over the place, you register a semantic key for your Theme, assign a definition and use it in your SwiftUI views.
+
+`Theme` comes with:
+ - Base attributes (Color, Font, Icon, Number) and composed attributes (Surface, Background, TextSurface).
+ - A preset of common semantic definitions for these attributes (e.g. textTitle, textSubtitle).
+ - ViewModifier to apply them to your views.
+
+
 ## How to use
 
-Create a Theme:
-
+### Define your Theme
+A: Define your own attributes
 ```
-	let theme = Theme(
-		colors: [
-			.accentColorBase : .color(.purple)
-		], 
-		...
-	)
+public static let exampleColor = Theme.ColorKey("exampleColor", default: .color(.purple))
 ```
 
-Apply the Theme to your view:
+B: Override preset attributes in a custom Theme
+```
+let theme = Theme(
+	colors: [
+		.accentColorBase : .color(.purple)
+	], 
+	...
+)
+```
+
+### Apply your Theme
 ```
 contentView
 	.theme(apply: theme)
+```
+
+### Use theme attributes
+```
+Text("Example")
+	.color(.exampleColor)
 ```
 
 
