@@ -55,7 +55,7 @@ private extension Theme {
 		var body: some View {
 			VStack {
 				content()
-#if os(macOS)
+#if os(macOS) // TODO macOS: Is it different between sidebar and normal list styles?
 					.theme(padding: .sidebarMacOSBackgroundPaddingHorizontal, .horizontal)
 #endif
 			}
