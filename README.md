@@ -106,8 +106,10 @@ Assigns a `Surface` to a font.
 Defines the background of a semantic layout element (`.scene`, `.content`, `.contentSecondary`) by assigning a `Surface`.
 
 
-## Demo
-The Demo project shows some examples of the theme elements.
+## SnapAppThemeDemo
+
+A demo of the Theme in action is available at [snap-app-theme-demo](https://github.com/simonnickel/snap-app-theme-demo).
+It provides a reference for all preset attributes, demonstrates the default values and provides some configuration sets to change attributes in the app.
 
 
 ## Elements of the Theme 
