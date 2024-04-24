@@ -27,6 +27,12 @@ Instead of defining design attributes all over the place, you register a semanti
  - A preset of common semantic definitions for these attributes (e.g. textTitle, textSubtitle).
  - ViewModifier to apply them to your views.
 
+Fonts and Numbers are scaled by DynamicType.
+
+This brings some additional benefits: 
+ - Number by default are scaled by DynamicType. This means all UI sizes based on them will scale too.
+ - By adjusting the scale factor, the whole UI can be scaled by a single config change.
+  
 
 ## How to use
 
