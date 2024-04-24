@@ -12,14 +12,14 @@ public struct ThemeLabelStyleButtonSecondary: LabelStyle {
 	public init() {}
 	
 	public func makeBody(configuration: Configuration) -> some View {
-		ThemeHStack(spacing: .labelCTAPaddingHorizontal) {
+		ThemeHStack(spacing: .labelButtonPaddingHorizontal) {
 			configuration.icon
 				.imageScale(.medium)
 			configuration.title
 		}
 		.theme(text: .labelButtonSecondary)
-		.theme(padding: .labelCTAPaddingHorizontal, .horizontal)
-		.theme(padding: .labelCTAPaddingVertical, .vertical)
+		.theme(padding: .labelButtonPaddingHorizontal, .horizontal)
+		.theme(padding: .labelButtonPaddingVertical, .vertical)
 	}
 	
 }

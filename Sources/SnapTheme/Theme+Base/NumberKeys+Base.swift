@@ -16,7 +16,7 @@ public extension Theme.NumberKey {
 		.cardCornerRadiusGround, .cardCornerRadiusFirst, .cardPadding, .cardPaddingIndicator,
 		.listSpacingTitle, .listRowPaddingVertical, .listRowPaddingHorizontal,
 		.sidebarMacOSBackgroundPaddingHorizontal, .sidebarBackgroundCornerRadius,
-		.buttonCornerRadius, .labelCTAPaddingVertical, .labelCTAPaddingHorizontal,
+		.buttonCornerRadius, .labelButtonPaddingVertical, .labelButtonPaddingHorizontal,
 		.labelTagCornerRadius, .labelTagPaddingVertical, .labelTagPaddingHorizontal,
 	]
 	
@@ -104,27 +104,27 @@ public extension Theme.NumberKey {
 	static let sidebarBackgroundCornerRadius = Theme.NumberKey("sidebarBackgroundCornerRadius", default: .platform(macOS: .value(5), other: .value(8)))
 	
 	
-	// MARK: - CTA Style: Button / Label
+	// MARK: - Button Label
 	
 	/// Corner radius for the background of a button, see `ThemeButtonStyle`.
-	static let buttonCornerRadius = Theme.NumberKey("buttonCTACornerRadius", default: .value(8))
+	static let buttonCornerRadius = Theme.NumberKey("buttonCornerRadius", default: .key(.cardCornerRadiusFirst))
 	
-	/// Vertical Padding for a label styled as a CTA, see `LabelStyleThemedTag`.
-	static let labelCTAPaddingVertical = Theme.NumberKey("labelCTAPaddingVertical", default: .value(12))
+	/// Vertical Padding for a label used in a Button, see `ThemeLabelStyleButtonPrimary/Secondary`.
+	static let labelButtonPaddingVertical = Theme.NumberKey("labelButtonPaddingVertical", default: .value(12))
 	
-	/// Horizontal Padding for a label styled as a CTA, see `LabelStyleThemedTag`.
-	static let labelCTAPaddingHorizontal = Theme.NumberKey("labelCTAPaddingHorizontal", default: .value(16))
+	/// Horizontal Padding for a label styled as a Button, see `ThemeLabelStyleButtonPrimary/Secondary`.
+	static let labelButtonPaddingHorizontal = Theme.NumberKey("labelButtonPaddingHorizontal", default: .value(16))
 	
 	
-	// MARK: - Tag Style: Label
+	// MARK: - Tag Label
 	
-	/// Corner radius for the background of a label styled as a Tag, see `LabelStyleThemedTag`.
+	/// Corner radius for the background of a label styled as a Tag, see `ThemeLabelStyleTag`.
 	static let labelTagCornerRadius = Theme.NumberKey("labelTagCornerRadius", default: .value(4))
 	
-	/// Vertical Padding for a label styled as a Tag, see `LabelStyleThemedTag`.
+	/// Vertical Padding for a label styled as a Tag, see `ThemeLabelStyleTag`.
 	static let labelTagPaddingVertical = Theme.NumberKey("labelTagPaddingVertical", default: .value(3))
 	
-	/// Horizontal Padding for a label styled as a Tag, see `LabelStyleThemedTag`.
+	/// Horizontal Padding for a label styled as a Tag, see `ThemeLabelStyleTag`.
 	static let labelTagPaddingHorizontal = Theme.NumberKey("labelTagPaddingHorizontal", default: .value(8))
 	
 }
