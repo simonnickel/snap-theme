@@ -26,7 +26,7 @@ public extension Theme.FontKey {
 		// Toolbar
 		.toolbarLabel, .toolbarIcon, .toolbarNavigationLabel, .toolbarNavigationIcon, .toolbarClose,
 		// Controls
-		.pickerLabel, .controlTextField, .controlTextFieldProminent,
+		.controlTextField, .controlTextFieldProminent,
 	]
 	
 	
@@ -137,8 +137,6 @@ public extension Theme.FontKey {
 	
 	
 	// MARK: Controls
-	
-	static let pickerLabel = Theme.FontKey("pickerLabel", default: .definition(.init(size: 14, weight: .regular)))
 	
 	static let controlTextField = Theme.FontKey("textField", default: .system)
 	static let controlTextFieldProminent = Theme.FontKey("textField", default: .key(.sceneSectionHeader))
