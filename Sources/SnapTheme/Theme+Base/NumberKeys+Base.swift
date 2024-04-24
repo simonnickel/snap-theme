@@ -60,7 +60,7 @@ public extension Theme.NumberKey {
 	static let spacingTextHeader = Theme.NumberKey("spacingTextHeader", default: .value(12))
 	
 	/// Generic spacing between `.textTitle` and content.
-	static let spacingTextTitle = Theme.NumberKey("spacingTextTitle", default: .value(8))
+	static let spacingTextTitle = Theme.NumberKey("spacingTextTitle", default: .key(.spacingElements))
 	
 	/// Generic spacing between `.textBlock` and `.textBlock`.
 	static let spacingTextBlock = Theme.NumberKey("spacingTextBlock", default: .key(.spacingElements))
