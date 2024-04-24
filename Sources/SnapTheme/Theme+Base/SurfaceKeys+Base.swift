@@ -12,8 +12,9 @@ public extension Theme.SurfaceKey {
 		
 	static let allBaseKeys: [Theme.SurfaceKey] = [
 		accentGradientForeground, accentGradientBackground,
-		accentForeground, accentBackground, accentForegroundInteractive, accentForegroundNavigation, accentBackgroundInteractive,
-		overlayHighlightPush, overlayHighlightPushIntense, overlayHighlightDrop, overlayHighlightContent, overlayHighlightAccent, uiIndicator
+		accentForeground, accentForegroundInteractive, accentForegroundNavigation, accentBackground, accentBackgroundInteractive,
+		overlayHighlightPush, overlayHighlightPushIntense, overlayHighlightDrop, overlayHighlightContent, overlayHighlightAccent,
+		uiIndicator
 	]
 	
 	
@@ -32,10 +33,12 @@ public extension Theme.SurfaceKey {
 	
 	// MARK: Base
 	
+	/// Gradient definition for foreground use, based on the accent.
 	static let accentGradientForeground = Theme.SurfaceKey("accentGradientForeground", default:
 			.gradient(.angular([.accentPrimary, .accentComplimentary, .accentPrimary, .accentPrimary], center: .center))
 	)
 	
+	/// Gradient definition for background use, based on the accent.
 	static let accentGradientBackground = Theme.SurfaceKey("accentGradientBackground", default:
 			.gradient(.linear([.accentPrimary, .accentPrimary, .accentComplimentary], start: .topLeading, end: .bottomTrailing))
 	)
@@ -43,14 +46,19 @@ public extension Theme.SurfaceKey {
 	
 	// MARK: Accent
 	
+	/// Surface definition of foreground for accented content.
 	static let accentForeground = Theme.SurfaceKey("accentForeground", default: .color(.accentPrimary))
 	
+	/// Surface definition of foreground for accented content used for navigation.
 	static let accentForegroundNavigation = Theme.SurfaceKey("accentForegroundNavigation", default: .key(.accentForeground))
 	
+	/// Surface definition of foreground for accented content that is interactive.
 	static let accentForegroundInteractive = Theme.SurfaceKey("accentForegroundInteractive", default: .key(.accentGradientForeground))
 	
+	/// Surface definition of background for accented content.
 	static let accentBackground = Theme.SurfaceKey("accentBackground", default: .color(.accentPrimary))
 	
+	/// Surface definition of background for accented content that is interactive.
 	static let accentBackgroundInteractive = Theme.SurfaceKey("accentBackgroundInteractive", default: .key(.accentGradientBackground))
 	
 	
