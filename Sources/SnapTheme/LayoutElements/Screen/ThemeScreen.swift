@@ -11,6 +11,7 @@ import SwiftUI
 
 extension ThemeScreen where Content : View {
 	
+	/// Layout options of a `ThemeScreen`.
 	public enum Style {
 		case plain, scrollView
 		public static var defaultCase: Self { .scrollView }
@@ -18,6 +19,13 @@ extension ThemeScreen where Content : View {
 	
 }
 
+/// A `Screen` represents an independent arrangement of Views that is displayed in a `Scene`, see [Conventions.md](https://github.com/simonnickel/snap-abstract/blob/main/Conventions.md).
+/// ``ThemeScreen``, ``ThemeScreenList``, ``ThemeScreenSidebar`` are convenience views to set basic attributes and setup the Content to use the `Theme`.
+/// Use:
+///  - `Screen(style: .plain)` for the Content as the screen.
+///  - `Screen()` to place the Content in a `ScrollView`.
+///  - `ThemeScreenList()` to place the Content in a `ListView`.
+///  - `ThemeScreenSidebar()` to place the Content in a `ListView` with style `.sidebar`.
 public struct ThemeScreen<Content>: View where Content : View {
 	
 	@Environment(\.theme) private var theme

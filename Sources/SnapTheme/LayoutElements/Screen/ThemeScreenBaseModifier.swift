@@ -11,6 +11,7 @@ public extension Theme {
 	
 	struct ThemeScreenBaseModifier: ViewModifier {
 		
+		/// Attributes to configure for a `ThemeScreen`, `ThemeScreenList` or `ThemeScreenSidebar`.
 		public struct Model {
 			
 			public let title: String?
