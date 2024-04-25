@@ -12,7 +12,14 @@ public extension Theme.Card {
 	/// The style of the Card container.
 	enum Style: Sendable {
 		
-		case content, accent, accentStack
+		/// A content card.
+		case content
+		
+		/// An accented card.
+		case accent
+		
+		/// An accented card inside an accented card.
+		case accentStack
 		
 		case custom(color: Theme.ColorKey, background: Theme.BackgroundKey)
 		

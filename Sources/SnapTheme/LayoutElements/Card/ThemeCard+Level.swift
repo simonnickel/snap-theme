@@ -12,7 +12,11 @@ public extension Theme.Card {
 	/// The level the card is placed on in a card-in-card scenario.
 	enum Level {
 		
-		case ground, first
+		/// A card on ground level.
+		case ground
+		
+		/// A card inside another card.
+		case first
 		
 		var cornerRadius: Theme.NumberKey {
 			return switch self {
