@@ -142,7 +142,7 @@ private extension Theme {
 		
 		ThemeCard() {
 			ThemeCard(
-				style: .custom(color: .foregroundOnBackground, background: .accent),
+				style: .accent,
 				level: .first
 			) {
 				Text("Card on Card")
@@ -154,7 +154,7 @@ private extension Theme {
 			style: .accent
 		) {
 			ThemeCard(
-				style: .accent,
+				style: .accentStack,
 				level: .first
 			) {
 				Text("Card on Card")
