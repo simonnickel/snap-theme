@@ -83,7 +83,7 @@ public extension Theme.ColorKey {
 	// static let accentColorBaseComplementary // There is no single color or adjustment to work with all accents. See ColorKeys+System and ColorKey.systemColorSet(for: Color)
 	
 	/// Set of accent colors.
-	static let accentColors = Theme.ColorKey("accentColors", default: .colorSet(.accentColorBase, complimentary: nil, complementary: nil))
+	static let accentColors = Theme.ColorKey("accentColors", default: .colorSet(.accentColorBase, complimentary: .accentColorBaseComplimentary, complementary: nil))
 	
 	/// Main accent color, `.base` style from `.accentColors` ColorSet..
 	static let accentPrimary = Theme.ColorKey("accentPrimary", default: .colorInSet(.accentColors, style: .base))

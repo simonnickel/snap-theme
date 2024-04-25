@@ -48,6 +48,9 @@ public extension Theme.BackgroundKey {
 	/// Background of content elements with visual focus.
 	static let accent = Theme.BackgroundKey("accent", default: .surface(.accentBackground, highlight: .overlayHighlightAccent))
 	
+	/// Background of content elements with visual focus.
+	static let accentSecondary = Theme.BackgroundKey("accent", default: .surface(.color(.accentComplimentary), highlight: .overlayHighlightAccent))
+	
 	/// Background of interactive elements.
 	static let interactive = Theme.BackgroundKey("interactive", default: .surface(.accentBackgroundInteractive, highlight: .overlayHighlightAccent))
 	

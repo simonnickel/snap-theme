@@ -9,6 +9,7 @@ import Foundation
 
 public extension Theme.Card {
 	
+	/// The level the card is placed on in a card-in-card scenario.
 	enum Level {
 		
 		case ground, first
@@ -22,6 +23,23 @@ public extension Theme.Card {
 			}
 		}
 		
+		var backgroundKeyContent: Theme.BackgroundKey {
+			return switch self {
+					
+				case .ground: .content
+				case .first: .contentSecondary
+					
+			}
+		}
+		
+		var backgroundKeyAccent: Theme.BackgroundKey {
+			return switch self {
+					
+				case .ground: .accent
+				case .first: .accentSecondary
+					
+			}
+		}
 		
 	}
 	

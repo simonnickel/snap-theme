@@ -8,9 +8,10 @@
 import SwiftUI
 import SnapCore
 
+/// A convenience container to apply common theme attributes.
 public struct ThemeElement<Content: View>: View {
 	
-	/// A convenience container to apply common theme attributes.
+	/// `ThemeElement` is a convenience container to apply common theme attributes:
 	/// - Parameters:
 	///   - shape: `ThemeShape.Style` of the view,
 	///   - padding: `Theme.NumberKey` to apply as padding.

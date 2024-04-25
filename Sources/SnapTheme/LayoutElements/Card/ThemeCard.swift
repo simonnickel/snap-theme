@@ -10,7 +10,7 @@ import SnapCore
 
 public extension Theme {
 	
-	/// A dummy type to define some attributes.
+	/// A dummy type to define some nested types. ThemeCard can not be extended because of generic attribute.
 	struct Card {}
 	
 }
@@ -18,8 +18,15 @@ public extension Theme {
 
 // MARK: - ThemeCard
 
+/// A convenience layout container to show the Content in a card style box. Based on ``ThemeElement``.
 public struct ThemeCard<Content: View>: View {
 	
+	/// `ThemeCard` is a convenience layout container to show the Content in a card style box.
+	/// - Parameters:
+	///   - style: Style of the card.
+	///   - level: Level of card if placed in another card.
+	///   - highlighted: Highlight state.
+	///   - content: The Content to place in the container.
 	public init(style: Theme.Card.Style = .content, level: Theme.Card.Level = .ground, highlighted: Bool = false, content: @escaping () -> Content) {
 		self.style = style
 		self.level = level
@@ -45,6 +52,12 @@ public struct ThemeCard<Content: View>: View {
 
 public extension View {
 	
+	/// A convenience layout ViewModifier to show the Content in a card style box. Based on ``ThemeElement``.
+	/// - Parameters:
+	///   - style: Style of the card.
+	///   - level: Level of card if placed in another card.
+	///   - highlighted: Highlight state.
+	/// - Returns: The modified View.
 	func themeCard(_ style: Theme.Card.Style = .content, level: Theme.Card.Level = .ground, highlighted: Bool = false) -> some View {
 		return self.modifier(Theme.ThemeCard(style: style, level: level, highlighted: highlighted))
 	}
@@ -66,7 +79,7 @@ private extension Theme {
 				shape: .rectangle(level.cornerRadius),
 				padding: .cardPadding,
 				color: style.foreground,
-				background: style.backgroundKey(in: theme),
+				background: style.backgroundKey(for: level, in: theme),
 				highlighted: highlighted
 			) {
 				content
@@ -119,6 +132,27 @@ private extension Theme {
 		.themeCard(.custom(color: .foreground, background: .content))
 		
 		ThemeCard() {
+			ThemeCard(
+				level: .first
+			) {
+				Text("Card on Card")
+					.theme(font: .cardTitle)
+			}
+		}
+		
+		ThemeCard() {
+			ThemeCard(
+				style: .custom(color: .foregroundOnBackground, background: .accent),
+				level: .first
+			) {
+				Text("Card on Card")
+					.theme(font: .cardTitle)
+			}
+		}
+		
+		ThemeCard(
+			style: .accent
+		) {
 			ThemeCard(
 				style: .accent,
 				level: .first
