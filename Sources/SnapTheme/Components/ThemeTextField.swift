@@ -39,7 +39,7 @@ public struct ThemeTextField: View {
 			)
 			if showClearButton {
 				AnyView(clearButton)
-					.transition(.asymmetric(insertion: .push(from: .trailing), removal: .push(from: .leading))) // TODO: Animations as Theme Keys?
+					.transition(.asymmetric(insertion: .push(from: .trailing), removal: .push(from: .leading))) // TODO idea: Animations as Theme Keys?
 			}
 		}
 		.if(unwrap: font, transform: { view, font in
