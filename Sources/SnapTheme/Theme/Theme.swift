@@ -24,7 +24,7 @@ public extension Theme {
 
 // MARK: - Theme
 
-public struct Theme: Identifiable, Equatable, Hashable, Sendable { // TODO: Codable
+public struct Theme: Identifiable, Equatable, Hashable, Sendable, Codable {
 	
 	public init(
 		icons: [IconKey : IconValue] = [:],
@@ -40,6 +40,7 @@ public struct Theme: Identifiable, Equatable, Hashable, Sendable { // TODO: Coda
 		textSurfaceDefault: Theme.TextSurfaceValueType = .color(.foreground),
 		debugFlags: [DebugFlag] = []
 	) {
+		self.id = UUID()
 		self.icons = icons
 		self.numbers = numbers
 		self.scale = scale
@@ -54,7 +55,7 @@ public struct Theme: Identifiable, Equatable, Hashable, Sendable { // TODO: Coda
 		self.debugFlags = debugFlags
 	}
 	
-	public let id: UUID = UUID()
+	public let id: UUID
 	
 	public var icons: [IconKey : IconValue]
 	
