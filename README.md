@@ -7,7 +7,7 @@
 
 # SnapTheme
 
-A toolset to abstract Colors, Fonts, Icons and Numbers into semantic definitions for a SwiftUI app. The package contains a Theme definition to hold values and a set of ViewModifier to apply them to SwiftUI views.
+A toolset to abstract Colors, Fonts, Icons and Numbers of a multi-platform SwiftUI app. Define semantic attributes in a `Theme` and apply them to your views for a consistent UI with maintainability in mind.
 
 
 [![Documentation][documentation badge]][documentation] 
@@ -18,22 +18,22 @@ A toolset to abstract Colors, Fonts, Icons and Numbers into semantic definitions
 
 ## Motivation
 
-Consistency in look and feel is important. Especially for a growing app project, when you decide to tweak a few attributes or need adjustments to fit platform changes or design trends. Goal of `SnapTheme` is to define visual attributes in a single place, to allow: simple adjustments, quick experiments and user-selectable styles. 
+Consistency in look and feel is important. Especially for a growing app project, when you decide to tweak a few attributes or need adjustments to fit platform changes or design trends. Goal of `SnapTheme` is to define visual attributes in a single place, to allow: **A consistent UI with simple adjustments and quick experiments, but strong maintainability.**
 
-Instead of defining design attributes all over the place, you register a semantic key for your Theme, assign a definition and use it in your SwiftUI views.
+Instead of defining design attributes all over the place, you register a semantic key, assign a definition and use it in your SwiftUI views. You can also define multiple Themes to let the user choose it's favorite.
 
 `Theme` comes with:
  - Base attributes (Color, Font, Icon, Number) and composed attributes (Surface, Background, TextSurface).
- - A preset of common semantic definitions for these attributes (e.g. `.textTitle`, `.textSubtitle`).
+ - A preset of common semantic definitions for these attributes (e.g. `.textTitle`, `.textSubtitle`) with platform specific default values.
  - ViewModifier to apply them to your views.
- - Wrapper of stock SwiftUI views to configure attributes with theme definitions (e.g. `ThemeVStack(spacing:`)).
+ - Wrapper of stock SwiftUI views to set attributes from Theme definitions (e.g. `ThemeVStack(spacing:`)).
  - Convenience views for common layout and style tasks (e.g. `ThemeScreen`, `ThemeElement`).
 
-Fonts and Numbers are scaled by DynamicType.
+The Theme is injected in the `Environment` to be available to ViewModifier and Views. 
 
-This brings some additional benefits: 
- - Number by default are scaled by DynamicType. This means all UI sizes based on them will scale too.
- - By adjusting the scale factor, the whole UI can be scaled by a single config change.
+Fonts and Numbers are scaled by DynamicType by default. This brings some additional benefits: 
+ - UI sizes (paddings, spacings, ...) defined by the Theme will scale with DynamicType.
+ - By adjusting the Themes scale factor, the whole UI can be zoomed by a simple value change.
   
 
 ## How to use
