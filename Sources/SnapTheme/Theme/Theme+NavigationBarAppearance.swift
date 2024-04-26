@@ -25,6 +25,7 @@ extension Theme {
 					standardAppearance.configureWithDefaultBackground()
 					
 					// TODO: Set font from theme. Needs to get UIFont from Font.
+					// TODO: Color does not get adjusted on DarkMode.
 					let color = theme.color(for: .navigationTitle, in: environment).getPlatformSpecific(in: environment)
 					let attributes: [NSAttributedString.Key : Any] = [
 						.foregroundColor: color,
