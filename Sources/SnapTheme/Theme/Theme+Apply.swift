@@ -25,6 +25,7 @@ public extension Theme {
 		public func body(content: Content) -> some View {
 			content
 				.theme(tint: .accentPrimary)
+				.fontDesign(theme.fontDesignDefault)
 				.environment(\.theme, theme)
 		}
 	}
