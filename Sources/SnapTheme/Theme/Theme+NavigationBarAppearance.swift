@@ -1,5 +1,5 @@
 //
-//  ThemeNavigationBarAppearance.swift
+//  Theme+NavigationBarAppearance.swift
 //  SnapTheme
 //
 //  Created by Simon Nickel on 26.04.24.
@@ -10,13 +10,7 @@ import UIKit
 
 // TODO FB: SwiftUI should support styling of navigation bar.
 
-extension View {
-	func themeNavigationBarAppearance() -> some View {
-		return self.modifier(Theme.ThemeNavigationBarAppearance())
-	}
-}
-
-private extension Theme {
+extension Theme {
 	
 	struct ThemeNavigationBarAppearance: ViewModifier {
 		
