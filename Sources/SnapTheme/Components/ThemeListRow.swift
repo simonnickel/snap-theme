@@ -8,7 +8,6 @@
 import SwiftUI
 import SnapCore
 
-// TODO FB12515251, FB13091055, FB13091169: Find a solution to use with NavigationLink supporting highlight on selection.
 
 // MARK: - View Modifier
 
