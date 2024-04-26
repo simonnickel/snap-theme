@@ -100,7 +100,8 @@ public extension Theme.ColorKey {
 	/// Main accent color, `.base` style from `.accentColors` ColorSet..
 	static let accentNavigation = Theme.ColorKey("accentNavigation", default: .key(.accentPrimary))
 	
-	/// Color of text in the navigationBar. Requires configuration via UIKit Appearance, see ``ThemeNavigationBarAppearance``, does not update on changes, only applied on app start.
+	/// Color of text in the navigationBar. Requires configuration via UIKit Appearance, see ``ThemeNavigationBarAppearance``.
+	/// Does not update on changes, only applied on app start. Also be careful to handle color scheme changes (dark mode).
 	static let navigationTitle = Theme.ColorKey("navigationTitle", default: .key(.foreground))
 	
 	/// Color for an accessory in a List indicating navigation..
