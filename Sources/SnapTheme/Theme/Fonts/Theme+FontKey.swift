@@ -27,7 +27,7 @@ public extension Theme {
 		
 		let size: CGFloat = sizeOverride ?? definition.size
 		let weight: Font.Weight = definition.weight.value
-		let design: Font.Design = definition.design?.value ?? fontDesignDefault
+		let design: Font.Design = definition.design?.value ?? fontDesignDefault.value
 		
 		switch definition.family ?? fontFamilyDefault {
 			case .custom(let name):

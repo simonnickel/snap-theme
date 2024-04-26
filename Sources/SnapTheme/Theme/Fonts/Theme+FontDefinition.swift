@@ -60,10 +60,20 @@ public extension Theme.FontDefinition {
 	
 	/// A Wrapper around Font.Design to conform to Codable.
 	enum FontDesign: Theme.KeyProtocolRequirements {
-		case serif, rounded, monospaced
+		case `default`, serif, rounded, monospaced
 		
 		var value: Font.Design {
 			return switch self {
+				case .`default`: .default
+				case .serif: .serif
+				case .rounded: .rounded
+				case .monospaced: .monospaced
+			}
+		}
+		
+		var valueUIFontDescriptor: UIFontDescriptor.SystemDesign {
+			return switch self {
+				case .`default`: .default
 				case .serif: .serif
 				case .rounded: .rounded
 				case .monospaced: .monospaced

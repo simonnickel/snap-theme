@@ -34,7 +34,7 @@ public struct Theme: Identifiable, Equatable, Hashable, Sendable, Codable {
 		surfaces: [SurfaceKey : SurfaceValue] = [:],
 		backgrounds: [BackgroundKey : BackgroundValue] = [:],
 		fonts: [FontKey : Theme.FontValue] = [:],
-		fontDesignDefault: Font.Design = .default,
+		fontDesignDefault: Theme.FontDefinition.FontDesign = .rounded,
 		fontFamilyDefault: Theme.FontDefinition.FontFamily = .system,
 		textSurfaces: [Theme.TextSurfaceKeyType : Theme.TextSurfaceValueType] = [:],
 		textSurfaceDefault: Theme.TextSurfaceValueType = .color(.foreground),
@@ -74,7 +74,7 @@ public struct Theme: Identifiable, Equatable, Hashable, Sendable, Codable {
 	public var backgrounds: [BackgroundKey : BackgroundValue]
 	
 	public var fonts: [FontKey : FontValue]
-	public var fontDesignDefault: Font.Design
+	public var fontDesignDefault: Theme.FontDefinition.FontDesign
 	public var fontFamilyDefault: Theme.FontDefinition.FontFamily
 	
 	public var textSurfaces: [Theme.TextSurfaceKeyType : Theme.TextSurfaceValueType]
@@ -93,7 +93,7 @@ public struct Theme: Identifiable, Equatable, Hashable, Sendable, Codable {
 		surfaces: [SurfaceKey : SurfaceValue]? = nil,
 		backgrounds: [BackgroundKey : BackgroundValue]? = nil,
 		fonts: [FontKey : FontValue]? = nil,
-		fontDesignDefault: Font.Design? = nil,
+		fontDesignDefault: Theme.FontDefinition.FontDesign? = nil,
 		fontFamilyDefault: FontDefinition.FontFamily? = nil,
 		textSurfaces: [Theme.TextSurfaceKeyType : Theme.TextSurfaceValueType]? = nil,
 		textSurfaceDefault: Theme.TextSurfaceValueType? = nil,
@@ -123,7 +123,7 @@ public struct Theme: Identifiable, Equatable, Hashable, Sendable, Codable {
 		surfaces: [SurfaceKey : SurfaceValue] = [:],
 		backgrounds: [BackgroundKey : BackgroundValue] = [:],
 		fonts: [FontKey : FontValue] = [:],
-		fontDesignDefault: Font.Design? = nil,
+		fontDesignDefault: Theme.FontDefinition.FontDesign? = nil,
 		fontFamilyDefault: FontDefinition.FontFamily? = nil,
 		textSurfaces: [Theme.TextSurfaceKeyType : Theme.TextSurfaceValueType] = [:],
 		textSurfaceDefault: Theme.TextSurfaceValueType? = nil,
