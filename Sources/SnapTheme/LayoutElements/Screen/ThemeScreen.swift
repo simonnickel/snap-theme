@@ -28,8 +28,6 @@ extension ThemeScreen where Content : View {
 ///  - `ThemeScreenSidebar()` to place the Content in a `ListView` with style `.sidebar`.
 public struct ThemeScreen<Content>: View where Content : View {
 	
-	@Environment(\.theme) private var theme
-	
 	public init(
 		style: Style = .defaultCase,
 		title: String? = nil,
