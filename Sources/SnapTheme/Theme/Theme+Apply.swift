@@ -25,7 +25,10 @@ public extension Theme {
 		public func body(content: Content) -> some View {
 			content
 				.theme(tint: .accentPrimary)
-				.fontDesign(theme.fontDesignDefault.value)
+				.if(theme.fontFamilyDefault == .system, transform: { view in
+					// Applying font design would break other font families.
+					view.fontDesign(theme.fontDesignDefault.value)
+				})
 				.environment(\.theme, theme)
 		}
 	}
