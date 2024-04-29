@@ -44,9 +44,7 @@ public struct ThemeCloseContainer<Content: View>: View {
 			}
 			.theme(font: .toolbarClose)
 			.theme(surface: .uiIndicator)
-			.if(unwrap: padding) { view, padding in
-				view.theme(padding: padding)
-			}
+			.theme(padding: padding)
 		}
 		
 	}

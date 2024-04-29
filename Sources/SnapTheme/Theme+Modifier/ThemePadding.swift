@@ -11,10 +11,10 @@ public extension View {
 	
 	/// View Modifier to set the padding by given `NumberKey`.
 	/// - Parameters:
-	///   - numberKey: `NumberKey` to apply as padding.
+	///   - numberKey: `NumberKey` to apply as padding. Applies 0 if nil.
 	///   - edges: `Edge.Set` the padding is applied to.
 	/// - Returns: Modified View.
-	func theme(padding numberKey: Theme.NumberKey, _ edges: Edge.Set = .all) -> some View {
+	func theme(padding numberKey: Theme.NumberKey?, _ edges: Edge.Set = .all) -> some View {
 		return self.modifier(Theme.ThemePadding(number: numberKey, edges: edges))
 	}
 
@@ -31,12 +31,16 @@ private extension Theme {
 		@Environment(\.theme) private var theme
 		@ScaledMetric private var scaleFactor: CGFloat = 1
 		
-		let number: Theme.NumberKey
+		let number: Theme.NumberKey?
 		let edges: Edge.Set
 		
 		public func body(content: Content) -> some View {
+			let padding: CGFloat? = if let number {
+				theme.number(number, scaled: scaleFactor)
+			} else { 0 }
+			
 			return content
-				.padding(edges, theme.number(number, scaled: scaleFactor))
+				.padding(edges, padding)
 		}
 	}
 	

@@ -26,12 +26,8 @@ public struct ThemeSectionHeaderContainer<Content: View>: View {
 		
 		content()
 			.frame(maxWidth: .infinity, alignment: .leading)
-			.if(unwrap: top, transform: { view, top in
-				view.theme(padding: top, .top)
-			})
-			.if(unwrap: inset, transform: { view, insetKey in
-				view.theme(padding: insetKey, .leading)
-			})
+			.theme(padding: top, .top)
+			.theme(padding: inset, .leading)
 		
 	}
 	

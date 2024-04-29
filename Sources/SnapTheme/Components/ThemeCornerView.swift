@@ -95,9 +95,7 @@ public struct ThemeCornerView: View {
 				if let isSelected = model.isSelected {
 					theme.icon((model.isSelected ?? false) ? .cardIndicatorSelected : .cardIndicatorDisabled).image
 						.theme(font: .cardIndicator)
-						.if(!isSelected && iconOff == nil) { view in
-							view.opacity(0)
-						}
+						.opacity((!isSelected && iconOff == nil) ? 0 : 1)
 				}
 				
 			}
