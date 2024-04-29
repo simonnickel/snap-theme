@@ -90,11 +90,13 @@ private extension Theme {
 		private let cornerRadius: Theme.NumberKey?
 		
 		public func body(content: Content) -> some View {
+			let cornerRadiusValue: Theme.NumberValueType? = if let cornerRadius {
+				theme.number(cornerRadius, scaled: scaleFactor)
+			} else { nil }
+			
 			return content
 				.presentationDetents(detents, selection: currentPresentationDetentExternal ?? $currentPresentationDetent)
-				.if(unwrap: cornerRadius, transform: { view, cornerRadius in
-					view.presentationCornerRadius(theme.number(cornerRadius, scaled: scaleFactor))
-				})
+				.presentationCornerRadius(cornerRadiusValue)
 				// .presentationCompactAdaptation(.fullScreenCover) for .popOver only
 		}
 	}

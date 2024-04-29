@@ -12,7 +12,7 @@ public extension View {
 	/// Applies background registered for `BackgroundKey` as `.listRowBackground`.
 	/// - Parameter background: `BackgroundKey` to apply.
 	/// - Returns: Modified view.
-	func theme(listRowBackground: Theme.BackgroundKey, highlighted: Bool = false, shape: ThemeShape.Style? = nil) -> some View {
+	func theme(listRowBackground: Theme.BackgroundKey?, highlighted: Bool = false, shape: ThemeShape.Style? = nil) -> some View {
 		return self.modifier(Theme.ThemeListRowBackground(background: listRowBackground, highlighted: highlighted, shape: shape))
 	}
 	
@@ -26,24 +26,27 @@ private extension Theme {
 	struct ThemeListRowBackground: ViewModifier {
 		@Environment(\.theme) private var theme
 		
-		let background: Theme.BackgroundKey
+		let background: Theme.BackgroundKey?
 		let highlighted: Bool
 		let shape: ThemeShape.Style?
 		
 		public func body(content: Content) -> some View {
-			let backgroundView = theme.background(for: background, highlighted: highlighted)
+			let backgroundView: (AnyView)?
+			if let background, let view = theme.background(for: background, highlighted: highlighted) {
+				backgroundView = AnyView(ThemeListRowBackgroundContainer {
+					AnyView(view)
+						.if(unwrap: shape, transform: { view, shape in
+							view.mask {
+								ThemeShape(shape)
+							}
+						})
+				})
+			} else {
+				backgroundView = nil
+			}
 			
 			return content
-				.if(unwrap: backgroundView, transform: { view, backgroundView in
-					view.listRowBackground(ThemeListRowBackgroundContainer {
-						AnyView(backgroundView)
-							.if(unwrap: shape, transform: { view, shape in
-								view.mask {
-									ThemeShape(shape)
-								}
-							})
-					})
-				})
+				.listRowBackground(backgroundView)
 		}
 	}
 	
