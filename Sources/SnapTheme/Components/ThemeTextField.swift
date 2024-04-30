@@ -42,9 +42,7 @@ public struct ThemeTextField: View {
 					.transition(.asymmetric(insertion: .push(from: .trailing), removal: .push(from: .leading))) // TODO idea: Animations as Theme Keys?
 			}
 		}
-		.if(unwrap: font, transform: { view, font in
-			view.theme(font: font)
-		})
+		.theme(font: font)
 		.if(unwrap: color) { view, color in
 			view.theme(color: color)
 		}

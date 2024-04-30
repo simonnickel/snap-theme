@@ -22,7 +22,8 @@ public extension Theme {
 	///   - key: `FontKey` to get the Font for.
 	///   - size: Override of the defined size as `CGFloat`.
 	/// - Returns: The `Font` resolved for the key.
-	func font(_ key: FontKey, sizeOverride: CGFloat? = nil) -> Font? {
+	func font(_ key: FontKey?, sizeOverride: CGFloat? = nil) -> Font? {
+		guard let key else { return nil }
 		guard let definition = fontDefinition(for: key) else { return nil}
 		
 		let size: CGFloat = sizeOverride ?? definition.size
@@ -38,7 +39,8 @@ public extension Theme {
 		}
 	}
 	
-	func fontDefinition(for key: FontKey) -> Theme.FontDefinition? {
+	func fontDefinition(for key: FontKey?) -> Theme.FontDefinition? {
+		guard let key else { return nil }
 		let fontValue: Theme.FontValue? = fonts[key] ?? key.defaultValue
 		
 		guard let fontValue else { return nil }

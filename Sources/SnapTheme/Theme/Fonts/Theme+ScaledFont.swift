@@ -14,7 +14,7 @@ internal extension View {
 	/// The font is scaled by `dynamicType` and the configured scale of the theme: `Theme.scale`.
 	/// - Parameter key: Key of the font to use.
 	/// - Returns: The modified view with font applied.
-	func themeScaledFont(_ key: Theme.FontKey) -> some View {
+	func themeScaledFont(_ key: Theme.FontKey?) -> some View {
 		return self.modifier(Theme.FontDefinitionUnwrapper(key: key))
 	}
 	
@@ -29,7 +29,7 @@ internal extension Theme {
 	struct FontDefinitionUnwrapper: ViewModifier {
 		@Environment(\.theme) private var theme
 		
-		let key: Theme.FontKey
+		let key: Theme.FontKey?
 		
 		public func body(content: Content) -> some View {
 			guard let definition = theme.fontDefinition(for: key) else { return AnyView(content) }
@@ -42,10 +42,10 @@ internal extension Theme {
 	struct ScaledFont: ViewModifier {
 		@Environment(\.theme) private var theme
 		
-		let key: Theme.FontKey
+		let key: Theme.FontKey?
 		private let scaled: ScaledMetric<Double>
 		
-		init(key: Theme.FontKey, size: CGFloat, textStyle: Font.TextStyle) {
+		init(key: Theme.FontKey?, size: CGFloat, textStyle: Font.TextStyle) {
 			self.key = key
 			self.scaled = ScaledMetric(wrappedValue: size, relativeTo: textStyle)
 		}

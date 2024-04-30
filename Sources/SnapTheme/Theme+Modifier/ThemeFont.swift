@@ -13,7 +13,7 @@ public extension View {
 	/// - Parameters:
 	///   - font: `FontKey` to apply as `.font`.
 	/// - Returns: Modified View.
-	func theme(font: Theme.FontKey) -> some View {
+	func theme(font: Theme.FontKey?) -> some View {
 		return self.modifier(Theme.ThemeFont(font: font))
 	}
 
@@ -29,7 +29,7 @@ private extension Theme {
 	struct ThemeFont: ViewModifier {
 		@Environment(\.theme) private var theme
 		
-		var font: Theme.FontKey
+		var font: Theme.FontKey?
 		
 		public func body(content: Content) -> some View {
 			return content
