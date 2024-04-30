@@ -32,11 +32,7 @@ public struct ThemeLabelStyleToolbar: LabelStyle {
 				.theme(font: placement == .navigation ? .toolbarNavigationIcon : .toolbarIcon)
 				.imageScale(.large)
 		}
-		.if(showTitle, transform: { view in
-			view.labelStyle(.titleAndIcon)
-		}, else: { view in
-			view.labelStyle(.iconOnly)
-		})
+		.labelStyle(showTitle ? AnyLabelStyle(.titleAndIcon) : AnyLabelStyle(.iconOnly))
 		
 	}
 	

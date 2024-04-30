@@ -25,11 +25,7 @@ public struct ThemeLabelStyleSidebarSectionHeader: LabelStyle {
 	public func makeBody(configuration: Configuration) -> some View {
 		Label {
 			configuration.title
-				.if(unwrap: textCase, transform: { view, textCase in
-					view.textCase(textCase)
-				}, else: { view in
-					view.textCase(.none)
-				})
+				.textCase(textCase ?? .none)
 		} icon: {
 			configuration.icon
 				.imageScale(.large)
