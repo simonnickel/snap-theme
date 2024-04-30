@@ -94,8 +94,6 @@ public struct ThemeTextField: View {
 		
 	}
 	
-	var text: String
-	
 	return ThemePreviewContainer(
 		.view,
 		theme: .base.replacingValues(
