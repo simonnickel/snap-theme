@@ -43,15 +43,13 @@ public extension Theme {
 			case .surface(let surfaceKey, highlight: let highlight):
 				return Rectangle()
 					.theme(surface: surfaceKey)
-					.if(highlighted, transform: { view in
-						// Apply highlight if available.
-						view.if(unwrap: highlight) { view, highlight in
-							view.overlay(
-								Rectangle()
-									.theme(surface: highlight)
-							)
-						}
-					})
+					.if(unwrap: highlight) { view, highlight in
+						view.overlay(
+							Rectangle()
+								.theme(surface: highlight)
+								.opacity(highlighted ? 1 : 0)
+						)
+					}
 				
 			case .key(_), .system: return nil
 				
