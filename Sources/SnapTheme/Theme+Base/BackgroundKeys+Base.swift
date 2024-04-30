@@ -80,6 +80,7 @@ public extension Theme.BackgroundKey {
 	
 	// MARK: Others
 	
+	/// TODO FB13475990: Currently not in use, see ThemeNavLinkSidebarRow.
 	static let sidebarSelected = Theme.BackgroundKey("sidebarSelected", default: .key(.interactive))
 	
 	static let tag = Theme.BackgroundKey("tag", default: .key(.contentSecondary))

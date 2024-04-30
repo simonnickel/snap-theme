@@ -12,13 +12,11 @@ public struct ThemeNavLinkSidebarRow<Label, P>: View where Label : View, P : Dec
 	private let value: P
 	private let label: () -> Label
 	private let isSelected: Bool
-	private let isCollapsed: Bool
 	
-	public init(value: P, isSelected: Bool, isCollapsed: Bool, @ViewBuilder label: @escaping () -> Label) {
+	public init(value: P, isSelected: Bool, @ViewBuilder label: @escaping () -> Label) {
 		self.value = value
 		self.label = label
 		self.isSelected = isSelected
-		self.isCollapsed = isCollapsed
 	}
 	
 	public var body: some View {
@@ -28,15 +26,10 @@ public struct ThemeNavLinkSidebarRow<Label, P>: View where Label : View, P : Dec
 			label()
 			
 		}
-		.if(isCollapsed, transform: { view in
-			view.theme(listRowBackground: isSelected ? .sidebarSelected : .content)
-		})
-		
-		// TODO FB13475990: NavigationsSplitViews Sidebar shows highlight border when ListRowBackground is used.
-//		, else: { view in
-//			view.theme(listRowBackground: isSelected ? .sidebarSelected : .system, shape: .rectangle(.sidebarBackgroundCornerRadius))
-//		})
-		
+
+//		// TODO FB13475990: NavigationsSplitViews Sidebar shows highlight border when ListRowBackground is used.
+////		.theme(listRowBackground: .sidebarSelected, shape: .rectangle(.sidebarBackgroundCornerRadius))
+//
 	}
 	
 }
