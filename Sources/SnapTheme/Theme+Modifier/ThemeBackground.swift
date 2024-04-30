@@ -15,7 +15,7 @@ public extension View {
 	/// - Parameter highlighted: If `true` the highlight of the background is activated (animated).
 	/// - Parameter ignoreSafeArea: Applies `.ignoresSafeArea()` to background if `true`.
 	/// - Returns: Modified view.
-	func theme(background: Theme.BackgroundKey, highlighted: Bool = false, ignoreSafeArea: Bool = false) -> some View {
+	func theme(background: Theme.BackgroundKey?, highlighted: Bool = false, ignoreSafeArea: Bool = false) -> some View {
 		return self.modifier(Theme.ThemeBackground(background: background, highlighted: highlighted, ignoreSafeArea: ignoreSafeArea))
 	}
 	
@@ -46,7 +46,7 @@ private extension Theme {
 		@Environment(\.theme) private var theme
 		@Environment(\.highlighted) private var highlightedEnvironment
 		
-		let background: Theme.BackgroundKey
+		let background: Theme.BackgroundKey?
 		let highlighted: Bool
 		let ignoreSafeArea: Bool
 		

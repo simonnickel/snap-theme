@@ -40,12 +40,8 @@ public struct ThemeElement<Content: View>: View {
 		ThemeVStack {
 			content()
 		}
-		.if(unwrap: padding, transform: { view, padding in
-			view.theme(padding: padding)
-		})
-		.if(unwrap: background, transform: { view, background in
-			view.theme(background: background, highlighted: highlighted)
-		})
+		.theme(padding: padding)
+		.theme(background: background, highlighted: highlighted)
 		.if(unwrap: color, transform: { view, color in
 			view.theme(color: color)
 		})

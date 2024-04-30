@@ -26,7 +26,8 @@ public extension Theme {
 		}
 	}
 	
-	func shapeStyle(for key: BackgroundKey, in environment: EnvironmentValues) -> (any ShapeStyle)? {
+	func shapeStyle(for key: BackgroundKey?, in environment: EnvironmentValues) -> (any ShapeStyle)? {
+		guard let key else { return nil }
 		let value = backgroundValue(for: key)
 		return switch value {
 			case .surface(let surface, highlight: _): shapeStyle(for: surface, in: environment)
@@ -34,7 +35,8 @@ public extension Theme {
 		}
 	}
 	
-	func background(for backgroundKey: BackgroundKey, highlighted: Bool) -> (any View)? {
+	func background(for backgroundKey: BackgroundKey?, highlighted: Bool) -> (any View)? {
+		guard let backgroundKey else { return nil }
 		let value = backgroundValue(for: backgroundKey)
 		switch value {
 				
