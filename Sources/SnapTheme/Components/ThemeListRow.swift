@@ -19,8 +19,8 @@ public extension View {
 	/// Needs to track List selection and update the highlight manually, but still does not animate nicely (the deselect animation on pop of the `NavigationStack` does not follow the cancellable swipe transition). See `ExperimentListBackgroundHighlightScene`.
 	/// - Parameter isSelected: isSelected
 	/// - Returns: Modified view.
-	func themeListRow(isSelected: Bool = false, applyThemePadding: Bool = true, applyBackgroundColor: Bool = true) -> some View {
-		return self.modifier(Theme.ThemeListRow(isSelected: isSelected, applyThemePaddding: applyThemePadding, applyBackgroundColor: applyBackgroundColor))
+	func themeListRow(isSelected: Bool = false, font: Theme.FontKey? = .listLabel, applyThemePadding: Bool = true, applyBackgroundColor: Bool = true) -> some View {
+		return self.modifier(Theme.ThemeListRow(isSelected: isSelected, font: font, applyThemePaddding: applyThemePadding, applyBackgroundColor: applyBackgroundColor))
 	}
 
 }
@@ -30,11 +30,16 @@ private extension Theme {
 	struct ThemeListRow: ViewModifier {
 
 		let isSelected: Bool
+		let font: Theme.FontKey?
 		let applyThemePaddding: Bool
 		let applyBackgroundColor: Bool
 		
 		public func body(content: Content) -> some View {
 			return content
+				.if(unwrap: font, transform: { view, textStyle in
+					view
+						.theme(font: font)
+				})
 				.if(applyThemePaddding) { view in
 					view
 						.theme(padding: .listRowPaddingVertical, .vertical)
