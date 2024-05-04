@@ -127,4 +127,13 @@ public extension Theme.NumberKey {
 	/// Horizontal Padding for a label styled as a Tag, see `ThemeLabelStyleTag`.
 	static let labelTagPaddingHorizontal = Theme.NumberKey("labelTagPaddingHorizontal", default: .value(8))
 	
+	
+	// MARK: - Scale
+	
+	static let interfaceScaleTiny = Theme.NumberKey("interfaceScaleTiny", default: .value(0.75))
+	static let interfaceScaleSmall = Theme.NumberKey("interfaceScaleSmall", default: .value(0.9))
+	static let interfaceScaleMedium = Theme.NumberKey("interfaceScaleMedium", default: .value(1))
+	static let interfaceScaleLarge = Theme.NumberKey("interfaceScaleLarge", default: .value(1.1))
+	static let interfaceScaleHuge = Theme.NumberKey("interfaceScaleHuge", default: .value(1.25))
+	
 }
