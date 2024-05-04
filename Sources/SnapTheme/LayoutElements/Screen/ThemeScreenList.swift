@@ -70,6 +70,7 @@ public struct ThemeScreenList<SelectionValue, Content>: View where SelectionValu
 				}
 			)
 		})
+		.environment(\.defaultMinListRowHeight, 0)
 
 	}
 	
