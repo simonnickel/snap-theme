@@ -30,6 +30,10 @@ public extension Theme {
 					view.fontDesign(theme.fontDesignDefault.value)
 				})
 				.environment(\.theme, theme)
+			// UIKit Appearance
+			// TODO FB: Does not update on theme change, only applied on app start.
+				.modifier(Theme.ThemeNavigationBarAppearance())
+				.modifier(Theme.ThemeTabBarAppearance())
 		}
 	}
 	

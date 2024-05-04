@@ -51,9 +51,6 @@ public extension Theme {
 				.theme(toolbarBackground: .barTab, placement: .tabBar)
 		#endif
 			
-			// NavigationBar Appearance
-				.modifier(Theme.ThemeNavigationBarAppearance()) // TODO FB: Does not update on theme change, only applied on app start.
-			
 			// TODO idea: Could be a config on theme.
 			// FB13322408: Force visible navigation bar
 			// iOS: .toolbarBackground(.visible, for: .automatic)
