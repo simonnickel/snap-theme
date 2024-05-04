@@ -23,10 +23,12 @@ public extension Theme.ColorKey {
 		.foreground, .foregroundSecondary, .foregroundDisabled, .foregroundOnBackground, .foregroundOnLightBackground,
 		// Accent
 		.accentColorBase, .accentColors, .accentPrimary, .accentComplimentary, .accentComplementary,
+		// Navigation
+		.accentNavigation, .navigationTitle, .listAccessoryNavigation,
 		// Controls
-		.placeholder,
+		.placeholder, .controlIndicator,
 		// Others
-		.destructive, .listAccessoryNavigation,
+		.destructive,
 		.debugAssetReplacement,
 		
 	]
