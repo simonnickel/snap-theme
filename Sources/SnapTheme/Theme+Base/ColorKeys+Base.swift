@@ -24,7 +24,7 @@ public extension Theme.ColorKey {
 		// Accent
 		.accentColorBase, .accentColors, .accentPrimary, .accentComplimentary, .accentComplementary,
 		// Navigation
-		.accentNavigation, .navigationTitle, .listAccessoryNavigation,
+		.navigationBarTitle, .listAccessoryNavigation,
 		// Controls
 		.placeholder, .controlIndicator,
 		// Others
@@ -98,13 +98,10 @@ public extension Theme.ColorKey {
 	
 	
 	// MARK: - Navigation
-	
-	/// Main accent color, `.base` style from `.accentColors` ColorSet..
-	static let accentNavigation = Theme.ColorKey("accentNavigation", default: .key(.accentPrimary))
-	
+
 	/// Color of text in the navigationBar. Requires configuration via UIKit Appearance, see ``ThemeNavigationBarAppearance``.
 	/// Does not update on changes, only applied on app start. Also be careful to handle color scheme changes (dark mode).
-	static let navigationTitle = Theme.ColorKey("navigationTitle", default: .key(.foreground))
+	static let navigationBarTitle = Theme.ColorKey("navigationBarTitle", default: .key(.foreground))
 	
 	/// Color for an accessory in a List indicating navigation..
 	static let listAccessoryNavigation = Theme.ColorKey("listAccessoryNavigation", default: .color(.secondaryLabel))

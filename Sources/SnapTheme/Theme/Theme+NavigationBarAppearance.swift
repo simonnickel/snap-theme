@@ -25,7 +25,7 @@ extension Theme {
 					let standardAppearance = UINavigationBarAppearance()
 					standardAppearance.configureWithDefaultBackground()
 					
-					let color = theme.color(for: .navigationTitle, in: environment)
+					let color = theme.color(for: .navigationBarTitle, in: environment)
 					
 					// TODO idea: Set font from theme. Needs to get UIFont from Font.
 					// Converting Font to UIFont is a bit tricky. This will at least use fontDesignDefault of the Theme.
