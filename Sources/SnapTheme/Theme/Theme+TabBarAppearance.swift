@@ -6,7 +6,9 @@
 //
 
 import SwiftUI
+#if !os(macOS)
 import UIKit
+#endif
 import SnapCore
 
 // TODO FB: SwiftUI should support styling of tab bar.

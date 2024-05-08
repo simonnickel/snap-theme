@@ -71,6 +71,7 @@ public extension Theme.FontDefinition {
 			}
 		}
 		
+#if !os(macOS)
 		var valueUIFontDescriptor: UIFontDescriptor.SystemDesign {
 			return switch self {
 				case .`default`: .default
@@ -79,6 +80,7 @@ public extension Theme.FontDefinition {
 				case .monospaced: .monospaced
 			}
 		}
+#endif
 	}
 	
 	
