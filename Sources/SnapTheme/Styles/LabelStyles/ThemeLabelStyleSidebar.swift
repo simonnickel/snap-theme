@@ -9,6 +9,8 @@ import SwiftUI
 
 public struct ThemeLabelStyleSidebar: LabelStyle {
 	
+	@Environment(\.backgroundProminence) private var backgroundProminence
+	
 	public static let defaultIsSelected: Bool = false
 	
 	public init(isSelected: Bool = ThemeLabelStyleSidebar.defaultIsSelected) {
@@ -18,12 +20,14 @@ public struct ThemeLabelStyleSidebar: LabelStyle {
 	private let isSelected: Bool
 	
 	public func makeBody(configuration: Configuration) -> some View {
+		// TODO FB: BackgroundProminence alone does work on macOS, but not on iOS (reference: FB13310835).
+		let shouldHighlight = isSelected || backgroundProminence == .increased
 		Label {
 			configuration.title
-				.theme(text: isSelected ? .sidebarLabelSelected : .sidebarLabel)
+				.theme(text: shouldHighlight ? .sidebarLabelSelected : .sidebarLabel)
 		} icon: {
 			configuration.icon
-				.theme(text: isSelected ? .sidebarIconSelected : .sidebarIcon)
+				.theme(text: shouldHighlight ? .sidebarIconSelected : .sidebarIcon)
 				// .imageScale(.large) gets scale from List automatically
 		}
 	}
