@@ -12,7 +12,7 @@ public extension View {
 	/// Applies background registered for `BackgroundKey` as `.listRowBackground`.
 	/// - Parameter background: `BackgroundKey` to apply.
 	/// - Returns: Modified view.
-	func theme(listRowBackground: Theme.BackgroundKey?, highlighted: Bool = false, shape: ThemeShape.Shape? = nil) -> some View {
+	func theme(listRowBackground: Theme.BackgroundKey?, highlighted: Bool = false, shape: ThemeShape.Style? = nil) -> some View {
 		return self.modifier(Theme.ThemeListRowBackground(background: listRowBackground, highlighted: highlighted, shape: shape))
 	}
 	
@@ -28,7 +28,7 @@ private extension Theme {
 		
 		let background: Theme.BackgroundKey?
 		let highlighted: Bool
-		let shape: ThemeShape.Shape?
+		let shape: ThemeShape.Style?
 		
 		public func body(content: Content) -> some View {
 			let backgroundView: (AnyView)?

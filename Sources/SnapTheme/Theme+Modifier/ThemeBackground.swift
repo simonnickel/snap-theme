@@ -12,12 +12,12 @@ public extension View {
 	
 	/// Applies background registered for `BackgroundKey`.
 	/// - Parameter background: `BackgroundKey` to apply.
-	/// - Parameter shape: `ThemeShape.Shape` to apply.
+	/// - Parameter shape: `ThemeShape.Style` to apply.
 	/// - Parameter stroke: `ThemeShape.Stroke` configuration of the stroke to apply.
 	/// - Parameter highlighted: If `true` the highlight of the background is activated (animated).
 	/// - Parameter ignoreSafeArea: Applies `.ignoresSafeArea()` to background if `true`.
 	/// - Returns: Modified view.
-	func theme(background: Theme.BackgroundKey?, shape: ThemeShape.Shape? = nil, stroke: ThemeShape.Stroke? = nil, highlighted: Bool = false, ignoreSafeArea: Bool = false) -> some View {
+	func theme(background: Theme.BackgroundKey?, shape: ThemeShape.Style? = nil, stroke: ThemeShape.Stroke? = nil, highlighted: Bool = false, ignoreSafeArea: Bool = false) -> some View {
 		return self.modifier(Theme.ThemeBackground(background: background, shape: shape, stroke: stroke, highlighted: highlighted, ignoreSafeArea: ignoreSafeArea))
 	}
 	
@@ -49,7 +49,7 @@ private extension Theme {
 		@Environment(\.highlighted) private var highlightedEnvironment
 		
 		let background: Theme.BackgroundKey?
-		let shape: ThemeShape.Shape?
+		let shape: ThemeShape.Style?
 		let stroke: ThemeShape.Stroke?
 		let highlighted: Bool
 		let ignoreSafeArea: Bool

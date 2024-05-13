@@ -48,12 +48,12 @@ public struct ThemeButtonStyle: ButtonStyle {
 	/// Button Style using `Theme.BackgroundKey`. Pressed state is forwarded to Environment (`\.highlighted`) via `ThemeElement`.
 	/// - Parameters:
 	///   - background: `Theme.BackgroundKey` to apply as background.
-	public init(shape: ThemeShape.Shape? = nil, background: Theme.BackgroundKey? = nil) {
+	public init(shape: ThemeShape.Style? = nil, background: Theme.BackgroundKey? = nil) {
 		self.shape = shape
 		self.background = background
 	}
 	
-	private let shape: ThemeShape.Shape?
+	private let shape: ThemeShape.Style?
 	private let background: Theme.BackgroundKey?
 	
 	public func makeBody(configuration: Configuration) -> some View {

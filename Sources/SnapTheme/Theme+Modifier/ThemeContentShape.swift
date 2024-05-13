@@ -9,7 +9,7 @@ import SwiftUI
 
 public extension View {
 	
-	func theme(contentShape: ThemeShape.Shape, kind: ContentShapeKinds) -> some View {
+	func theme(contentShape: ThemeShape.Style, kind: ContentShapeKinds) -> some View {
 		return self.modifier(Theme.ThemeContentShape(kind: kind, shape: contentShape))
 	}
 
@@ -26,7 +26,7 @@ private extension Theme {
 		@ScaledMetric private var scaleFactor: CGFloat = 1
 		
 		let kind: ContentShapeKinds
-		let shape: ThemeShape.Shape
+		let shape: ThemeShape.Style
 		
 		public func body(content: Content) -> some View {
 			return content
