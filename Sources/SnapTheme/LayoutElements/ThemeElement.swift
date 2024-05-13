@@ -80,6 +80,10 @@ public struct ThemeElement<Content: View>: View {
 				Text("Content Secondary, highlighted")
 			}
 			
+			ThemeElement(shape: .capsule, stroke: .init(fill: .accentGradientForeground, lineWidth: .spacingElements), padding: .spacingGroups, color: .foregroundOnBackground, background: .buttonPrimary) {
+				Text("Some Shape")
+			}
+			
 		}
 		
 	}
