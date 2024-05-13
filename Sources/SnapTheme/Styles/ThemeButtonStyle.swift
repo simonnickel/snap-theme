@@ -67,10 +67,13 @@ public struct ThemeButtonStyle: ButtonStyle {
 			configuration.label
 		}
 		.onChange(of: configuration.isPressed) { oldValue, newValue in
-			if newValue == true {
-				highlighted = true
-			} else {
-				withAnimation(.default.delay(theme.number(.durationDelayButtonHighlight) ?? 0)) {
+			if highlighted == false && oldValue == false && newValue == true {
+				withAnimation(.easeOut) {
+					highlighted = true
+				}
+			}
+			if highlighted == true && newValue == false {
+				withAnimation(.easeIn.delay(theme.number(.durationDelayButtonHighlight) ?? 0)) {
 					highlighted = false
 				}
 			}
