@@ -44,8 +44,7 @@ public extension Theme {
 				return ThemeShape(shape, fill: surfaceKey, stroke: stroke)
 					.if(unwrap: highlight) { view, highlight in
 						view.overlay(
-							ThemeShape(shape)
-								.theme(surface: highlight)
+							ThemeShape(shape, fill: highlight, stroke: stroke)
 								.opacity(highlighted ? 1 : 0)
 						)
 					}
