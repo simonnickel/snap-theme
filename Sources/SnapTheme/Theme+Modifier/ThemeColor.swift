@@ -53,7 +53,7 @@ public extension Theme {
 		var color: Theme.ColorKey
 		
 		public func body(content: Content) -> some View {
-			let shapeStyle = theme.shapeStyle(for: color, in: environment)
+			let shapeStyle = theme.shapeStyleForColor(key: color, in: environment)
 			return AnyView(content
 				.foregroundStyle(shapeStyle))
 		}
@@ -67,7 +67,7 @@ public extension Theme {
 		var surface: Theme.SurfaceValue
 		
 		public func body(content: Content) -> some View {
-			let shapeStyle = theme.shapeStyle(for: surface, in: environment)
+			let shapeStyle = theme.shapeStyleForSurface(value: surface, in: environment)
 			var colorSchemeOverride: ColorScheme? = nil
 			switch surface {
 				case .material(_, let colorScheme): colorSchemeOverride = colorScheme?.system

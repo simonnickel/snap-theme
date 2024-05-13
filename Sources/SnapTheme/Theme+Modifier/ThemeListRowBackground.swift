@@ -32,7 +32,7 @@ private extension Theme {
 		
 		public func body(content: Content) -> some View {
 			let backgroundView: (AnyView)?
-			if let background, let view = theme.background(for: background, highlighted: highlighted) {
+			if let background, let view = theme.backgroundView(key: background, highlighted: highlighted) {
 				backgroundView = AnyView(ThemeListRowBackgroundContainer {
 					AnyView(view)
 						.if(unwrap: shape, transform: { view, shape in

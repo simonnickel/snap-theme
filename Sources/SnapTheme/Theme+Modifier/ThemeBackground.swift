@@ -51,7 +51,7 @@ private extension Theme {
 		let ignoreSafeArea: Bool
 		
 		public func body(content: Content) -> some View {
-			let backgroundView = theme.background(for: background, highlighted: highlighted || highlightedEnvironment)
+			let backgroundView = theme.backgroundView(key: background, highlighted: highlighted || highlightedEnvironment)
 			return content
 				.if(unwrap: backgroundView, transform: { view, backgroundView in
 					view.background {
@@ -73,7 +73,7 @@ private extension Theme {
 		var placement: ToolbarPlacement
 		
 		public func body(content: Content) -> some View {
-			let shapeStyle = theme.shapeStyle(for: background, in: environment)
+			let shapeStyle = theme.shapeStyleForBackground(key: background, in: environment)
 			return content
 				.if(unwrap: shapeStyle, transform: { view, shapeStyle in
 					view.toolbarBackground(AnyShapeStyle(shapeStyle), for: placement)
