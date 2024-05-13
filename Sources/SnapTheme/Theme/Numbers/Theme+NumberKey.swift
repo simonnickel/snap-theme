@@ -20,7 +20,8 @@ public extension Theme {
 	///
 	/// - Parameter key: `NumberKey` to get the Icon for.
 	/// - Returns: The `NumberValueType` resolved for the key. Nil indicates to use the system value.
-	func number(_ key: NumberKey) -> NumberValueType? {
+	func number(_ key: NumberKey?) -> NumberValueType? {
+		guard let key else { return nil }
 		let value = numbers[key] ?? key.defaultValue
 		return switch value {
 			case .key(let replacement): number(replacement)
@@ -45,8 +46,8 @@ public extension Theme {
 	///   - key: `NumberKey` to get the Icon for.
 	///   - factor: Additional factor as `NumberValueType aka CGFloat`, should be scaled by `@ScaledMetric`.
 	/// - Returns: **`value * theme.scale * factor`** --- The `NumberValue` resolved for the key, scaled by `theme.scale` and `factor`.
-	func number(_ key: NumberKey, scaled factor: NumberValueType) -> NumberValueType? {
-		guard let valueOfKey = number(key) else { return nil }
+	func number(_ key: NumberKey?, scaled factor: NumberValueType) -> NumberValueType? {
+		guard let key, let valueOfKey = number(key) else { return nil }
 		return valueOfKey * scale(with: factor)
 	}
 	

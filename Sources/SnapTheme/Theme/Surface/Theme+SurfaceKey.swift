@@ -27,12 +27,13 @@ public extension Theme {
 		}
 	}
 	
-	func shapeStyleForSurface(key: SurfaceKey, in environment: EnvironmentValues) -> any ShapeStyle {
+	func shapeStyleForSurface(key: SurfaceKey?, in environment: EnvironmentValues) -> (any ShapeStyle)? {
+		guard let key else { return nil }
 		let value = surfaceValue(for: key)
 		return shapeStyleForSurface(value: value, in: environment)
 	}
 	
-	func shapeStyleForSurface(value: SurfaceValue, in environment: EnvironmentValues) -> any ShapeStyle {
+	func shapeStyleForSurface(value: SurfaceValue, in environment: EnvironmentValues) -> (any ShapeStyle)? {
 		return switch value {
 			case .color(let colorKey): self.color(for: colorKey, in: environment)
 			case .colorAdjusted(let colorKey, hue: let hue, saturation: let saturation, brightness: let brightness, alpha: let alpha): self.color(for: colorKey, in: environment).adjusted(hue: hue, saturation: saturation, brightness: brightness, alpha: alpha, in: environment)

@@ -73,11 +73,13 @@ public extension Theme {
 				case .material(_, let colorScheme): colorSchemeOverride = colorScheme?.system
 				default: break
 			}
-			return AnyView(content
-				.foregroundStyle(shapeStyle))
-			.if(unwrap: colorSchemeOverride) { view, override in
-				view.environment(\.colorScheme, override)
-			}
+			return content
+				.if(unwrap: shapeStyle, transform: { view, shapeStyle in
+					view.foregroundStyle(AnyShapeStyle(shapeStyle))
+				})
+				.if(unwrap: colorSchemeOverride) { view, override in
+					view.environment(\.colorScheme, override)
+				}
 		}
 	}
 	
