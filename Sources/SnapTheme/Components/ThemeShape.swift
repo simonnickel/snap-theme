@@ -9,6 +9,21 @@ import SwiftUI
 
 public struct ThemeShape: View {
 	
+	public struct Configuration {
+		
+		public init(shape: ThemeShape.Style = .rectangle(), fill: Theme.SurfaceKey? = nil, stroke: ThemeShape.Stroke? = nil) {
+			self.shape = shape
+			self.fill = fill
+			self.stroke = stroke
+		}
+		
+		public let shape: Style
+		public let fill: Theme.SurfaceKey?
+		public let stroke: Stroke?
+		
+	}
+	
+	// TODO: Rename
 	public enum Style: Theme.KeyProtocolRequirements {
 		
 		/// A simple rectangle, e.g. to just have a colored area.
@@ -32,20 +47,31 @@ public struct ThemeShape: View {
 			}
 		}
 	}
+	
+	public struct Stroke {
+		public let fill: Theme.SurfaceKey
+		public let lineWidth: Theme.NumberKey
+	}
 
 	@Environment(\.self) var environment
 	@Environment(\.theme) private var theme
 	@ScaledMetric private var scaleFactor: CGFloat = 1
 
-	public let shape: Style
+	public let configuration: Configuration
 
-	public init(_ shape: Style) {
-		self.shape = shape
+	public init(_ shape: Style?, fill: Theme.SurfaceKey? = nil, stroke: Stroke? = nil) {
+		self.configuration = Configuration(shape: shape ?? .rectangle(), fill: fill, stroke: stroke)
 	}
 	
 	public var body: some View {
 		
+		let fill = theme.shapeStyleForSurface(key: configuration.fill, in: environment) ?? Color.clear
+		let stroke = theme.shapeStyleForSurface(key: configuration.stroke?.fill, in: environment) ?? Color.clear
+		let strokeWidth = theme.number(configuration.stroke?.lineWidth, scaled: scaleFactor)
+		
 		return AnyShape(shapeView)
+			.fill(AnyShapeStyle(fill))
+			.stroke(AnyShapeStyle(stroke), lineWidth: strokeWidth ?? 0)
 
 	}
 	
@@ -56,7 +82,7 @@ public struct ThemeShape: View {
 	/// Generate the `Shape` without being installed on a View
 	/// Prevents warning: `Accessing Environment<CGFloat>'s value outside of being installed on a View. This will always read the default value and will not update.`
 	internal func shapeViewWith(scaleFactor: CGFloat, in theme: Theme) -> any Shape {
-		switch shape {
+		switch configuration.shape {
 				
 			case .plane: return Rectangle()
 				

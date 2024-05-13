@@ -19,8 +19,9 @@ public struct ThemeElement<Content: View>: View {
 	///   - background: `Theme.BackgroundKey` to use as background.
 	///   - highlighted: If `true`, the highlight configured in the background is applied (animated).
 	///   - content: The content view to present in the element.
-	public init(shape: ThemeShape.Style? = nil, padding: Theme.NumberKey? = nil, color: Theme.ColorKey? = nil, background: Theme.BackgroundKey? = nil, highlighted: Bool = false, @ViewBuilder content: @escaping () -> Content) {
+	public init(shape: ThemeShape.Style? = nil, stroke: ThemeShape.Stroke? = nil, padding: Theme.NumberKey? = nil, color: Theme.ColorKey? = nil, background: Theme.BackgroundKey? = nil, highlighted: Bool = false, @ViewBuilder content: @escaping () -> Content) {
 		self.shape = shape
+		self.stroke = stroke
 		self.padding = padding
 		self.color = color
 		self.background = background
@@ -29,6 +30,7 @@ public struct ThemeElement<Content: View>: View {
 	}
 	
 	private let shape: ThemeShape.Style?
+	private let stroke: ThemeShape.Stroke?
 	private let padding: Theme.NumberKey?
 	private let color: Theme.ColorKey?
 	private let background: Theme.BackgroundKey?
@@ -41,14 +43,9 @@ public struct ThemeElement<Content: View>: View {
 			content()
 		}
 		.theme(padding: padding)
-		.theme(background: background, highlighted: highlighted)
+		.theme(background: background, shape: shape, stroke: stroke, highlighted: highlighted)
 		.if(unwrap: color, transform: { view, color in
 			view.theme(color: color)
-		})
-		.if(unwrap: shape, transform: { view, shape in
-			view.mask {
-				ThemeShape(shape)
-			}
 		})
 		.environment(\.highlighted, highlighted)
 	}
@@ -71,8 +68,11 @@ public struct ThemeElement<Content: View>: View {
 			ThemeElement(shape: .circle, padding: .spacingElements, color: .foregroundOnBackground, background: .accent) {
 				Text("Some Shape")
 			}
+			ThemeElement(shape: .circle, stroke: .init(fill: .uiIndicator, lineWidth: .spacingElements), padding: .spacingElements, color: .foregroundOnBackground, background: .accent) {
+				Text("Some Shape")
+			}
 			
-			ThemeElement(padding: .spacingElements, background: .contentSecondary) {
+			ThemeElement(stroke: .init(fill: .accentGradientBackground, lineWidth: .spacingElements), padding: .spacingElements, background: .contentSecondary) {
 				Text("Content Secondary")
 			}
 			

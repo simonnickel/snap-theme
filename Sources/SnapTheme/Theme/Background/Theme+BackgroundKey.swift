@@ -35,17 +35,16 @@ public extension Theme {
 		}
 	}
 	
-	func backgroundView(key: BackgroundKey?, highlighted: Bool) -> (any View)? {
+	func backgroundView(key: BackgroundKey?, shape: ThemeShape.Style?, stroke: ThemeShape.Stroke?, highlighted: Bool) -> (any View)? {
 		guard let key else { return nil }
 		let value = backgroundValue(for: key)
 		switch value {
 				
 			case .surface(let surfaceKey, highlight: let highlight):
-				return Rectangle()
-					.theme(surface: surfaceKey)
+				return ThemeShape(shape, fill: surfaceKey, stroke: stroke)
 					.if(unwrap: highlight) { view, highlight in
 						view.overlay(
-							Rectangle()
+							ThemeShape(shape)
 								.theme(surface: highlight)
 								.opacity(highlighted ? 1 : 0)
 						)
