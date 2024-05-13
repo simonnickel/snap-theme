@@ -50,6 +50,7 @@ public struct ThemeElement<Content: View>: View {
 				ThemeShape(shape)
 			}
 		})
+		.environment(\.highlighted, highlighted)
 	}
 	
 }
@@ -74,12 +75,10 @@ public struct ThemeElement<Content: View>: View {
 			ThemeElement(padding: .spacingElements, background: .contentSecondary) {
 				Text("Content Secondary")
 			}
-			.environment(\.highlighted, false)
 			
-			ThemeElement(padding: .spacingElements, background: .contentSecondary) {
-				Text("Content Secondary, highlighted via Env")
+			ThemeElement(padding: .spacingElements, background: .contentSecondary, highlighted: true) {
+				Text("Content Secondary, highlighted")
 			}
-			.environment(\.highlighted, true)
 			
 		}
 		

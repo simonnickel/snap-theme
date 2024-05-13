@@ -10,27 +10,27 @@ import SnapCore
 
 extension ButtonStyle where Self == ThemeButtonStyle {
 	
-	/// No shape, no background, forwards pressed state to Environment (`\.highlighted`).
+	/// No shape, no background, pressed state is forwarded to Environment (`\.highlighted`) via `ThemeElement`.
 	public static var themePlain: ThemeButtonStyle {
 		ThemeButtonStyle()
 	}
 	
-	/// Applies shape, without background, forwards pressed state to Environment (`\.highlighted`).
+	/// Applies shape, without background, pressed state is forwarded to Environment (`\.highlighted`) via `ThemeElement`.
 	public static var themeShape: ThemeButtonStyle {
 		ThemeButtonStyle(shape: .capsule)
 	}
 	
-	/// Applies shape with `.buttonPrimary` background, forwards pressed state to Environment (`\.highlighted`).
+	/// Applies shape with `.buttonPrimary` background, pressed state is forwarded to Environment (`\.highlighted`) via `ThemeElement`.
 	public static var themePrimary: ThemeButtonStyle {
 		ThemeButtonStyle(shape: .capsule, background: .buttonPrimary)
 	}
 	
-	/// Applies shape with `.buttonSecondary` background, forwards pressed state to Environment (`\.highlighted`).
+	/// Applies shape with `.buttonSecondary` background, pressed state is forwarded to Environment (`\.highlighted`) via `ThemeElement`.
 	public static var themeSecondary: ThemeButtonStyle {
 		ThemeButtonStyle(shape: .capsule, background: .buttonSecondary)
 	}
 	
-	/// Applies shape with `.buttonDestructive` background, forwards pressed state to Environment (`\.highlighted`).
+	/// Applies shape with `.buttonDestructive` background, pressed state is forwarded to Environment (`\.highlighted`) via `ThemeElement`.
 	public static var themeDestructive: ThemeButtonStyle {
 		ThemeButtonStyle(shape: .capsule, background: .buttonDestructive)
 	}
@@ -40,12 +40,12 @@ extension ButtonStyle where Self == ThemeButtonStyle {
 
 // MARK: - ThemeButtonStyle
 
-/// A `ButtonStyle` that assignes a shape and background and forwards pressed state to Environment (`\.highlighted`).
+/// A `ButtonStyle` that assignes a shape and background and pressed state is forwarded to Environment (`\.highlighted`) via `ThemeElement`.
 public struct ThemeButtonStyle: ButtonStyle {
 	
 	@Environment(\.theme) private var theme
 	
-	/// Button Style using `Theme.BackgroundKey`.
+	/// Button Style using `Theme.BackgroundKey`. Pressed state is forwarded to Environment (`\.highlighted`) via `ThemeElement`.
 	/// - Parameters:
 	///   - background: `Theme.BackgroundKey` to apply as background.
 	public init(shape: ThemeShape.Style? = nil, background: Theme.BackgroundKey? = nil) {
@@ -60,11 +60,11 @@ public struct ThemeButtonStyle: ButtonStyle {
 		
 		ThemeElement(
 			shape: shape,
-			background: background
+			background: background,
+			highlighted: configuration.isPressed
 		) {
 			configuration.label
 		}
-		.environment(\.highlighted, configuration.isPressed)
 		
 	}
 	
