@@ -79,7 +79,7 @@ They do not describe the color or specific use case (~`.red`~, ~`.buttonLabel`~)
 
 ### SurfaceKey
 
-A Surface represents a specific visual style and a highlight. Can be a gradient, material or color.
+A Surface represents a `ShapeStyle`, either a color, material or gradient.
 
 
 ### FontKey
@@ -105,7 +105,7 @@ Assigns a `Surface` to a font.
 
 ### BackgroundKey
 
-Defines the background of a semantic layout element (`.screen`, `.content`, `.contentSecondary`) by assigning a `Surface`.
+Defines the background of a semantic layout element (`.screen`, `.content`, `.contentSecondary`) by assigning a `Surface` and a highlight `Surface`.
 
 
 ## SnapAppThemeDemo
