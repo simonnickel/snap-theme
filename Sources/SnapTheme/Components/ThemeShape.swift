@@ -11,20 +11,19 @@ public struct ThemeShape: View {
 	
 	public struct Configuration {
 		
-		public init(shape: ThemeShape.Style = .rectangle(), fill: Theme.SurfaceKey? = nil, stroke: ThemeShape.Stroke? = nil) {
+		public init(shape: ThemeShape.Shape = .rectangle(), fill: Theme.SurfaceKey? = nil, stroke: ThemeShape.Stroke? = nil) {
 			self.shape = shape
 			self.fill = fill
 			self.stroke = stroke
 		}
 		
-		public let shape: Style
+		public let shape: Shape
 		public let fill: Theme.SurfaceKey?
 		public let stroke: Stroke?
 		
 	}
 	
-	// TODO: Rename
-	public enum Style: Theme.KeyProtocolRequirements {
+	public enum Shape: Theme.KeyProtocolRequirements {
 		
 		/// A simple rectangle, e.g. to just have a colored area.
 		case plane
@@ -59,7 +58,7 @@ public struct ThemeShape: View {
 
 	public let configuration: Configuration
 
-	public init(_ shape: Style?, fill: Theme.SurfaceKey? = nil, stroke: Stroke? = nil) {
+	public init(_ shape: Shape?, fill: Theme.SurfaceKey? = nil, stroke: Stroke? = nil) {
 		self.configuration = Configuration(shape: shape ?? .rectangle(), fill: fill, stroke: stroke)
 	}
 	
@@ -108,7 +107,7 @@ public struct ThemeShape: View {
 	
 	return ThemePreviewContainer(.view) {
 		
-		let shapes: [ThemeShape.Style] = [.rectangle(), .rectangle(.cornerRadiusElement), .circle, .capsule]
+		let shapes: [ThemeShape.Shape] = [.rectangle(), .rectangle(.cornerRadiusElement), .circle, .capsule]
 		
 		ForEach(shapes, id: \.self) { shape in
 			
