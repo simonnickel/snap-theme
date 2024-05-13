@@ -71,7 +71,6 @@ private extension Theme {
 								view.ignoresSafeArea()
 							})
 					}
-					.animation(.default, value: self.highlighted)
 				})
 
 		}

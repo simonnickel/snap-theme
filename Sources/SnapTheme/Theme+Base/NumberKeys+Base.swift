@@ -115,6 +115,9 @@ public extension Theme.NumberKey {
 	/// Horizontal Padding for a label styled as a Button, see `ThemeLabelStyleButtonPrimary/Secondary`.
 	static let labelButtonPaddingHorizontal = Theme.NumberKey("labelButtonPaddingHorizontal", default: .value(16))
 	
+	/// The duration the button should be highlighted. 
+	static let durationDelayButtonHighlight = Theme.NumberKey("durationDelayButtonHighlight", default: .value(0.2))
+	
 	
 	// MARK: - Tag Label
 	

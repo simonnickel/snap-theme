@@ -55,15 +55,25 @@ public struct ThemeButtonStyle: ButtonStyle {
 	
 	private let shape: ThemeShape.Style?
 	private let background: Theme.BackgroundKey?
+	@State private var highlighted: Bool = false
 	
 	public func makeBody(configuration: Configuration) -> some View {
 		
 		ThemeElement(
 			shape: shape,
 			background: background,
-			highlighted: configuration.isPressed
+			highlighted: highlighted
 		) {
 			configuration.label
+		}
+		.onChange(of: configuration.isPressed) { oldValue, newValue in
+			if newValue == true {
+				highlighted = true
+			} else {
+				withAnimation(.default.delay(theme.number(.durationDelayButtonHighlight) ?? 0)) {
+					highlighted = false
+				}
+			}
 		}
 		
 	}
