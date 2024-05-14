@@ -17,24 +17,36 @@ public extension View {
 	/// - Parameter highlighted: If `true` the highlight of the background is activated (animated).
 	/// - Parameter ignoreSafeArea: Applies `.ignoresSafeArea()` to background if `true`.
 	/// - Returns: Modified view.
-	func theme(background: Theme.BackgroundKey?, shape: ThemeShape.Style? = nil, stroke: ThemeShape.Stroke? = nil, highlighted: Bool = false, ignoreSafeArea: Bool = false) -> some View {
-		return self.modifier(Theme.ThemeBackground(background: background, shape: shape, stroke: stroke, highlighted: highlighted, ignoreSafeArea: ignoreSafeArea))
+	func theme(background key: Theme.BackgroundKey?, shape: ThemeShape.Style? = nil, stroke: ThemeShape.Stroke? = nil, highlighted: Bool = false, ignoreSafeArea: Bool = false) -> some View {
+		return self.modifier(Theme.ThemeBackground(background: key, shape: shape, stroke: stroke, highlighted: highlighted, ignoreSafeArea: ignoreSafeArea))
 	}
 	
 	/// Applies background registered for `BackgroundKey` as `.toolbarBackground` for given placement.
 	/// - Parameter background: `BackgroundKey` to apply.
 	/// - Parameter placement: `ToolbarPlacement` to apply the background to.
 	/// - Returns: Modified view.
-	func theme(toolbarBackground: Theme.BackgroundKey, placement: ToolbarPlacement) -> some View {
-		return self.modifier(Theme.ThemeToolbarBackground(background: toolbarBackground, placement: placement))
+	func theme(toolbarBackground key: Theme.BackgroundKey, placement: ToolbarPlacement) -> some View {
+		return self.modifier(Theme.ThemeToolbarBackground(background: key, placement: placement))
 	}
 	
 	/// Applies color registered for `ColorKey` as `.background`.
 	/// Consider using `.theme(background:)` with `BackgroundKey` instead.
 	/// - Parameter background: `ColorKey` to apply.
 	/// - Returns: Modified view.
-	func theme(backgroundColor: Theme.ColorKey) -> some View {
-		return self.modifier(Theme.ThemeBackgroundColor(background: backgroundColor))
+	func theme(backgroundColor key: Theme.ColorKey) -> some View {
+		return self.modifier(Theme.ThemeBackgroundColor(background: key))
+	}
+	
+	/// Applies `.containerBackground` registered for `BackgroundKey`.
+	/// - Parameter background: `BackgroundKey` to apply.
+	/// - Parameter shape: `ThemeShape.Style` to apply.
+	/// - Parameter stroke: `ThemeShape.Stroke` configuration of the stroke to apply.
+	/// - Parameter highlighted: If `true` the highlight of the background is activated (animated).
+	/// - Parameter ignoreSafeArea: Applies `.ignoresSafeArea()` to background if `true`.
+	/// - Returns: Modified view.
+	func theme(containerBackground key: Theme.BackgroundKey?, placement: ContainerBackgroundPlacement) -> some View {
+		return self.modifier(Theme.ThemeContainerBackground(background: key, placement: placement))
+
 	}
 	
 }
@@ -101,6 +113,22 @@ private extension Theme {
 		
 		public func body(content: Content) -> some View {
 			return content.background(theme.color(for: background, in: environment))
+		}
+	}
+	
+	struct ThemeContainerBackground: ViewModifier {
+		@Environment(\.self) var environment
+		@Environment(\.theme) private var theme
+		
+		let background: Theme.BackgroundKey?
+		let placement: ContainerBackgroundPlacement
+		
+		public func body(content: Content) -> some View {
+			let shapeStyle = theme.shapeStyleForBackground(key: background, in: environment)
+			return content
+				.if(unwrap: shapeStyle, transform: { view, shapeStyle in
+					view.containerBackground(AnyShapeStyle(shapeStyle), for: placement)
+				})
 		}
 	}
 	
@@ -179,7 +207,7 @@ private extension Theme {
 					.theme(padding: .cardPadding)
 					.theme(color: .foregroundOnBackground)
 					.theme(background: gradientBackground, highlighted: false)
-				
+	
 			}
 			.theme(padding: .cardPadding)
 			
