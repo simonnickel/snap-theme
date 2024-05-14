@@ -53,6 +53,7 @@ public struct ThemePickerListRow<Label, SelectionValue> : View where Label : Vie
 				}
 			})
 		)
+		.themeListRow()
 		
 	}
 	
