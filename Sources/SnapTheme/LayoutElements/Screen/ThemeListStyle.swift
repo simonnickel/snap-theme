@@ -9,9 +9,11 @@ import SwiftUI
 
 public extension Theme {
 	
-	enum ThemeListStyle: String, CaseIterable, Identifiable {
-		
+	enum ThemeListStyle: String, CaseIterable, Identifiable, CustomStringConvertible {
+				
 		public var id: String { return self.rawValue }
+		
+		public var description: String { self.rawValue }
 		
 		/// Platform specifc default style.
 		case automatic

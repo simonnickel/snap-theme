@@ -19,6 +19,7 @@ public extension Theme.TextSurfaceKey {
 		.listHeader: .color(.foregroundSecondary),
 		.listFooter: .color(.foregroundSecondary),
 		.listAccessoryNavigation: .color(.listAccessoryNavigation),
+		.listAccessoryPicker: .key(.accentForegroundInteractive),
 		// Sidebar
 		.sidebarTitle: .platform(macOS: .color(.foregroundSecondary), other: .color(.foreground)),
 		.sidebarLabelSelected: .color(.foregroundOnBackground),

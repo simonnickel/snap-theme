@@ -54,6 +54,9 @@ public extension Theme.IconKey {
 	/// Icon that indicates a navigation action.
 	static let accessoryNavigation = Theme.IconKey("accessoryNavigation", default: .system(name: "chevron.forward"))
 	
+	/// Icon that indicates a picker action.
+	static let accessoryPicker = Theme.IconKey("accessoryPicker", default: .system(name: "chevron.up.chevron.down"))
+	
 	/// Icon to use as a button to clear a `TextField`.
 	static let textFieldClear = Theme.IconKey("textFieldClear", default: .system(name: "xmark.circle.fill"))
 	

@@ -88,6 +88,9 @@ public extension Theme.FontKey {
 	/// Font for a list accesory indicating a navigation action.
 	static let listAccessoryNavigation = Theme.FontKey("listAccessoryNavigation", default: .key(.listTitle))
 	
+	/// Font for a list accesory indicating a navigation action.
+	static let listAccessoryPicker = Theme.FontKey("listAccessoryPicker", default: .key(.listValue))
+	
 	
 	// MARK: Sidebar
 	
