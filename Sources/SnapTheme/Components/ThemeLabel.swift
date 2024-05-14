@@ -54,9 +54,9 @@ public extension ThemeLabel where LabelContent == Text {
 
 public extension ThemeLabel where Style == DefaultLabelStyle {
 	
-	init(@ViewBuilder _ label: @escaping () -> LabelContent, icon: Theme.IconKey? = nil) {
-		self.label = label
+	init(icon: Theme.IconKey? = nil, @ViewBuilder _ label: @escaping () -> LabelContent) {
 		self.icon = icon
+		self.label = label
 		self.labelStyle = nil
 	}
 	
