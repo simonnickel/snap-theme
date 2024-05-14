@@ -21,7 +21,11 @@ public struct ThemeLabelStyleSidebar: LabelStyle {
 	
 	public func makeBody(configuration: Configuration) -> some View {
 		// TODO FB: BackgroundProminence alone does work on macOS, but not on iOS (reference: FB13310835).
-		let shouldHighlight = isSelected || backgroundProminence == .increased
+		#if os(macOS)
+		let shouldHighlight = backgroundProminence == .increased
+		#else
+		let shouldHighlight = isSelected
+		#endif
 		Label {
 			configuration.title
 				.theme(text: shouldHighlight ? .sidebarLabelSelected : .sidebarLabel)
