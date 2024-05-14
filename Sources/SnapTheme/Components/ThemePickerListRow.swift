@@ -18,22 +18,25 @@ import SwiftUI
 ///
 ///	- FB12181540: Should be able to apply color and font to Picker.
 ///	Workaround: Builds a custom
-public struct ThemePickerListRow<Label, SelectionValue> : View where Label : View, SelectionValue : Hashable & CustomStringConvertible {
+public struct ThemePickerListRow<SelectionValue> : View where SelectionValue : Hashable & CustomStringConvertible {
 	
-	public init(selection: Binding<SelectionValue>, options: [SelectionValue], label: @escaping () -> Label) {
+	public init(text: String?, icon: Theme.IconKey?, selection: Binding<SelectionValue>, options: [SelectionValue]) {
 		self.selection = selection
 		self.options = options
-		self.label = label
+		self.text = text
+		self.icon = icon
 	}
 	
 	let selection: Binding<SelectionValue>
 	let options: [SelectionValue]
-	let label: () -> Label
+	let text: String?
+	let icon: Theme.IconKey?
 	
 	public var body: some View {
 		
-		AnyView(
+		ThemeLabel(icon: icon) {
 			Menu(content: {
+				
 				ForEach(options, id: \.self) { option in
 					Button {
 						selection.wrappedValue = option
@@ -41,18 +44,26 @@ public struct ThemePickerListRow<Label, SelectionValue> : View where Label : Vie
 						ThemeLabel(text: option.description)
 					}
 				}
+				
 			}, label: {
+				
 				ThemeHStack(spacing: .spacingElements) {
-					label()
+					
+					ThemeLabel(text: text, style: .themeListRow())
 						.frame(maxWidth: .infinity, alignment: .leading)
+					
 					ThemeHStack(spacing: .spacingLines) {
+						
 						ThemeLabel(text: selection.wrappedValue.description, style: .titleOnly)
 						ThemeLabel(text: nil, icon: .accessoryPicker, style: .iconOnly)
+						
 					}
 					.theme(text: .listAccessoryPicker)
+					
 				}
+				
 			})
-		)
+		}
 		.themeListRow()
 		
 	}
