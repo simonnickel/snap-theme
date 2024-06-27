@@ -79,7 +79,7 @@ public struct ThemeScreenSidebar<SelectionValue, Content>: View where SelectionV
 
 #Preview {
 	
-	@State var selected: Int? = 0
+	@Previewable @State var selected: Int? = 0
 	
 	return NavigationStack {
 		

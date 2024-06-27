@@ -81,7 +81,7 @@ public struct ThemeScreenList<SelectionValue, Content>: View where SelectionValu
 
 #Preview {
 	
-	@State var selected: Int? = 0
+	@Previewable @State var selected: Int? = 0
 	
 	return NavigationStack {
 		
@@ -117,7 +117,7 @@ public struct ThemeScreenList<SelectionValue, Content>: View where SelectionValu
 	))
 	
 	struct Factory {
-		static func createList(style: Theme.ThemeListStyle) -> some View {
+		@MainActor static func createList(style: Theme.ThemeListStyle) -> some View {
 			
 			ThemeScreen(
 				title: style.rawValue
