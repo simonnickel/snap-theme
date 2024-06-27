@@ -26,9 +26,6 @@ let package = Package(
             name: "SnapTheme",
 			dependencies: [
 				.product(name: "SnapCore", package: "snap-core")
-			],
-			swiftSettings: [
-				.enableExperimentalFeature("StrictConcurrency")
 			]
 		),
         .testTarget(
