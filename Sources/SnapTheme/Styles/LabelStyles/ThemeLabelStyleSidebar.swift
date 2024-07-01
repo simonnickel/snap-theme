@@ -20,18 +20,19 @@ public struct ThemeLabelStyleSidebar: LabelStyle {
 	private let isSelected: Bool
 	
 	public func makeBody(configuration: Configuration) -> some View {
+		// TODO: iOS 18 - sidebar styling changed
 		// TODO FB: BackgroundProminence alone does work on macOS, but not on iOS (reference: FB13310835).
-		#if os(macOS)
-		let shouldHighlight = backgroundProminence == .increased
-		#else
-		let shouldHighlight = isSelected
-		#endif
+//		#if os(macOS)
+//		let shouldHighlight = backgroundProminence == .increased
+//		#else
+//		let shouldHighlight = isSelected
+//		#endif
 		Label {
 			configuration.title
-				.theme(text: shouldHighlight ? .sidebarLabelSelected : .sidebarLabel)
+//				.theme(text: shouldHighlight ? .sidebarLabelSelected : .sidebarLabel)
 		} icon: {
 			configuration.icon
-				.theme(text: shouldHighlight ? .sidebarIconSelected : .sidebarIcon)
+//				.theme(text: shouldHighlight ? .sidebarIconSelected : .sidebarIcon)
 				// .imageScale(.large) gets scale from List automatically
 		}
 	}
