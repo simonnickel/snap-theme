@@ -1,8 +1,6 @@
 //
-//  ColorKeys+Base.swift
-//  SnapTheme
-//
-//  Created by Simon Nickel on 10.03.23.
+//  SNAP - https://github.com/simonnickel/snap
+//  Created by Simon Nickel
 //
 
 import SwiftUI

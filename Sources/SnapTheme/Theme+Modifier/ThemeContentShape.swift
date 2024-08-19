@@ -1,8 +1,6 @@
 //
-//  ThemeContentShape.swift
-//  SnapTheme
-//
-//  Created by Simon Nickel on 08.01.24.
+//  SNAP - https://github.com/simonnickel/snap
+//  Created by Simon Nickel
 //
 
 import SwiftUI

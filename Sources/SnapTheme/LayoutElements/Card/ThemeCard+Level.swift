@@ -1,8 +1,6 @@
 //
-//  ThemeCard+Level.swift
-//
-//
-//  Created by Simon Nickel on 05.12.23.
+//  SNAP - https://github.com/simonnickel/snap
+//  Created by Simon Nickel
 //
 
 import Foundation

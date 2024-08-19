@@ -1,8 +1,6 @@
 //
-//  ThemeEmptyDecorationView.swift
-//  SnapTheme
-//
-//  Created by Simon Nickel on 21.09.23.
+//  SNAP - https://github.com/simonnickel/snap
+//  Created by Simon Nickel
 //
 
 import SwiftUI
