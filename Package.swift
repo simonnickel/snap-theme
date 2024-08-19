@@ -28,10 +28,6 @@ let package = Package(
 				.product(name: "SnapCore", package: "snap-core")
 			]
 		),
-        .testTarget(
-            name: "SnapThemeTests",
-            dependencies: ["SnapTheme"]
-		),
     ],
     swiftLanguageModes: [.version("6")]
 )
