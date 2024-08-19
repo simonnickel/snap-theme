@@ -33,5 +33,5 @@ let package = Package(
             dependencies: ["SnapTheme"]
 		),
     ],
-	swiftLanguageVersions: [.version("6")]
+    swiftLanguageModes: [.version("6")]
 )
