@@ -1,8 +1,6 @@
 //
-//  ThemeCloseContainer.swift
-//  SnapTheme
-//
-//  Created by Simon Nickel on 05.09.23.
+//  SNAP - https://github.com/simonnickel/snap
+//  Created by Simon Nickel
 //
 
 import SwiftUI

@@ -1,8 +1,6 @@
 //
-//  ThemeCard.swift
-//  SnapTheme
-//
-//  Created by Simon Nickel on 27.04.23.
+//  SNAP - https://github.com/simonnickel/snap
+//  Created by Simon Nickel
 //
 
 import SwiftUI
