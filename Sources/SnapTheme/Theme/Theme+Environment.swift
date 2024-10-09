@@ -5,6 +5,7 @@
 
 import SwiftUI
 
+// TODO: Use @Entry
 private struct ThemeKey: EnvironmentKey {
 	
 	static let defaultValue: Theme = Theme.base

@@ -5,6 +5,7 @@
 
 import SwiftUI
 
+// TODO: Use @Entry
 private struct HighlightEnvironmentKey: EnvironmentKey {
 	static let defaultValue: Bool = false
 }
