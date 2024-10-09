@@ -33,6 +33,7 @@ public extension Theme {
 		}
 	}
 	
+	@MainActor
 	func backgroundView(key: BackgroundKey?, shape: ThemeShape.Style?, stroke: ThemeShape.Stroke?, highlighted: Bool) -> (any View)? {
 		guard let key else { return nil }
 		let value = backgroundValue(for: key)

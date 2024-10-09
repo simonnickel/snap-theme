@@ -26,7 +26,7 @@ public struct ThemeNavLinkSidebarRow<Label, P>: View where Label : View, P : Dec
 		}
 
 //		// TODO FB13475990: NavigationsSplitViews Sidebar shows highlight border when ListRowBackground is used.
-////		.theme(listRowBackground: .sidebarSelected, shape: .rectangle(.sidebarBackgroundCornerRadius))
+//		.theme(listRowBackground: .sidebarSelected, shape: .rectangle(.sidebarBackgroundCornerRadius))
 //
 	}
 	

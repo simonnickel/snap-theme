@@ -95,6 +95,7 @@ private extension Theme {
 			return content
 				.presentationDetents(detents, selection: currentPresentationDetentExternal ?? $currentPresentationDetent)
 				.presentationCornerRadius(cornerRadiusValue)
+				.presentationSizing(.page) // TODO: Play around with new options
 				// .presentationCompactAdaptation(.fullScreenCover) for .popOver only
 		}
 	}
