@@ -22,7 +22,7 @@ public extension Theme {
 
 // MARK: - Theme
 
-public struct Theme: Identifiable, Equatable, Hashable, Sendable, Codable {
+public struct Theme: Identifiable, Codable, Hashable, Equatable, Sendable {
 	
 	public init(
 		icons: [IconKey : IconValue] = [:],

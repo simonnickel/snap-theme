@@ -7,7 +7,7 @@ import Foundation
 
 public extension Theme {
 	
-	typealias KeyProtocolRequirements = Codable & Equatable & Hashable & Sendable
+	typealias KeyProtocolRequirements = Codable & Hashable & Equatable & Sendable
 	
 	final class Key<T>: Identifiable, KeyProtocolRequirements where T: Theme.KeyProtocolRequirements {
 		
